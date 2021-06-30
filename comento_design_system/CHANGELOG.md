@@ -1,0 +1,12 @@
+## 0.0.1
+
+* Add colors, text styles
+
+## 0.0.2
+
+* Fix colors, text styles name
+
+## 0.0.3
+
+* Add text styles theme
+
