@@ -6,6 +6,8 @@ on:
 jobs:
   build:
     name: Build Web
+    env:
+      COMMIT_SECRET: ${{secrets.commit_secret}}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
@@ -22,7 +24,7 @@ jobs:
           git config --global user.email tech@comento.kr
           git config --global user.name comento
           git status
-          git remote add origin https://${{secrets.commit_secret}}@github.com/comento/flutter-comento-ui.git
+          git remote add origin https://$COMMIT_SECRET@github.com/comento/flutter-comento-ui.git
           git checkout -b gh-pages
           git add --all
           git commit -m "update"
