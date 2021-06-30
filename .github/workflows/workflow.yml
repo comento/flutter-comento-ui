@@ -22,7 +22,7 @@ jobs:
           git config --global user.name comento
           git config --global user.email tech@comento.kr
           git status
-          git remote add origin https://comento:${{ secrets.COMMIT_SECRET }}@github.com/comento/flutter-comento-ui.git
+          git remote add origin https://${{ github.actor }}:${{ secrets.COMMIT_SECRET }}@github.com/comento/flutter-comento-ui.git
           git checkout -b gh-pages
           git add --all
           git commit -m "update"
