@@ -6,8 +6,6 @@ on:
 jobs:
   build:
     name: Build Web
-#    env:
-#      GITHUB_TOKEN: ${{secrets.commit_secret}}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
@@ -21,10 +19,8 @@ jobs:
       - run: |
           cd build/web
           git init
-          git config --global user.email tech@comento.kr
-          git config --global user.name comento
           git status
-          git remote add origin https://${{ secrets.GITHUB_TOKEN }}@github.com/comento/flutter-comento-ui.git
+          git remote add origin https://${{ github.actor }}:${{ secrets.COMMIT_SECRET }}@github.com/comento/flutter-comento-ui.git
           git checkout -b gh-pages
           git add --all
           git commit -m "update"
