@@ -18,7 +18,7 @@ class CdsTextStyles {
     fontSize: 28,
     color: CdsColors.grey850,
     fontWeight: FontWeight.w700,
-    height: 1.3,
+    height: 1.38,
   );
   static const TextStyle headline3 = const TextStyle(
     fontFamily: 'SpoqaHanSans',
@@ -69,6 +69,7 @@ class CdsTextStyles {
     fontWeight: FontWeight.w300,
     height: 1.15,
   );
+  /// caption2
   static const TextStyle overline = const TextStyle(
     fontFamily: 'SpoqaHanSans',
     fontSize: 10,
@@ -78,7 +79,7 @@ class CdsTextStyles {
   );
   static const TextStyle button = const TextStyle(
     fontFamily: 'SpoqaHanSans',
-    fontSize: 16,
+    fontSize: 14,
     fontWeight: FontWeight.w700,
   );
 
