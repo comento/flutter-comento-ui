@@ -7,66 +7,77 @@ class CdsTextStyles {
   CdsTextStyles._();
 
   static const TextStyle headline1 = const TextStyle(
+    fontFamily: 'SpoqaHanSans',
     fontSize: 32,
     color: CdsColors.grey850,
     fontWeight: FontWeight.w700,
     height: 1.25,
   );
   static const TextStyle headline2 = const TextStyle(
+    fontFamily: 'SpoqaHanSans',
     fontSize: 28,
     color: CdsColors.grey850,
     fontWeight: FontWeight.w700,
     height: 1.3,
   );
   static const TextStyle headline3 = const TextStyle(
+    fontFamily: 'SpoqaHanSans',
     fontSize: 26,
     color: CdsColors.grey850,
     fontWeight: FontWeight.w700,
     height: 1.3,
   );
   static const TextStyle headline4 = const TextStyle(
+    fontFamily: 'SpoqaHanSans',
     fontSize: 24,
     color: CdsColors.grey850,
     fontWeight: FontWeight.w700,
     height: 1.25,
   );
   static const TextStyle headline5 = const TextStyle(
+    fontFamily: 'SpoqaHanSans',
     fontSize: 22,
     color: CdsColors.grey850,
     fontWeight: FontWeight.w400,
     height: 1.3,
   );
   static const TextStyle headline6 = const TextStyle(
+    fontFamily: 'SpoqaHanSans',
     fontSize: 18,
     color: CdsColors.grey850,
     fontWeight: FontWeight.w700,
     height: 1.35,
   );
   static const TextStyle bodyText1 = const TextStyle(
+    fontFamily: 'SpoqaHanSans',
     fontSize: 16,
     color: CdsColors.grey850,
     fontWeight: FontWeight.w400,
     height: 1.5,
   );
   static const TextStyle bodyText2 = const TextStyle(
+    fontFamily: 'SpoqaHanSans',
     fontSize: 14,
     color: CdsColors.grey850,
     fontWeight: FontWeight.w400,
     height: 1.45,
   );
   static const TextStyle caption = const TextStyle(
+    fontFamily: 'SpoqaHanSans',
     fontSize: 12,
     color: CdsColors.grey850,
     fontWeight: FontWeight.w300,
     height: 1.15,
   );
   static const TextStyle overline = const TextStyle(
+    fontFamily: 'SpoqaHanSans',
     fontSize: 10,
     color: CdsColors.grey850,
     fontWeight: FontWeight.w400,
     height: 1.15,
   );
   static const TextStyle button = const TextStyle(
+    fontFamily: 'SpoqaHanSans',
     fontSize: 16,
     fontWeight: FontWeight.w700,
   );
