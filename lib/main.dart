@@ -1,3 +1,4 @@
+import 'package:comento_design_system/comento_design_system.dart';
 import 'package:flutter/material.dart';
 import 'package:storybook_flutter/storybook_flutter.dart';
 
@@ -21,11 +22,11 @@ class MyApp extends StatelessWidget {
           ),
         ),
         Story(
-          name: 'Raised button',
-          builder: (_, k) => ElevatedButton(
+          name: 'Elevated button',
+          builder: (_, k) => CdsElevatedButton(
             onPressed:
                 k.boolean(label: 'Enabled', initial: true) ? () {} : null,
-            child: Text(k.text(label: 'Text', initial: 'Raised button')),
+            child: Text(k.text(label: 'Text', initial: 'Elevated button')),
           ),
         ),
         Story.simple(

@@ -43,6 +43,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.15.0"
+  comento_design_system:
+    dependency: "direct main"
+    description:
+      path: comento_design_system
+      relative: true
+    source: path
+    version: "0.0.3"
   cupertino_icons:
     dependency: "direct main"
     description:

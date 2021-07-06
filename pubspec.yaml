@@ -11,6 +11,8 @@ dependencies:
   flutter:
     sdk: flutter
   storybook_flutter: ^0.5.0+1
+  comento_design_system:
+    path: comento_design_system
 
   cupertino_icons: ^1.0.2
 
