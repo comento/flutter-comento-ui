@@ -11,20 +11,17 @@ class ElevatedButtonMedium extends StatelessWidget {
       children: [
         CdsElevatedButton.medium(
           onPressed: k.boolean(label: 'Enabled', initial: true) ? () {} : null,
-          child:
-              Text(k.text(label: 'Text', initial: 'Button')),
+          text: k.text(label: 'Text', initial: 'Button'),
         ),
         CdsElevatedButton.medium(
           color: CdsElevatedButtonColor.blue,
           onPressed: k.boolean(label: 'Enabled', initial: true) ? () {} : null,
-          child:
-              Text(k.text(label: 'Text', initial: 'Button')),
+          text: k.text(label: 'Text', initial: 'Button'),
         ),
         CdsElevatedButton.medium(
           color: CdsElevatedButtonColor.grey,
           onPressed: k.boolean(label: 'Enabled', initial: true) ? () {} : null,
-          child:
-              Text(k.text(label: 'Text', initial: 'Button')),
+          text: k.text(label: 'Text', initial: 'Button'),
         ),
       ],
     );

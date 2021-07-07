@@ -13,8 +13,10 @@ class CdsElevatedButton extends StatelessWidget {
   final FocusNode? focusNode;
   final bool autofocus;
   final Clip clipBehavior;
-  final Widget? child;
+  final String text;
   final ButtonStyle? style;
+  final bool isEnabled;
+  final bool isLoading;
 
   static final _defaultStyle = ElevatedButton.styleFrom(
     elevation: 0,
@@ -53,8 +55,10 @@ class CdsElevatedButton extends StatelessWidget {
     this.focusNode,
     this.autofocus = false,
     this.clipBehavior = Clip.none,
-    required this.child,
+    required this.text,
     required ButtonStyle style,
+    required this.isEnabled,
+    required this.isLoading,
   })  : this.style = style.merge(_defaultStyle),
         super(key: key);
 
@@ -66,7 +70,9 @@ class CdsElevatedButton extends StatelessWidget {
     bool autofocus = false,
     Clip clipBehavior = Clip.none,
     CdsElevatedButtonColor? color,
-    required Widget? child,
+    required String text,
+    bool isEnabled = true,
+    bool isLoading = false,
   }) =>
       CdsElevatedButton._(
         key: key,
@@ -75,7 +81,7 @@ class CdsElevatedButton extends StatelessWidget {
         focusNode: focusNode,
         autofocus: autofocus,
         clipBehavior: clipBehavior,
-        child: child,
+        text: text,
         style: ElevatedButton.styleFrom(
           textStyle: CdsTextStyles.button.merge(
             TextStyle(
@@ -86,6 +92,8 @@ class CdsElevatedButton extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 8),
           minimumSize: const Size(36, 24),
         ).merge(_getStyleByColor(color)),
+        isEnabled: isEnabled,
+        isLoading: isLoading,
       );
 
   factory CdsElevatedButton.medium({
@@ -96,7 +104,9 @@ class CdsElevatedButton extends StatelessWidget {
     bool autofocus = false,
     Clip clipBehavior = Clip.none,
     CdsElevatedButtonColor? color,
-    required Widget? child,
+    required String text,
+    bool isEnabled = true,
+    bool isLoading = false,
   }) =>
       CdsElevatedButton._(
         key: key,
@@ -105,7 +115,7 @@ class CdsElevatedButton extends StatelessWidget {
         focusNode: focusNode,
         autofocus: autofocus,
         clipBehavior: clipBehavior,
-        child: child,
+        text: text,
         style: ElevatedButton.styleFrom(
           textStyle: CdsTextStyles.button.merge(
             TextStyle(fontSize: 14),
@@ -113,6 +123,8 @@ class CdsElevatedButton extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 12),
           minimumSize: const Size(60, 36),
         ).merge(_getStyleByColor(color)),
+        isEnabled: isEnabled,
+        isLoading: isLoading,
       );
 
   factory CdsElevatedButton.large({
@@ -123,7 +135,9 @@ class CdsElevatedButton extends StatelessWidget {
     bool autofocus = false,
     Clip clipBehavior = Clip.none,
     CdsElevatedButtonColor? color,
-    required Widget? child,
+    required String text,
+    bool isEnabled = true,
+    bool isLoading = false,
   }) =>
       CdsElevatedButton._(
         key: key,
@@ -132,7 +146,7 @@ class CdsElevatedButton extends StatelessWidget {
         focusNode: focusNode,
         autofocus: autofocus,
         clipBehavior: clipBehavior,
-        child: child,
+        text: text,
         style: ElevatedButton.styleFrom(
           textStyle: CdsTextStyles.button.merge(
             TextStyle(fontSize: 16),
@@ -140,6 +154,8 @@ class CdsElevatedButton extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 14),
           minimumSize: const Size(76, 48),
         ).merge(_getStyleByColor(color)),
+        isEnabled: isEnabled,
+        isLoading: isLoading,
       );
 
   factory CdsElevatedButton.largeFull({
@@ -150,7 +166,9 @@ class CdsElevatedButton extends StatelessWidget {
     bool autofocus = false,
     Clip clipBehavior = Clip.none,
     CdsElevatedButtonColor? color,
-    required Widget? child,
+    required String text,
+    bool isEnabled = true,
+    bool isLoading = false,
   }) =>
       CdsElevatedButton._(
         key: key,
@@ -159,7 +177,7 @@ class CdsElevatedButton extends StatelessWidget {
         focusNode: focusNode,
         autofocus: autofocus,
         clipBehavior: clipBehavior,
-        child: child,
+        text: text,
         style: ElevatedButton.styleFrom(
           textStyle: CdsTextStyles.button.merge(
             TextStyle(fontSize: 16),
@@ -167,6 +185,8 @@ class CdsElevatedButton extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 14),
           minimumSize: const Size(double.infinity, 48),
         ).merge(_getStyleByColor(color)),
+        isEnabled: isEnabled,
+        isLoading: isLoading,
       );
 
   @override
@@ -174,12 +194,16 @@ class CdsElevatedButton extends StatelessWidget {
         child: ElevatedButton(
           style: style,
           key: key,
-          onPressed: onPressed,
+          onPressed: isEnabled ? onPressed : null,
           onLongPress: onLongPress,
           focusNode: focusNode,
           autofocus: autofocus,
           clipBehavior: clipBehavior,
-          child: child,
+          child: isLoading
+              ? CircularProgressIndicator(
+                  valueColor: AlwaysStoppedAnimation<Color>(CdsColors.white),
+                )
+              : Text(text),
         ),
       );
 }

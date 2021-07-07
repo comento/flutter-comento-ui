@@ -11,20 +11,17 @@ class ElevatedButtonLarge extends StatelessWidget {
       children: [
         CdsElevatedButton.large(
           onPressed: k.boolean(label: 'Enabled', initial: true) ? () {} : null,
-          child:
-              Text(k.text(label: 'Text', initial: 'Button')),
+          text: k.text(label: 'Text', initial: 'Button'),
         ),
         CdsElevatedButton.large(
           color: CdsElevatedButtonColor.blue,
           onPressed: k.boolean(label: 'Enabled', initial: true) ? () {} : null,
-          child:
-              Text(k.text(label: 'Text', initial: 'Button')),
+          text: k.text(label: 'Text', initial: 'Button'),
         ),
         CdsElevatedButton.large(
           color: CdsElevatedButtonColor.grey,
           onPressed: k.boolean(label: 'Enabled', initial: true) ? () {} : null,
-          child:
-              Text(k.text(label: 'Text', initial: 'Button')),
+          text: k.text(label: 'Text', initial: 'Button'),
         ),
       ],
     );

@@ -11,20 +11,17 @@ class ElevatedButtonSmall extends StatelessWidget {
       children: [
         CdsElevatedButton.small(
           onPressed: k.boolean(label: 'Enabled', initial: true) ? () {} : null,
-          child:
-              Text(k.text(label: 'Text', initial: 'Button')),
+          text: k.text(label: 'Text', initial: 'Button'),
         ),
         CdsElevatedButton.small(
           color: CdsElevatedButtonColor.blue,
           onPressed: k.boolean(label: 'Enabled', initial: true) ? () {} : null,
-          child:
-              Text(k.text(label: 'Text', initial: 'Button')),
+          text: k.text(label: 'Text', initial: 'Button'),
         ),
         CdsElevatedButton.small(
           color: CdsElevatedButtonColor.grey,
           onPressed: k.boolean(label: 'Enabled', initial: true) ? () {} : null,
-          child:
-              Text(k.text(label: 'Text', initial: 'Button')),
+          text: k.text(label: 'Text', initial: 'Button'),
         ),
       ],
     );
