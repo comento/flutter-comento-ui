@@ -1,6 +1,10 @@
-import 'package:comento_design_system/comento_design_system.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_comento_ui/elevated_button_large.dart';
+import 'package:flutter_comento_ui/elevated_button_medium.dart';
+import 'package:flutter_comento_ui/elevated_button_small.dart';
 import 'package:storybook_flutter/storybook_flutter.dart';
+
+import 'elevated_button_large_full.dart';
 
 void main() {
   runApp(MyApp());
@@ -12,31 +16,20 @@ class MyApp extends StatelessWidget {
     return Storybook(
       children: [
         Story(
-          name: 'Flat button',
-          padding: EdgeInsets.all(5), // optional padding customization
-          background: Colors.red, // optional background color customization
-          builder: (_, k) => MaterialButton(
-            onPressed:
-                k.boolean(label: 'Enabled', initial: true) ? () {} : null,
-            child: Text(k.text(label: 'Text', initial: 'Flat button')),
-          ),
+          name: 'Elevated button - small',
+          builder: (_, k) => ElevatedButtonSmall(k),
         ),
         Story(
-          name: 'Elevated button',
-          builder: (_, k) => CdsElevatedButton(
-            onPressed:
-                k.boolean(label: 'Enabled', initial: true) ? () {} : null,
-            child: Text(k.text(label: 'Text', initial: 'Elevated button')),
-          ),
+          name: 'Elevated button - medium',
+          builder: (_, k) => ElevatedButtonMedium(k),
         ),
-        Story.simple(
-          name: 'Input field',
-          child: const TextField(
-            decoration: InputDecoration(
-              border: OutlineInputBorder(),
-              labelText: 'Input field',
-            ),
-          ),
+        Story(
+          name: 'Elevated button - large',
+          builder: (_, k) => ElevatedButtonLarge(k),
+        ),
+        Story(
+          name: 'Elevated button - large full',
+          builder: (_, k) => ElevatedButtonLargeFull(k),
         ),
       ],
     );
