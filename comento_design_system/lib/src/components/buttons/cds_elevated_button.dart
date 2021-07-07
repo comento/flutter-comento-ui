@@ -10,8 +10,6 @@ enum CdsElevatedButtonColor {
 class CdsElevatedButton extends StatelessWidget {
   final VoidCallback? onPressed;
   final VoidCallback? onLongPress;
-  final FocusNode? focusNode;
-  final bool autofocus;
   final Clip clipBehavior;
   final String text;
   final ButtonStyle? style;
@@ -52,8 +50,6 @@ class CdsElevatedButton extends StatelessWidget {
     Key? key,
     required this.onPressed,
     this.onLongPress,
-    this.focusNode,
-    this.autofocus = false,
     this.clipBehavior = Clip.none,
     required this.text,
     required ButtonStyle style,
@@ -66,8 +62,6 @@ class CdsElevatedButton extends StatelessWidget {
     Key? key,
     required VoidCallback? onPressed,
     VoidCallback? onLongPress,
-    FocusNode? focusNode,
-    bool autofocus = false,
     Clip clipBehavior = Clip.none,
     CdsElevatedButtonColor? color,
     required String text,
@@ -78,8 +72,6 @@ class CdsElevatedButton extends StatelessWidget {
         key: key,
         onPressed: onPressed,
         onLongPress: onLongPress,
-        focusNode: focusNode,
-        autofocus: autofocus,
         clipBehavior: clipBehavior,
         text: text,
         style: ElevatedButton.styleFrom(
@@ -100,8 +92,6 @@ class CdsElevatedButton extends StatelessWidget {
     Key? key,
     required VoidCallback? onPressed,
     VoidCallback? onLongPress,
-    FocusNode? focusNode,
-    bool autofocus = false,
     Clip clipBehavior = Clip.none,
     CdsElevatedButtonColor? color,
     required String text,
@@ -112,8 +102,6 @@ class CdsElevatedButton extends StatelessWidget {
         key: key,
         onPressed: onPressed,
         onLongPress: onLongPress,
-        focusNode: focusNode,
-        autofocus: autofocus,
         clipBehavior: clipBehavior,
         text: text,
         style: ElevatedButton.styleFrom(
@@ -131,8 +119,6 @@ class CdsElevatedButton extends StatelessWidget {
     Key? key,
     required VoidCallback? onPressed,
     VoidCallback? onLongPress,
-    FocusNode? focusNode,
-    bool autofocus = false,
     Clip clipBehavior = Clip.none,
     CdsElevatedButtonColor? color,
     required String text,
@@ -143,8 +129,6 @@ class CdsElevatedButton extends StatelessWidget {
         key: key,
         onPressed: onPressed,
         onLongPress: onLongPress,
-        focusNode: focusNode,
-        autofocus: autofocus,
         clipBehavior: clipBehavior,
         text: text,
         style: ElevatedButton.styleFrom(
@@ -162,8 +146,6 @@ class CdsElevatedButton extends StatelessWidget {
     Key? key,
     required VoidCallback? onPressed,
     VoidCallback? onLongPress,
-    FocusNode? focusNode,
-    bool autofocus = false,
     Clip clipBehavior = Clip.none,
     CdsElevatedButtonColor? color,
     required String text,
@@ -174,8 +156,6 @@ class CdsElevatedButton extends StatelessWidget {
         key: key,
         onPressed: onPressed,
         onLongPress: onLongPress,
-        focusNode: focusNode,
-        autofocus: autofocus,
         clipBehavior: clipBehavior,
         text: text,
         style: ElevatedButton.styleFrom(
@@ -196,8 +176,6 @@ class CdsElevatedButton extends StatelessWidget {
           key: key,
           onPressed: isEnabled ? onPressed : null,
           onLongPress: onLongPress,
-          focusNode: focusNode,
-          autofocus: autofocus,
           clipBehavior: clipBehavior,
           child: isLoading
               ? CircularProgressIndicator(
