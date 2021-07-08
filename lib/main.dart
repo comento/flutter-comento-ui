@@ -6,6 +6,10 @@ import 'package:flutter_comento_ui/elevated_button/elevated_button_small.dart';
 import 'package:flutter_comento_ui/elevated_icon_button/elevated_icon_button_large_full.dart';
 import 'package:flutter_comento_ui/elevated_icon_button/elevated_icon_button_medium.dart';
 import 'package:flutter_comento_ui/elevated_icon_button/elevated_icon_button_small.dart';
+import 'package:flutter_comento_ui/outlined_button/outlined_button_large.dart';
+import 'package:flutter_comento_ui/outlined_button/outlined_button_large_full.dart';
+import 'package:flutter_comento_ui/outlined_button/outlined_button_medium.dart';
+import 'package:flutter_comento_ui/outlined_button/outlined_button_small.dart';
 import 'package:storybook_flutter/storybook_flutter.dart';
 
 import 'elevated_icon_button/elevated_icon_button_large.dart';
@@ -50,6 +54,22 @@ class MyApp extends StatelessWidget {
         Story(
           name: 'Elevated icon button - large full',
           builder: (_, k) => ElevatedIconButtonLargeFull(k),
+        ),
+        Story(
+          name: 'Outlined button - small',
+          builder: (_, k) => OutlinedButtonSmall(k),
+        ),
+        Story(
+          name: 'Outlined button - medium',
+          builder: (_, k) => OutlinedButtonMedium(k),
+        ),
+        Story(
+          name: 'Outlined button - large',
+          builder: (_, k) => OutlinedButtonLarge(k),
+        ),
+        Story(
+          name: 'Outlined button - large full',
+          builder: (_, k) => OutlinedButtonLargeFull(k),
         ),
       ],
     );

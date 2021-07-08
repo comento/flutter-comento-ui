@@ -19,14 +19,7 @@ class CdsElevatedIconButton extends StatelessWidget {
   final bool isLoading;
   final Widget child;
 
-  static final _defaultStyle = ElevatedButton.styleFrom(
-    elevation: 0,
-    shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(CdsSizes.buttonRadius),
-    ),
-  );
-
-  static ButtonStyle _getButtonStyleByColor(CdsElevatedIconButtonColor? color) {
+  static ButtonStyle _getButtonStyle(CdsElevatedIconButtonColor? color) {
     Color primary;
     Color onPrimary;
     switch (color) {
@@ -50,6 +43,10 @@ class CdsElevatedIconButton extends StatelessWidget {
     return ElevatedButton.styleFrom(
       primary: primary,
       onPrimary: onPrimary,
+      elevation: 0,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(CdsSizes.buttonRadius),
+      ),
     );
   }
 
@@ -58,12 +55,11 @@ class CdsElevatedIconButton extends StatelessWidget {
     required this.onPressed,
     this.onLongPress,
     this.clipBehavior = Clip.none,
-    required ButtonStyle style,
+    required this.style,
     required this.isEnabled,
     required this.isLoading,
     required this.child,
-  })  : this.style = style.merge(_defaultStyle),
-        super(key: key);
+  }) : super(key: key);
 
   factory CdsElevatedIconButton.small({
     Key? key,
@@ -90,7 +86,7 @@ class CdsElevatedIconButton extends StatelessWidget {
           ),
           padding: EdgeInsets.only(left: 10.5, right: 8),
           minimumSize: const Size(36, 24),
-        ).merge(_getButtonStyleByColor(color)),
+        ).merge(_getButtonStyle(color)),
         isEnabled: isEnabled,
         isLoading: isLoading,
         child: Row(
@@ -125,7 +121,7 @@ class CdsElevatedIconButton extends StatelessWidget {
           ),
           padding: EdgeInsets.only(left: 15.25, right: 12),
           minimumSize: const Size(60, 36),
-        ).merge(_getButtonStyleByColor(color)),
+        ).merge(_getButtonStyle(color)),
         isEnabled: isEnabled,
         isLoading: isLoading,
         child: Row(
@@ -160,7 +156,7 @@ class CdsElevatedIconButton extends StatelessWidget {
           ),
           padding: EdgeInsets.only(left: 17.25, right: 14),
           minimumSize: const Size(76, 48),
-        ).merge(_getButtonStyleByColor(color)),
+        ).merge(_getButtonStyle(color)),
         isEnabled: isEnabled,
         isLoading: isLoading,
         child: Row(
@@ -195,7 +191,7 @@ class CdsElevatedIconButton extends StatelessWidget {
           ),
           padding: EdgeInsets.only(left: 17.25, right: 14),
           minimumSize: const Size(76, 48),
-        ).merge(_getButtonStyleByColor(color)),
+        ).merge(_getButtonStyle(color)),
         isEnabled: isEnabled,
         isLoading: isLoading,
         child: Row(

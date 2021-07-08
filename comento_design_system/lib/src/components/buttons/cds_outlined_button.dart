@@ -1,13 +1,14 @@
 import 'package:comento_design_system/comento_design_system.dart';
 import 'package:flutter/material.dart';
 
-enum CdsElevatedButtonColor {
+enum CdsOutlinedButtonColor {
   green,
   blue,
   grey,
+  red,
 }
 
-class CdsElevatedButton extends StatelessWidget {
+class CdsOutlinedButton extends StatelessWidget {
   final VoidCallback? onPressed;
   final VoidCallback? onLongPress;
   final Clip clipBehavior;
@@ -16,34 +17,36 @@ class CdsElevatedButton extends StatelessWidget {
   final bool isEnabled;
   final bool isLoading;
 
-  static ButtonStyle _getButtonStyle(CdsElevatedButtonColor? color) {
+  static ButtonStyle _getButtonStyle(CdsOutlinedButtonColor? color) {
     Color primary;
-    Color onPrimary;
+    Color borderColor;
     switch (color) {
-      case CdsElevatedButtonColor.blue:
-        primary = CdsColors.blue600;
-        onPrimary = CdsColors.white;
+      case CdsOutlinedButtonColor.blue:
+        primary = borderColor = CdsColors.blue600;
         break;
-      case CdsElevatedButtonColor.grey:
-        primary = CdsColors.grey100;
-        onPrimary = CdsColors.grey700;
+      case CdsOutlinedButtonColor.grey:
+        primary = CdsColors.grey500;
+        borderColor = CdsColors.grey400;
         break;
-      case CdsElevatedButtonColor.green:
+      case CdsOutlinedButtonColor.red:
+        primary = borderColor = CdsColors.red600;
+        break;
+      case CdsOutlinedButtonColor.green:
       default:
-        primary = CdsColors.green600;
-        onPrimary = CdsColors.white;
+        primary = borderColor = CdsColors.green600;
     }
-    return ElevatedButton.styleFrom(
+    return OutlinedButton.styleFrom(
       primary: primary,
-      onPrimary: onPrimary,
-      elevation: 0,
+      backgroundColor: CdsColors.white,
+      shadowColor: CdsColors.transparent,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(CdsSizes.buttonRadius),
       ),
+      side: BorderSide(color: borderColor),
     );
   }
 
-  CdsElevatedButton._({
+  CdsOutlinedButton._({
     Key? key,
     required this.onPressed,
     this.onLongPress,
@@ -54,23 +57,23 @@ class CdsElevatedButton extends StatelessWidget {
     required this.isLoading,
   }) : super(key: key);
 
-  factory CdsElevatedButton.small({
+  factory CdsOutlinedButton.small({
     Key? key,
     required VoidCallback? onPressed,
     VoidCallback? onLongPress,
     Clip clipBehavior = Clip.none,
-    CdsElevatedButtonColor? color,
+    CdsOutlinedButtonColor? color,
     required String text,
     bool isEnabled = true,
     bool isLoading = false,
   }) =>
-      CdsElevatedButton._(
+      CdsOutlinedButton._(
         key: key,
         onPressed: onPressed,
         onLongPress: onLongPress,
         clipBehavior: clipBehavior,
         text: text,
-        style: ElevatedButton.styleFrom(
+        style: OutlinedButton.styleFrom(
           textStyle: CdsTextStyles.button.merge(
             TextStyle(
               fontSize: 10,
@@ -84,23 +87,23 @@ class CdsElevatedButton extends StatelessWidget {
         isLoading: isLoading,
       );
 
-  factory CdsElevatedButton.medium({
+  factory CdsOutlinedButton.medium({
     Key? key,
     required VoidCallback? onPressed,
     VoidCallback? onLongPress,
     Clip clipBehavior = Clip.none,
-    CdsElevatedButtonColor? color,
+    CdsOutlinedButtonColor? color,
     required String text,
     bool isEnabled = true,
     bool isLoading = false,
   }) =>
-      CdsElevatedButton._(
+      CdsOutlinedButton._(
         key: key,
         onPressed: onPressed,
         onLongPress: onLongPress,
         clipBehavior: clipBehavior,
         text: text,
-        style: ElevatedButton.styleFrom(
+        style: OutlinedButton.styleFrom(
           textStyle: CdsTextStyles.button.merge(
             TextStyle(fontSize: 14),
           ),
@@ -111,23 +114,23 @@ class CdsElevatedButton extends StatelessWidget {
         isLoading: isLoading,
       );
 
-  factory CdsElevatedButton.large({
+  factory CdsOutlinedButton.large({
     Key? key,
     required VoidCallback? onPressed,
     VoidCallback? onLongPress,
     Clip clipBehavior = Clip.none,
-    CdsElevatedButtonColor? color,
+    CdsOutlinedButtonColor? color,
     required String text,
     bool isEnabled = true,
     bool isLoading = false,
   }) =>
-      CdsElevatedButton._(
+      CdsOutlinedButton._(
         key: key,
         onPressed: onPressed,
         onLongPress: onLongPress,
         clipBehavior: clipBehavior,
         text: text,
-        style: ElevatedButton.styleFrom(
+        style: OutlinedButton.styleFrom(
           textStyle: CdsTextStyles.button.merge(
             TextStyle(fontSize: 16),
           ),
@@ -138,23 +141,23 @@ class CdsElevatedButton extends StatelessWidget {
         isLoading: isLoading,
       );
 
-  factory CdsElevatedButton.largeFull({
+  factory CdsOutlinedButton.largeFull({
     Key? key,
     required VoidCallback? onPressed,
     VoidCallback? onLongPress,
     Clip clipBehavior = Clip.none,
-    CdsElevatedButtonColor? color,
+    CdsOutlinedButtonColor? color,
     required String text,
     bool isEnabled = true,
     bool isLoading = false,
   }) =>
-      CdsElevatedButton._(
+      CdsOutlinedButton._(
         key: key,
         onPressed: onPressed,
         onLongPress: onLongPress,
         clipBehavior: clipBehavior,
         text: text,
-        style: ElevatedButton.styleFrom(
+        style: OutlinedButton.styleFrom(
           textStyle: CdsTextStyles.button.merge(
             TextStyle(fontSize: 16),
           ),
@@ -166,7 +169,7 @@ class CdsElevatedButton extends StatelessWidget {
       );
 
   @override
-  Widget build(BuildContext context) => ElevatedButton(
+  Widget build(BuildContext context) => OutlinedButton(
         style: style,
         key: key,
         onPressed: isEnabled ? onPressed : null,
