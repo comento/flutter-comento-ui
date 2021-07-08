@@ -1,26 +1,29 @@
 import 'package:comento_design_system/comento_design_system.dart';
 import 'package:flutter/cupertino.dart';
 
-class ElevatedButtonLarge extends StatelessWidget {
+class ElevatedButtonMedium extends StatelessWidget {
   final k;
-  ElevatedButtonLarge(this.k);
+  ElevatedButtonMedium(this.k);
   @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        CdsElevatedButton.large(
-          onPressed: k.boolean(label: 'Enabled', initial: true) ? () {} : null,
+        CdsElevatedButton.medium(
+          isEnabled: k.boolean(label: 'Enabled', initial: true),
+          onPressed: () {},
           text: k.text(label: 'Text', initial: 'Button'),
         ),
-        CdsElevatedButton.large(
+        CdsElevatedButton.medium(
           color: CdsElevatedButtonColor.blue,
-          onPressed: k.boolean(label: 'Enabled', initial: true) ? () {} : null,
+          isEnabled: k.boolean(label: 'Enabled', initial: true),
+          onPressed: () {},
           text: k.text(label: 'Text', initial: 'Button'),
         ),
-        CdsElevatedButton.large(
+        CdsElevatedButton.medium(
           color: CdsElevatedButtonColor.grey,
-          onPressed: k.boolean(label: 'Enabled', initial: true) ? () {} : null,
+          isEnabled: k.boolean(label: 'Enabled', initial: true),
+          onPressed: () {},
           text: k.text(label: 'Text', initial: 'Button'),
         ),
       ],
