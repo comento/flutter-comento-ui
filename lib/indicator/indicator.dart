@@ -10,40 +10,40 @@ class Indicator extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         CdsCircularProgressIndicator.small(
-          color: CdsCircularProgressIndicatorColor.green,
+          color: ComponentColor.green,
         ),
         CdsCircularProgressIndicator.small(
-          color: CdsCircularProgressIndicatorColor.red,
+          color: ComponentColor.red,
         ),
         CdsCircularProgressIndicator.small(
-          color: CdsCircularProgressIndicatorColor.grey,
+          color: ComponentColor.grey,
         ),
         CdsCircularProgressIndicator.small(
-          color: CdsCircularProgressIndicatorColor.blue,
+          color: ComponentColor.blue,
         ),
         CdsCircularProgressIndicator.medium(
-          color: CdsCircularProgressIndicatorColor.green,
+          color: ComponentColor.green,
         ),
         CdsCircularProgressIndicator.medium(
-          color: CdsCircularProgressIndicatorColor.red,
+          color: ComponentColor.red,
         ),
         CdsCircularProgressIndicator.medium(
-          color: CdsCircularProgressIndicatorColor.grey,
+          color: ComponentColor.grey,
         ),
         CdsCircularProgressIndicator.medium(
-          color: CdsCircularProgressIndicatorColor.blue,
+          color: ComponentColor.blue,
         ),
         CdsCircularProgressIndicator.large(
-          color: CdsCircularProgressIndicatorColor.green,
+          color: ComponentColor.green,
         ),
         CdsCircularProgressIndicator.large(
-          color: CdsCircularProgressIndicatorColor.red,
+          color: ComponentColor.red,
         ),
         CdsCircularProgressIndicator.large(
-          color: CdsCircularProgressIndicatorColor.grey,
+          color: ComponentColor.grey,
         ),
         CdsCircularProgressIndicator.large(
-          color: CdsCircularProgressIndicatorColor.blue,
+          color: ComponentColor.blue,
         ),
       ],
     );

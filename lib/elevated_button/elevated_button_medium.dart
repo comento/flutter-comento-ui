@@ -10,21 +10,25 @@ class ElevatedButtonMedium extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         CdsElevatedButton.medium(
+          color: ComponentColor.green,
           isEnabled: k.boolean(label: 'Enabled', initial: true),
+          isLoading: k.boolean(label: 'Loading', initial: false),
           onPressed: () {},
-          text: k.text(label: 'Text', initial: 'Button'),
+          child: Text(k.text(label: 'Text', initial: 'Button')),
         ),
         CdsElevatedButton.medium(
-          color: CdsElevatedButtonColor.blue,
+          color: ComponentColor.blue,
           isEnabled: k.boolean(label: 'Enabled', initial: true),
+          isLoading: k.boolean(label: 'Loading', initial: false),
           onPressed: () {},
-          text: k.text(label: 'Text', initial: 'Button'),
+          child: Text(k.text(label: 'Text', initial: 'Button')),
         ),
         CdsElevatedButton.medium(
-          color: CdsElevatedButtonColor.grey,
+          color: ComponentColor.grey,
           isEnabled: k.boolean(label: 'Enabled', initial: true),
+          isLoading: k.boolean(label: 'Loading', initial: false),
           onPressed: () {},
-          text: k.text(label: 'Text', initial: 'Button'),
+          child: Text(k.text(label: 'Text', initial: 'Button')),
         ),
       ],
     );

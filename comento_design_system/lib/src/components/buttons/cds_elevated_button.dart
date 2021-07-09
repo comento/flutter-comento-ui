@@ -1,34 +1,29 @@
 import 'package:comento_design_system/comento_design_system.dart';
+import 'package:comento_design_system/src/components/indicators/cds_thick_circular_progress_indicator.dart';
 import 'package:flutter/material.dart';
 
-enum CdsElevatedButtonColor {
-  green,
-  blue,
-  grey,
-}
+import '../component_enums.dart';
 
 class CdsElevatedButton extends StatelessWidget {
   final VoidCallback? onPressed;
   final VoidCallback? onLongPress;
   final Clip clipBehavior;
-  final String text;
+  final Widget child;
   final ButtonStyle? style;
-  final bool isEnabled;
-  final bool isLoading;
 
-  static ButtonStyle _getButtonStyle(CdsElevatedButtonColor? color) {
+  static ButtonStyle _getButtonStyle(ComponentColor color) {
     Color primary;
     Color onPrimary;
     switch (color) {
-      case CdsElevatedButtonColor.blue:
+      case ComponentColor.blue:
         primary = CdsColors.blue600;
         onPrimary = CdsColors.white;
         break;
-      case CdsElevatedButtonColor.grey:
+      case ComponentColor.grey:
         primary = CdsColors.grey100;
         onPrimary = CdsColors.grey700;
         break;
-      case CdsElevatedButtonColor.green:
+      case ComponentColor.green:
       default:
         primary = CdsColors.green600;
         onPrimary = CdsColors.white;
@@ -48,10 +43,8 @@ class CdsElevatedButton extends StatelessWidget {
     required this.onPressed,
     this.onLongPress,
     this.clipBehavior = Clip.none,
-    required this.text,
+    required this.child,
     required this.style,
-    required this.isEnabled,
-    required this.isLoading,
   }) : super(key: key);
 
   factory CdsElevatedButton.small({
@@ -59,17 +52,19 @@ class CdsElevatedButton extends StatelessWidget {
     required VoidCallback? onPressed,
     VoidCallback? onLongPress,
     Clip clipBehavior = Clip.none,
-    CdsElevatedButtonColor? color,
-    required String text,
+    required ComponentColor color,
+    required Widget child,
     bool isEnabled = true,
     bool isLoading = false,
   }) =>
       CdsElevatedButton._(
         key: key,
-        onPressed: onPressed,
+        onPressed: isEnabled ? onPressed : null,
         onLongPress: onLongPress,
         clipBehavior: clipBehavior,
-        text: text,
+        child: isLoading
+            ? CdsThickCircularProgressIndicator.small(color: color)
+            : child,
         style: ElevatedButton.styleFrom(
           textStyle: CdsTextStyles.button.merge(
             TextStyle(
@@ -80,8 +75,6 @@ class CdsElevatedButton extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 8),
           minimumSize: const Size(36, 24),
         ).merge(_getButtonStyle(color)),
-        isEnabled: isEnabled,
-        isLoading: isLoading,
       );
 
   factory CdsElevatedButton.medium({
@@ -89,17 +82,19 @@ class CdsElevatedButton extends StatelessWidget {
     required VoidCallback? onPressed,
     VoidCallback? onLongPress,
     Clip clipBehavior = Clip.none,
-    CdsElevatedButtonColor? color,
-    required String text,
+    required ComponentColor color,
+    required Widget child,
     bool isEnabled = true,
     bool isLoading = false,
   }) =>
       CdsElevatedButton._(
         key: key,
-        onPressed: onPressed,
+        onPressed: isEnabled ? onPressed : null,
         onLongPress: onLongPress,
         clipBehavior: clipBehavior,
-        text: text,
+        child: isLoading
+            ? CdsThickCircularProgressIndicator.small(color: color)
+            : child,
         style: ElevatedButton.styleFrom(
           textStyle: CdsTextStyles.button.merge(
             TextStyle(fontSize: 14),
@@ -107,8 +102,6 @@ class CdsElevatedButton extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 12),
           minimumSize: const Size(60, 36),
         ).merge(_getButtonStyle(color)),
-        isEnabled: isEnabled,
-        isLoading: isLoading,
       );
 
   factory CdsElevatedButton.large({
@@ -116,17 +109,19 @@ class CdsElevatedButton extends StatelessWidget {
     required VoidCallback? onPressed,
     VoidCallback? onLongPress,
     Clip clipBehavior = Clip.none,
-    CdsElevatedButtonColor? color,
-    required String text,
+    required ComponentColor color,
+    required Widget child,
     bool isEnabled = true,
     bool isLoading = false,
   }) =>
       CdsElevatedButton._(
         key: key,
-        onPressed: onPressed,
+        onPressed: isEnabled ? onPressed : null,
         onLongPress: onLongPress,
         clipBehavior: clipBehavior,
-        text: text,
+        child: isLoading
+            ? CdsThickCircularProgressIndicator.medium(color: color)
+            : child,
         style: ElevatedButton.styleFrom(
           textStyle: CdsTextStyles.button.merge(
             TextStyle(fontSize: 16),
@@ -134,8 +129,6 @@ class CdsElevatedButton extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 14),
           minimumSize: const Size(76, 48),
         ).merge(_getButtonStyle(color)),
-        isEnabled: isEnabled,
-        isLoading: isLoading,
       );
 
   factory CdsElevatedButton.largeFull({
@@ -143,17 +136,19 @@ class CdsElevatedButton extends StatelessWidget {
     required VoidCallback? onPressed,
     VoidCallback? onLongPress,
     Clip clipBehavior = Clip.none,
-    CdsElevatedButtonColor? color,
-    required String text,
+    required ComponentColor color,
+    required Widget child,
     bool isEnabled = true,
     bool isLoading = false,
   }) =>
       CdsElevatedButton._(
         key: key,
-        onPressed: onPressed,
+        onPressed: isEnabled ? onPressed : null,
         onLongPress: onLongPress,
         clipBehavior: clipBehavior,
-        text: text,
+        child: isLoading
+            ? CdsThickCircularProgressIndicator.medium(color: color)
+            : child,
         style: ElevatedButton.styleFrom(
           textStyle: CdsTextStyles.button.merge(
             TextStyle(fontSize: 16),
@@ -161,21 +156,15 @@ class CdsElevatedButton extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 14),
           minimumSize: const Size(double.infinity, 48),
         ).merge(_getButtonStyle(color)),
-        isEnabled: isEnabled,
-        isLoading: isLoading,
       );
 
   @override
   Widget build(BuildContext context) => ElevatedButton(
         style: style,
         key: key,
-        onPressed: isEnabled ? onPressed : null,
+        onPressed: onPressed,
         onLongPress: onLongPress,
         clipBehavior: clipBehavior,
-        child: isLoading
-            ? CircularProgressIndicator(
-                valueColor: AlwaysStoppedAnimation<Color>(CdsColors.white),
-              )
-            : Text(text),
+        child: child,
       );
 }

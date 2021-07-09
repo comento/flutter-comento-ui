@@ -2,7 +2,7 @@ import 'package:comento_design_system/comento_design_system.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class CdsCircularProgressIndicator extends StatelessWidget {
+class CdsThickCircularProgressIndicator extends StatelessWidget {
   final Color progressColor;
   final Color backgroundColor;
   final double size;
@@ -11,14 +11,14 @@ class CdsCircularProgressIndicator extends StatelessWidget {
   static Color _getProgressColor(ComponentColor color) {
     switch (color) {
       case ComponentColor.blue:
-        return CdsColors.blue600;
+        return CdsColors.blue800;
       case ComponentColor.red:
-        return CdsColors.red600;
+        return CdsColors.red800;
       case ComponentColor.grey:
         return CdsColors.grey500;
       case ComponentColor.green:
       default:
-        return CdsColors.green600;
+        return CdsColors.green800;
     }
   }
 
@@ -36,37 +36,37 @@ class CdsCircularProgressIndicator extends StatelessWidget {
     }
   }
 
-  CdsCircularProgressIndicator._({
+  CdsThickCircularProgressIndicator._({
     required this.progressColor,
     required this.backgroundColor,
     required this.size,
     required this.strokeWidth,
   });
 
-  factory CdsCircularProgressIndicator.small({
+  factory CdsThickCircularProgressIndicator.small({
     required ComponentColor color,
   }) =>
-      CdsCircularProgressIndicator._(
+      CdsThickCircularProgressIndicator._(
         progressColor: _getProgressColor(color),
         backgroundColor: _getBackgroundColor(color),
         size: 12,
         strokeWidth: 1.5,
       );
 
-  factory CdsCircularProgressIndicator.medium({
+  factory CdsThickCircularProgressIndicator.medium({
     required ComponentColor color,
   }) =>
-      CdsCircularProgressIndicator._(
+      CdsThickCircularProgressIndicator._(
         progressColor: _getProgressColor(color),
         backgroundColor: _getBackgroundColor(color),
         size: 20,
         strokeWidth: 2.5,
       );
 
-  factory CdsCircularProgressIndicator.large({
+  factory CdsThickCircularProgressIndicator.large({
     required ComponentColor color,
   }) =>
-      CdsCircularProgressIndicator._(
+      CdsThickCircularProgressIndicator._(
         progressColor: _getProgressColor(color),
         backgroundColor: _getBackgroundColor(color),
         size: 28,
