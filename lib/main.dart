@@ -7,7 +7,8 @@ import 'package:flutter_comento_ui/elevated_button/elevated_button_small.dart';
 import 'package:flutter_comento_ui/elevated_icon_button/elevated_icon_button_large_full.dart';
 import 'package:flutter_comento_ui/elevated_icon_button/elevated_icon_button_medium.dart';
 import 'package:flutter_comento_ui/elevated_icon_button/elevated_icon_button_small.dart';
-import 'package:flutter_comento_ui/indicator/indicator.dart';
+import 'package:flutter_comento_ui/indicator/circular_indicator.dart';
+import 'package:flutter_comento_ui/indicator/thick_circular_indicator.dart';
 import 'package:flutter_comento_ui/outlined_button/outlined_button_large.dart';
 import 'package:flutter_comento_ui/outlined_button/outlined_button_large_full.dart';
 import 'package:flutter_comento_ui/outlined_button/outlined_button_medium.dart';
@@ -91,7 +92,11 @@ class MyApp extends StatelessWidget {
         ),
         Story(
           name: 'Circular Progress indicator',
-          builder: (_, k) => Indicator(k),
+          builder: (_, k) => CircularIndicator(k),
+        ),
+        Story(
+          name: 'Thick Circular Progress indicator',
+          builder: (_, k) => ThickCircularIndicator(k),
         ),
       ],
     );

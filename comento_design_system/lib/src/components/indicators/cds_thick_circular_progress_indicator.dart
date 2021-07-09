@@ -27,16 +27,16 @@ class CdsThickCircularProgressIndicator extends StatelessWidget {
   static Color _getBackgroundColor(ComponentColor color) {
     switch (color) {
       case ComponentColor.blue:
-        return CdsColors.blue100;
+        return CdsColors.white;
       case ComponentColor.red:
-        return CdsColors.red100;
+        return CdsColors.white;
       case ComponentColor.grey:
         return CdsColors.grey200;
       case ComponentColor.kakao:
-        return CdsColors.yellow100;
+        return CdsColors.white;
       case ComponentColor.green:
       default:
-        return CdsColors.green100;
+        return CdsColors.white;
     }
   }
 

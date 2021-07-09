@@ -1,9 +1,9 @@
 import 'package:comento_design_system/comento_design_system.dart';
 import 'package:flutter/cupertino.dart';
 
-class Indicator extends StatelessWidget {
+class CircularIndicator extends StatelessWidget {
   final k;
-  Indicator(this.k);
+  CircularIndicator(this.k);
   @override
   Widget build(BuildContext context) {
     return Column(
