@@ -3,39 +3,30 @@ import 'dart:ui';
 import 'package:comento_design_system/comento_design_system.dart';
 import 'package:flutter/material.dart';
 
-enum CdsElevatedIconButtonColor {
-  green,
-  blue,
-  grey,
-  kakao,
-}
-
 class CdsElevatedIconButton extends StatelessWidget {
   final VoidCallback? onPressed;
   final VoidCallback? onLongPress;
   final Clip clipBehavior;
   final ButtonStyle? style;
-  final bool isEnabled;
-  final bool isLoading;
   final Widget child;
 
-  static ButtonStyle _getButtonStyle(CdsElevatedIconButtonColor? color) {
+  static ButtonStyle _getButtonStyle(ComponentColor color) {
     Color primary;
     Color onPrimary;
     switch (color) {
-      case CdsElevatedIconButtonColor.blue:
+      case ComponentColor.blue:
         primary = CdsColors.blue600;
         onPrimary = CdsColors.white;
         break;
-      case CdsElevatedIconButtonColor.grey:
+      case ComponentColor.grey:
         primary = CdsColors.grey100;
         onPrimary = CdsColors.grey700;
         break;
-      case CdsElevatedIconButtonColor.kakao:
+      case ComponentColor.kakao:
         primary = CdsColors.kakao;
         onPrimary = CdsColors.black;
         break;
-      case CdsElevatedIconButtonColor.green:
+      case ComponentColor.green:
       default:
         primary = CdsColors.green600;
         onPrimary = CdsColors.white;
@@ -56,8 +47,6 @@ class CdsElevatedIconButton extends StatelessWidget {
     this.onLongPress,
     this.clipBehavior = Clip.none,
     required this.style,
-    required this.isEnabled,
-    required this.isLoading,
     required this.child,
   }) : super(key: key);
 
@@ -66,15 +55,15 @@ class CdsElevatedIconButton extends StatelessWidget {
     required VoidCallback? onPressed,
     VoidCallback? onLongPress,
     Clip clipBehavior = Clip.none,
-    CdsElevatedIconButtonColor? color,
-    required String text,
+    required ComponentColor color,
+    required Widget child,
     bool isEnabled = true,
     bool isLoading = false,
     required Widget icon,
   }) =>
       CdsElevatedIconButton._(
         key: key,
-        onPressed: onPressed,
+        onPressed: isEnabled ? onPressed : null,
         onLongPress: onLongPress,
         clipBehavior: clipBehavior,
         style: ElevatedButton.styleFrom(
@@ -87,16 +76,16 @@ class CdsElevatedIconButton extends StatelessWidget {
           padding: EdgeInsets.only(left: 10.5, right: 8),
           minimumSize: const Size(36, 24),
         ).merge(_getButtonStyle(color)),
-        isEnabled: isEnabled,
-        isLoading: isLoading,
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            SizedBox(width: 7, height: 7, child: icon),
-            SizedBox(width: 4.5),
-            Text(text),
-          ],
-        ),
+        child: isLoading
+            ? CdsThickCircularProgressIndicator.small(color: color)
+            : Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  SizedBox(width: 7, height: 7, child: icon),
+                  SizedBox(width: 4.5),
+                  child,
+                ],
+              ),
       );
 
   factory CdsElevatedIconButton.medium({
@@ -104,15 +93,15 @@ class CdsElevatedIconButton extends StatelessWidget {
     required VoidCallback? onPressed,
     VoidCallback? onLongPress,
     Clip clipBehavior = Clip.none,
-    CdsElevatedIconButtonColor? color,
-    required String text,
+    required ComponentColor color,
+    required Widget child,
     bool isEnabled = true,
     bool isLoading = false,
     required Widget icon,
   }) =>
       CdsElevatedIconButton._(
         key: key,
-        onPressed: onPressed,
+        onPressed: isEnabled ? onPressed : null,
         onLongPress: onLongPress,
         clipBehavior: clipBehavior,
         style: ElevatedButton.styleFrom(
@@ -122,16 +111,16 @@ class CdsElevatedIconButton extends StatelessWidget {
           padding: EdgeInsets.only(left: 15.25, right: 12),
           minimumSize: const Size(60, 36),
         ).merge(_getButtonStyle(color)),
-        isEnabled: isEnabled,
-        isLoading: isLoading,
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            SizedBox(width: 11.5, height: 11.5, child: icon),
-            SizedBox(width: 5.25),
-            Text(text),
-          ],
-        ),
+        child: isLoading
+            ? CdsThickCircularProgressIndicator.small(color: color)
+            : Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  SizedBox(width: 11.5, height: 11.5, child: icon),
+                  SizedBox(width: 5.25),
+                  child,
+                ],
+              ),
       );
 
   factory CdsElevatedIconButton.large({
@@ -139,15 +128,15 @@ class CdsElevatedIconButton extends StatelessWidget {
     required VoidCallback? onPressed,
     VoidCallback? onLongPress,
     Clip clipBehavior = Clip.none,
-    CdsElevatedIconButtonColor? color,
-    required String text,
+    required ComponentColor color,
+    required Widget child,
     bool isEnabled = true,
     bool isLoading = false,
     required Widget icon,
   }) =>
       CdsElevatedIconButton._(
         key: key,
-        onPressed: onPressed,
+        onPressed: isEnabled ? onPressed : null,
         onLongPress: onLongPress,
         clipBehavior: clipBehavior,
         style: ElevatedButton.styleFrom(
@@ -157,16 +146,16 @@ class CdsElevatedIconButton extends StatelessWidget {
           padding: EdgeInsets.only(left: 17.25, right: 14),
           minimumSize: const Size(76, 48),
         ).merge(_getButtonStyle(color)),
-        isEnabled: isEnabled,
-        isLoading: isLoading,
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            SizedBox(width: 11.5, height: 11.5, child: icon),
-            SizedBox(width: 5.25),
-            Text(text),
-          ],
-        ),
+        child: isLoading
+            ? CdsThickCircularProgressIndicator.medium(color: color)
+            : Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  SizedBox(width: 11.5, height: 11.5, child: icon),
+                  SizedBox(width: 5.25),
+                  child,
+                ],
+              ),
       );
 
   factory CdsElevatedIconButton.largeFull({
@@ -174,15 +163,15 @@ class CdsElevatedIconButton extends StatelessWidget {
     required VoidCallback? onPressed,
     VoidCallback? onLongPress,
     Clip clipBehavior = Clip.none,
-    CdsElevatedIconButtonColor? color,
-    required String text,
+    required ComponentColor color,
+    required Widget child,
     bool isEnabled = true,
     bool isLoading = false,
     required Widget icon,
   }) =>
       CdsElevatedIconButton._(
         key: key,
-        onPressed: onPressed,
+        onPressed: isEnabled ? onPressed : null,
         onLongPress: onLongPress,
         clipBehavior: clipBehavior,
         style: ElevatedButton.styleFrom(
@@ -192,29 +181,25 @@ class CdsElevatedIconButton extends StatelessWidget {
           padding: EdgeInsets.only(left: 17.25, right: 14),
           minimumSize: const Size(76, 48),
         ).merge(_getButtonStyle(color)),
-        isEnabled: isEnabled,
-        isLoading: isLoading,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            SizedBox(width: 11.5, height: 11.5, child: icon),
-            SizedBox(width: 5.25),
-            Text(text),
-          ],
-        ),
+        child: isLoading
+            ? CdsThickCircularProgressIndicator.medium(color: color)
+            : Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SizedBox(width: 11.5, height: 11.5, child: icon),
+                  SizedBox(width: 5.25),
+                  child,
+                ],
+              ),
       );
 
   @override
   Widget build(BuildContext context) => ElevatedButton(
         style: style,
         key: key,
-        onPressed: isEnabled ? onPressed : null,
+        onPressed: onPressed,
         onLongPress: onLongPress,
         clipBehavior: clipBehavior,
-        child: isLoading
-            ? CircularProgressIndicator(
-                valueColor: AlwaysStoppedAnimation<Color>(CdsColors.white),
-              )
-            : child,
+        child: child,
       );
 }

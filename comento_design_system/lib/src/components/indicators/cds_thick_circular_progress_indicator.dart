@@ -16,6 +16,8 @@ class CdsThickCircularProgressIndicator extends StatelessWidget {
         return CdsColors.red800;
       case ComponentColor.grey:
         return CdsColors.grey500;
+      case ComponentColor.kakao:
+        return CdsColors.grey700;
       case ComponentColor.green:
       default:
         return CdsColors.green800;
@@ -30,6 +32,8 @@ class CdsThickCircularProgressIndicator extends StatelessWidget {
         return CdsColors.red100;
       case ComponentColor.grey:
         return CdsColors.grey200;
+      case ComponentColor.kakao:
+        return CdsColors.yellow100;
       case ComponentColor.green:
       default:
         return CdsColors.green100;
