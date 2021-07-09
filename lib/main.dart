@@ -1,3 +1,4 @@
+import 'package:comento_design_system/comento_design_system.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_comento_ui/elevated_button/elevated_button_large.dart';
 import 'package:flutter_comento_ui/elevated_button/elevated_button_large_full.dart';
@@ -6,6 +7,7 @@ import 'package:flutter_comento_ui/elevated_button/elevated_button_small.dart';
 import 'package:flutter_comento_ui/elevated_icon_button/elevated_icon_button_large_full.dart';
 import 'package:flutter_comento_ui/elevated_icon_button/elevated_icon_button_medium.dart';
 import 'package:flutter_comento_ui/elevated_icon_button/elevated_icon_button_small.dart';
+import 'package:flutter_comento_ui/indicator/indicator.dart';
 import 'package:flutter_comento_ui/outlined_button/outlined_button_large.dart';
 import 'package:flutter_comento_ui/outlined_button/outlined_button_large_full.dart';
 import 'package:flutter_comento_ui/outlined_button/outlined_button_medium.dart';
@@ -25,6 +27,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Storybook(
+      theme: ThemeData(canvasColor: CdsColors.white),
       children: [
         Story(
           name: 'Elevated button - small',
@@ -85,6 +88,10 @@ class MyApp extends StatelessWidget {
         Story(
           name: 'Text button - large',
           builder: (_, k) => TextButtonLarge(k),
+        ),
+        Story(
+          name: 'Circular Progress indicator',
+          builder: (_, k) => Indicator(k),
         ),
       ],
     );
