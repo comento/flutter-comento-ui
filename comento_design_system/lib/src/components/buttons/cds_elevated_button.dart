@@ -53,7 +53,7 @@ class CdsElevatedButton extends StatelessWidget {
     VoidCallback? onLongPress,
     Clip clipBehavior = Clip.none,
     required ComponentColor color,
-    required Widget child,
+    required String text,
     bool isEnabled = true,
     bool isLoading = false,
   }) =>
@@ -64,7 +64,7 @@ class CdsElevatedButton extends StatelessWidget {
         clipBehavior: clipBehavior,
         child: isLoading
             ? CdsThickCircularProgressIndicator.small(color: color)
-            : child,
+            : Text(text),
         style: ElevatedButton.styleFrom(
           textStyle: CdsTextStyles.button.merge(
             TextStyle(
@@ -83,7 +83,7 @@ class CdsElevatedButton extends StatelessWidget {
     VoidCallback? onLongPress,
     Clip clipBehavior = Clip.none,
     required ComponentColor color,
-    required Widget child,
+    required String text,
     bool isEnabled = true,
     bool isLoading = false,
   }) =>
@@ -94,7 +94,7 @@ class CdsElevatedButton extends StatelessWidget {
         clipBehavior: clipBehavior,
         child: isLoading
             ? CdsThickCircularProgressIndicator.small(color: color)
-            : child,
+            : Text(text),
         style: ElevatedButton.styleFrom(
           textStyle: CdsTextStyles.button.merge(
             TextStyle(fontSize: 14),
@@ -110,7 +110,7 @@ class CdsElevatedButton extends StatelessWidget {
     VoidCallback? onLongPress,
     Clip clipBehavior = Clip.none,
     required ComponentColor color,
-    required Widget child,
+    required String text,
     bool isEnabled = true,
     bool isLoading = false,
   }) =>
@@ -121,7 +121,7 @@ class CdsElevatedButton extends StatelessWidget {
         clipBehavior: clipBehavior,
         child: isLoading
             ? CdsThickCircularProgressIndicator.medium(color: color)
-            : child,
+            : Text(text),
         style: ElevatedButton.styleFrom(
           textStyle: CdsTextStyles.button.merge(
             TextStyle(fontSize: 16),
@@ -137,7 +137,7 @@ class CdsElevatedButton extends StatelessWidget {
     VoidCallback? onLongPress,
     Clip clipBehavior = Clip.none,
     required ComponentColor color,
-    required Widget child,
+    required String text,
     bool isEnabled = true,
     bool isLoading = false,
   }) =>
@@ -148,7 +148,7 @@ class CdsElevatedButton extends StatelessWidget {
         clipBehavior: clipBehavior,
         child: isLoading
             ? CdsThickCircularProgressIndicator.medium(color: color)
-            : child,
+            : Text(text),
         style: ElevatedButton.styleFrom(
           textStyle: CdsTextStyles.button.merge(
             TextStyle(fontSize: 16),

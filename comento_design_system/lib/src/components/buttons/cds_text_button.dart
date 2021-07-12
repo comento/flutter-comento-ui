@@ -1,35 +1,26 @@
 import 'package:comento_design_system/comento_design_system.dart';
 import 'package:flutter/material.dart';
 
-enum CdsTextButtonColor {
-  green,
-  blue,
-  grey,
-  red,
-}
-
 class CdsTextButton extends StatelessWidget {
   final VoidCallback? onPressed;
   final VoidCallback? onLongPress;
   final Clip clipBehavior;
-  final String text;
+  final Widget child;
   final ButtonStyle? style;
-  final bool isEnabled;
-  final bool isLoading;
 
-  static ButtonStyle _getButtonStyle(CdsTextButtonColor? color) {
+  static ButtonStyle _getButtonStyle(ComponentColor color) {
     Color primary;
     switch (color) {
-      case CdsTextButtonColor.blue:
+      case ComponentColor.blue:
         primary = CdsColors.blue600;
         break;
-      case CdsTextButtonColor.grey:
+      case ComponentColor.grey:
         primary = CdsColors.grey500;
         break;
-      case CdsTextButtonColor.red:
+      case ComponentColor.red:
         primary = CdsColors.red600;
         break;
-      case CdsTextButtonColor.green:
+      case ComponentColor.green:
       default:
         primary = CdsColors.green600;
     }
@@ -46,10 +37,8 @@ class CdsTextButton extends StatelessWidget {
     required this.onPressed,
     this.onLongPress,
     this.clipBehavior = Clip.none,
-    required this.text,
+    required this.child,
     required this.style,
-    required this.isEnabled,
-    required this.isLoading,
   }) : super(key: key);
 
   factory CdsTextButton.small({
@@ -57,17 +46,19 @@ class CdsTextButton extends StatelessWidget {
     required VoidCallback? onPressed,
     VoidCallback? onLongPress,
     Clip clipBehavior = Clip.none,
-    CdsTextButtonColor? color,
+    required ComponentColor color,
     required String text,
     bool isEnabled = true,
     bool isLoading = false,
   }) =>
       CdsTextButton._(
         key: key,
-        onPressed: onPressed,
+        onPressed: isEnabled ? onPressed : null,
         onLongPress: onLongPress,
         clipBehavior: clipBehavior,
-        text: text,
+        child: isLoading
+            ? CdsThickCircularProgressIndicator.medium(color: color)
+            : Text(text),
         style: TextButton.styleFrom(
           textStyle: CdsTextStyles.button.merge(
             TextStyle(
@@ -78,8 +69,6 @@ class CdsTextButton extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 8),
           minimumSize: const Size(36, 24),
         ).merge(_getButtonStyle(color)),
-        isEnabled: isEnabled,
-        isLoading: isLoading,
       );
 
   factory CdsTextButton.medium({
@@ -87,17 +76,19 @@ class CdsTextButton extends StatelessWidget {
     required VoidCallback? onPressed,
     VoidCallback? onLongPress,
     Clip clipBehavior = Clip.none,
-    CdsTextButtonColor? color,
+    required ComponentColor color,
     required String text,
     bool isEnabled = true,
     bool isLoading = false,
   }) =>
       CdsTextButton._(
         key: key,
-        onPressed: onPressed,
+        onPressed: isEnabled ? onPressed : null,
         onLongPress: onLongPress,
         clipBehavior: clipBehavior,
-        text: text,
+        child: isLoading
+            ? CdsThickCircularProgressIndicator.medium(color: color)
+            : Text(text),
         style: TextButton.styleFrom(
           textStyle: CdsTextStyles.button.merge(
             TextStyle(
@@ -108,8 +99,6 @@ class CdsTextButton extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 12),
           minimumSize: const Size(60, 36),
         ).merge(_getButtonStyle(color)),
-        isEnabled: isEnabled,
-        isLoading: isLoading,
       );
 
   factory CdsTextButton.large({
@@ -117,17 +106,19 @@ class CdsTextButton extends StatelessWidget {
     required VoidCallback? onPressed,
     VoidCallback? onLongPress,
     Clip clipBehavior = Clip.none,
-    CdsTextButtonColor? color,
+    required ComponentColor color,
     required String text,
     bool isEnabled = true,
     bool isLoading = false,
   }) =>
       CdsTextButton._(
         key: key,
-        onPressed: onPressed,
+        onPressed: isEnabled ? onPressed : null,
         onLongPress: onLongPress,
         clipBehavior: clipBehavior,
-        text: text,
+        child: isLoading
+            ? CdsThickCircularProgressIndicator.medium(color: color)
+            : Text(text),
         style: TextButton.styleFrom(
           textStyle: CdsTextStyles.button.merge(
             TextStyle(
@@ -138,21 +129,15 @@ class CdsTextButton extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 14),
           minimumSize: const Size(76, 48),
         ).merge(_getButtonStyle(color)),
-        isEnabled: isEnabled,
-        isLoading: isLoading,
       );
 
   @override
   Widget build(BuildContext context) => TextButton(
         style: style,
         key: key,
-        onPressed: isEnabled ? onPressed : null,
+        onPressed: onPressed,
         onLongPress: onLongPress,
         clipBehavior: clipBehavior,
-        child: isLoading
-            ? CircularProgressIndicator(
-                valueColor: AlwaysStoppedAnimation<Color>(CdsColors.white),
-              )
-            : Text(text),
+        child: child,
       );
 }

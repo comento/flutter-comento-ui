@@ -10,24 +10,25 @@ class TextButtonLarge extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         CdsTextButton.large(
+          color: ComponentColor.green,
           isEnabled: k.boolean(label: 'Enabled', initial: true),
           onPressed: () {},
           text: k.text(label: 'Text', initial: 'Button'),
         ),
         CdsTextButton.large(
-          color: CdsTextButtonColor.blue,
+          color: ComponentColor.blue,
           isEnabled: k.boolean(label: 'Enabled', initial: true),
           onPressed: () {},
           text: k.text(label: 'Text', initial: 'Button'),
         ),
         CdsTextButton.large(
-          color: CdsTextButtonColor.grey,
+          color: ComponentColor.grey,
           isEnabled: k.boolean(label: 'Enabled', initial: true),
           onPressed: () {},
           text: k.text(label: 'Text', initial: 'Button'),
         ),
         CdsTextButton.large(
-          color: CdsTextButtonColor.red,
+          color: ComponentColor.red,
           isEnabled: k.boolean(label: 'Enabled', initial: true),
           onPressed: () {},
           text: k.text(label: 'Text', initial: 'Button'),

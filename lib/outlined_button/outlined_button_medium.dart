@@ -10,24 +10,25 @@ class OutlinedButtonMedium extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         CdsOutlinedButton.medium(
+          color: ComponentColor.green,
           isEnabled: k.boolean(label: 'Enabled', initial: true),
           onPressed: () {},
           text: k.text(label: 'Text', initial: 'Button'),
         ),
         CdsOutlinedButton.medium(
-          color: CdsOutlinedButtonColor.blue,
+          color: ComponentColor.blue,
           isEnabled: k.boolean(label: 'Enabled', initial: true),
           onPressed: () {},
           text: k.text(label: 'Text', initial: 'Button'),
         ),
         CdsOutlinedButton.medium(
-          color: CdsOutlinedButtonColor.grey,
+          color: ComponentColor.grey,
           isEnabled: k.boolean(label: 'Enabled', initial: true),
           onPressed: () {},
           text: k.text(label: 'Text', initial: 'Button'),
         ),
         CdsOutlinedButton.medium(
-          color: CdsOutlinedButtonColor.red,
+          color: ComponentColor.red,
           isEnabled: k.boolean(label: 'Enabled', initial: true),
           onPressed: () {},
           text: k.text(label: 'Text', initial: 'Button'),

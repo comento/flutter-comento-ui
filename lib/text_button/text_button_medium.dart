@@ -10,24 +10,25 @@ class TextButtonMedium extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         CdsTextButton.medium(
+          color: ComponentColor.green,
           isEnabled: k.boolean(label: 'Enabled', initial: true),
           onPressed: () {},
           text: k.text(label: 'Text', initial: 'Button'),
         ),
         CdsTextButton.medium(
-          color: CdsTextButtonColor.blue,
+          color: ComponentColor.blue,
           isEnabled: k.boolean(label: 'Enabled', initial: true),
           onPressed: () {},
           text: k.text(label: 'Text', initial: 'Button'),
         ),
         CdsTextButton.medium(
-          color: CdsTextButtonColor.grey,
+          color: ComponentColor.grey,
           isEnabled: k.boolean(label: 'Enabled', initial: true),
           onPressed: () {},
           text: k.text(label: 'Text', initial: 'Button'),
         ),
         CdsTextButton.medium(
-          color: CdsTextButtonColor.red,
+          color: ComponentColor.red,
           isEnabled: k.boolean(label: 'Enabled', initial: true),
           onPressed: () {},
           text: k.text(label: 'Text', initial: 'Button'),

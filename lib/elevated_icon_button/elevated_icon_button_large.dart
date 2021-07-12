@@ -15,7 +15,7 @@ class ElevatedIconButtonLarge extends StatelessWidget {
           isEnabled: k.boolean(label: 'Enabled', initial: true),
           isLoading: k.boolean(label: 'Loading', initial: false),
           onPressed: () {},
-          child: Text(k.text(label: 'Text', initial: 'Button')),
+          text: k.text(label: 'Text', initial: 'Button'),
           icon: Image.asset('assets/images/icons/add.png'),
         ),
         CdsElevatedIconButton.large(
@@ -23,7 +23,7 @@ class ElevatedIconButtonLarge extends StatelessWidget {
           isEnabled: k.boolean(label: 'Enabled', initial: true),
           isLoading: k.boolean(label: 'Loading', initial: false),
           onPressed: () {},
-          child: Text(k.text(label: 'Text', initial: 'Button')),
+          text: k.text(label: 'Text', initial: 'Button'),
           icon: Image.asset('assets/images/icons/add.png'),
         ),
         CdsElevatedIconButton.large(
@@ -31,7 +31,7 @@ class ElevatedIconButtonLarge extends StatelessWidget {
           isEnabled: k.boolean(label: 'Enabled', initial: true),
           isLoading: k.boolean(label: 'Loading', initial: false),
           onPressed: () {},
-          child: Text(k.text(label: 'Text', initial: 'Button')),
+          text: k.text(label: 'Text', initial: 'Button'),
           icon: Image.asset(
             'assets/images/icons/add.png',
             color: CdsColors.grey700,
@@ -42,7 +42,7 @@ class ElevatedIconButtonLarge extends StatelessWidget {
           isEnabled: k.boolean(label: 'Enabled', initial: true),
           isLoading: k.boolean(label: 'Loading', initial: false),
           onPressed: () {},
-          child: Text(k.text(label: 'Text', initial: 'Button')),
+          text: k.text(label: 'Text', initial: 'Button'),
           icon: Image.asset(
             'assets/images/icons/add.png',
             color: CdsColors.black,

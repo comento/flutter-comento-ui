@@ -56,7 +56,7 @@ class CdsElevatedIconButton extends StatelessWidget {
     VoidCallback? onLongPress,
     Clip clipBehavior = Clip.none,
     required ComponentColor color,
-    required Widget child,
+    required String text,
     bool isEnabled = true,
     bool isLoading = false,
     required Widget icon,
@@ -83,7 +83,7 @@ class CdsElevatedIconButton extends StatelessWidget {
                 children: [
                   SizedBox(width: 7, height: 7, child: icon),
                   SizedBox(width: 4.5),
-                  child,
+                  Text(text),
                 ],
               ),
       );
@@ -94,7 +94,7 @@ class CdsElevatedIconButton extends StatelessWidget {
     VoidCallback? onLongPress,
     Clip clipBehavior = Clip.none,
     required ComponentColor color,
-    required Widget child,
+    required String text,
     bool isEnabled = true,
     bool isLoading = false,
     required Widget icon,
@@ -118,7 +118,7 @@ class CdsElevatedIconButton extends StatelessWidget {
                 children: [
                   SizedBox(width: 11.5, height: 11.5, child: icon),
                   SizedBox(width: 5.25),
-                  child,
+                  Text(text),
                 ],
               ),
       );
@@ -129,7 +129,7 @@ class CdsElevatedIconButton extends StatelessWidget {
     VoidCallback? onLongPress,
     Clip clipBehavior = Clip.none,
     required ComponentColor color,
-    required Widget child,
+    required String text,
     bool isEnabled = true,
     bool isLoading = false,
     required Widget icon,
@@ -153,7 +153,7 @@ class CdsElevatedIconButton extends StatelessWidget {
                 children: [
                   SizedBox(width: 11.5, height: 11.5, child: icon),
                   SizedBox(width: 5.25),
-                  child,
+                  Text(text),
                 ],
               ),
       );
@@ -164,7 +164,7 @@ class CdsElevatedIconButton extends StatelessWidget {
     VoidCallback? onLongPress,
     Clip clipBehavior = Clip.none,
     required ComponentColor color,
-    required Widget child,
+    required String text,
     bool isEnabled = true,
     bool isLoading = false,
     required Widget icon,
@@ -188,7 +188,7 @@ class CdsElevatedIconButton extends StatelessWidget {
                 children: [
                   SizedBox(width: 11.5, height: 11.5, child: icon),
                   SizedBox(width: 5.25),
-                  child,
+                  Text(text),
                 ],
               ),
       );
