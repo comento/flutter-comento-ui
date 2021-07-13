@@ -12,24 +12,28 @@ class TextButtonMedium extends StatelessWidget {
         CdsTextButton.medium(
           color: ComponentColor.green,
           isEnabled: k.boolean(label: 'Enabled', initial: true),
+          isLoading: k.boolean(label: 'Loading', initial: false),
           onPressed: () {},
           text: k.text(label: 'Text', initial: 'Button'),
         ),
         CdsTextButton.medium(
           color: ComponentColor.blue,
           isEnabled: k.boolean(label: 'Enabled', initial: true),
+          isLoading: k.boolean(label: 'Loading', initial: false),
           onPressed: () {},
           text: k.text(label: 'Text', initial: 'Button'),
         ),
         CdsTextButton.medium(
           color: ComponentColor.grey,
           isEnabled: k.boolean(label: 'Enabled', initial: true),
+          isLoading: k.boolean(label: 'Loading', initial: false),
           onPressed: () {},
           text: k.text(label: 'Text', initial: 'Button'),
         ),
         CdsTextButton.medium(
           color: ComponentColor.red,
           isEnabled: k.boolean(label: 'Enabled', initial: true),
+          isLoading: k.boolean(label: 'Loading', initial: false),
           onPressed: () {},
           text: k.text(label: 'Text', initial: 'Button'),
         ),

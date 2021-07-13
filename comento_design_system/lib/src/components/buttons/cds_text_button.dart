@@ -47,7 +47,7 @@ class CdsTextButton extends StatelessWidget {
         onLongPress: onLongPress,
         clipBehavior: clipBehavior,
         child: isLoading
-            ? CdsThickCircularProgressIndicator.medium(color: color)
+            ? CdsCircularProgressIndicator.small(color: color)
             : Text(text),
         style: TextButton.styleFrom(
           textStyle: CdsTextStyles.button.merge(
@@ -77,7 +77,7 @@ class CdsTextButton extends StatelessWidget {
         onLongPress: onLongPress,
         clipBehavior: clipBehavior,
         child: isLoading
-            ? CdsThickCircularProgressIndicator.medium(color: color)
+            ? CdsCircularProgressIndicator.small(color: color)
             : Text(text),
         style: TextButton.styleFrom(
           textStyle: CdsTextStyles.button.merge(
@@ -107,7 +107,7 @@ class CdsTextButton extends StatelessWidget {
         onLongPress: onLongPress,
         clipBehavior: clipBehavior,
         child: isLoading
-            ? CdsThickCircularProgressIndicator.medium(color: color)
+            ? CdsCircularProgressIndicator.medium(color: color)
             : Text(text),
         style: TextButton.styleFrom(
           textStyle: CdsTextStyles.button.merge(
