@@ -9,27 +9,17 @@ class CdsTextButton extends StatelessWidget {
   final ButtonStyle? style;
 
   static ButtonStyle _getButtonStyle(ComponentColor color) {
-    Color primary;
     switch (color) {
       case ComponentColor.blue:
-        primary = CdsColors.blue600;
-        break;
+        return _getBlueButtonStyle();
       case ComponentColor.grey:
-        primary = CdsColors.grey500;
-        break;
+        return _getGreyButtonStyle();
       case ComponentColor.red:
-        primary = CdsColors.red600;
-        break;
+        return _getRedButtonStyle();
       case ComponentColor.green:
       default:
-        primary = CdsColors.green600;
+        return _getGreenButtonStyle();
     }
-    return TextButton.styleFrom(
-      primary: primary,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(CdsSizes.buttonRadius),
-      ),
-    );
   }
 
   CdsTextButton._({
@@ -140,4 +130,72 @@ class CdsTextButton extends StatelessWidget {
         clipBehavior: clipBehavior,
         child: child,
       );
+
+  static ButtonStyle _getGreenButtonStyle() {
+    return ButtonStyle(
+      foregroundColor: MaterialStateProperty.resolveWith((states) {
+        if (states.contains(MaterialState.disabled)) return CdsColors.green100;
+        return CdsColors.green600;
+      }),
+      overlayColor: MaterialStateProperty.resolveWith((states) {
+        return CdsColors.green100;
+      }),
+      shape: MaterialStateProperty.all(
+        RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(CdsSizes.buttonRadius),
+        ),
+      ),
+    );
+  }
+
+  static ButtonStyle _getGreyButtonStyle() {
+    return ButtonStyle(
+      foregroundColor: MaterialStateProperty.resolveWith((states) {
+        if (states.contains(MaterialState.disabled)) return CdsColors.grey200;
+        return CdsColors.grey500;
+      }),
+      overlayColor: MaterialStateProperty.resolveWith((states) {
+        return CdsColors.grey100;
+      }),
+      shape: MaterialStateProperty.all(
+        RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(CdsSizes.buttonRadius),
+        ),
+      ),
+    );
+  }
+
+  static ButtonStyle _getBlueButtonStyle() {
+    return ButtonStyle(
+      foregroundColor: MaterialStateProperty.resolveWith((states) {
+        if (states.contains(MaterialState.disabled)) return CdsColors.blue100;
+        return CdsColors.blue600;
+      }),
+      overlayColor: MaterialStateProperty.resolveWith((states) {
+        return CdsColors.blue100;
+      }),
+      shape: MaterialStateProperty.all(
+        RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(CdsSizes.buttonRadius),
+        ),
+      ),
+    );
+  }
+
+  static ButtonStyle _getRedButtonStyle() {
+    return ButtonStyle(
+      foregroundColor: MaterialStateProperty.resolveWith((states) {
+        if (states.contains(MaterialState.disabled)) return CdsColors.red100;
+        return CdsColors.red600;
+      }),
+      overlayColor: MaterialStateProperty.resolveWith((states) {
+        return CdsColors.red000;
+      }),
+      shape: MaterialStateProperty.all(
+        RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(CdsSizes.buttonRadius),
+        ),
+      ),
+    );
+  }
 }
