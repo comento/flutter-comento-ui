@@ -203,7 +203,6 @@ class CdsElevatedIconButton extends StatelessWidget {
       ),
       elevation: MaterialStateProperty.all(0),
       overlayColor: MaterialStateProperty.all(CdsColors.green800),
-      shadowColor: MaterialStateProperty.all<Color>(Colors.green),
     );
   }
 
@@ -224,7 +223,6 @@ class CdsElevatedIconButton extends StatelessWidget {
       ),
       elevation: MaterialStateProperty.all(0),
       overlayColor: MaterialStateProperty.all(CdsColors.grey200),
-      shadowColor: MaterialStateProperty.all<Color>(Colors.green),
     );
   }
 
@@ -245,7 +243,6 @@ class CdsElevatedIconButton extends StatelessWidget {
       ),
       elevation: MaterialStateProperty.all(0),
       overlayColor: MaterialStateProperty.all(CdsColors.grey200),
-      shadowColor: MaterialStateProperty.all<Color>(Colors.green),
     );
   }
 
@@ -266,7 +263,6 @@ class CdsElevatedIconButton extends StatelessWidget {
       ),
       elevation: MaterialStateProperty.all(0),
       overlayColor: MaterialStateProperty.all(CdsColors.blue800),
-      shadowColor: MaterialStateProperty.all<Color>(Colors.green),
     );
   }
 }
