@@ -242,7 +242,7 @@ class CdsElevatedIconButton extends StatelessWidget {
         ),
       ),
       elevation: MaterialStateProperty.all(0),
-      overlayColor: MaterialStateProperty.all(CdsColors.grey200),
+      overlayColor: MaterialStateProperty.all(CdsColors.yellow400),
     );
   }
 
