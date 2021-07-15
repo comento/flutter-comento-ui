@@ -10,3 +10,6 @@
 
 * Add text styles theme
 
+## 0.0.4
+
+* Add Button Components
