@@ -8,3 +8,5 @@ export 'components/buttons/cds_text_button.dart';
 // indicators
 export 'components/indicators/cds_circular_progress_indicator.dart';
 export 'components/indicators/cds_thick_circular_progress_indicator.dart';
+// inputs
+export 'components/inputs/cds_outlined_text_field.dart';
