@@ -1,7 +1,7 @@
 import 'package:comento_design_system/comento_design_system.dart';
 import 'package:flutter/material.dart';
 
-class CdsOutlinedTextField extends StatefulWidget {
+class CdsOutlinedLabelTextField extends StatefulWidget {
   final TextEditingController? receivedController;
   final FocusNode? receivedFocusNode;
   final ValueChanged<String>? onChanged;
@@ -9,9 +9,10 @@ class CdsOutlinedTextField extends StatefulWidget {
   final FormFieldValidator<String>? validator;
   final bool autocorrect;
   final bool obscureText;
+  final String? labelText;
   final String? hintText;
 
-  CdsOutlinedTextField({
+  CdsOutlinedLabelTextField({
     TextEditingController? controller,
     FocusNode? focusNode,
     this.onChanged,
@@ -19,16 +20,17 @@ class CdsOutlinedTextField extends StatefulWidget {
     this.validator,
     this.autocorrect = true,
     this.obscureText = false,
+    this.labelText,
     this.hintText,
   })  : receivedController = controller,
         receivedFocusNode = focusNode,
         super();
 
   @override
-  _CdsOutlinedTextFieldState createState() => _CdsOutlinedTextFieldState();
+  _CdsOutlinedLabelStateTextField createState() => _CdsOutlinedLabelStateTextField();
 }
 
-class _CdsOutlinedTextFieldState extends State<CdsOutlinedTextField> {
+class _CdsOutlinedLabelStateTextField extends State<CdsOutlinedLabelTextField> {
   late final TextEditingController _controller;
   late final FocusNode _focusNode;
   bool _isInitial = true;
@@ -66,11 +68,17 @@ class _CdsOutlinedTextFieldState extends State<CdsOutlinedTextField> {
 
   InputDecoration _getInputDecoration() => InputDecoration(
         contentPadding: const EdgeInsets.only(left: 16, right: 12),
-        labelStyle: TextStyle(color: CdsColors.grey300),
+        labelStyle: TextStyle(
+          color: _focusNode.hasFocus
+              ? isValid
+                  ? CdsColors.comento
+                  : CdsColors.error
+              : CdsColors.grey250,
+        ),
         errorStyle: TextStyle(color: CdsColors.error),
         focusedBorder: const OutlineInputBorder(
           borderSide: BorderSide(
-            color: CdsColors.grey400,
+            color: CdsColors.comento,
           ),
           borderRadius: BorderRadius.all(Radius.circular(2)),
         ),
@@ -95,6 +103,7 @@ class _CdsOutlinedTextFieldState extends State<CdsOutlinedTextField> {
         hintStyle: TextStyle(
           color: CdsColors.grey300,
         ),
+        labelText: widget.labelText,
         hintText: widget.hintText,
       );
 
@@ -112,7 +121,7 @@ class _CdsOutlinedTextFieldState extends State<CdsOutlinedTextField> {
       autocorrect: widget.autocorrect,
       obscureText: widget.obscureText,
       validator: widget.validator,
-      cursorColor: isValid ? CdsColors.grey400 : CdsColors.error,
+      cursorColor: isValid ? CdsColors.comento : CdsColors.error,
       decoration: _getInputDecoration(),
       style: CdsTextStyles.spoqaHanSansStyle,
     );

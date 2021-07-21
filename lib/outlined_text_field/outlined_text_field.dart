@@ -11,7 +11,8 @@ class OutlinedTextField extends StatefulWidget {
 }
 
 class _OutlinedTextFieldState extends State<OutlinedTextField> {
-  final controller = TextEditingController();
+  final textController = TextEditingController();
+  final textWithLabelController = TextEditingController();
   String value = '';
 
   @override
@@ -24,7 +25,21 @@ class _OutlinedTextFieldState extends State<OutlinedTextField> {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           CdsOutlinedTextField(
-            controller: controller,
+            controller: textController,
+            autovalidateMode: AutovalidateMode.onUserInteraction,
+            onChanged: (value) {
+              setState(() {
+                this.value = value;
+              });
+            },
+            validator: (value) => isValid ? null : "Is not valid!",
+            autocorrect: false,
+            hintText:
+                widget.k.text(label: 'hintText', initial: 'test@test.com'),
+            obscureText: widget.k.boolean(label: 'obscure'),
+          ),
+          CdsOutlinedLabelTextField(
+            controller: textWithLabelController,
             autovalidateMode: AutovalidateMode.onUserInteraction,
             onChanged: (value) {
               setState(() {
