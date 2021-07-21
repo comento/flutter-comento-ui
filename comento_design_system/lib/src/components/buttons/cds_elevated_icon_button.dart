@@ -10,20 +10,6 @@ class CdsElevatedIconButton extends StatelessWidget {
   final ButtonStyle? style;
   final Widget child;
 
-  static ButtonStyle _getButtonStyle(ComponentColor color) {
-    switch (color) {
-      case ComponentColor.blue:
-        return _getBlueButtonStyle();
-      case ComponentColor.grey:
-        return _getGreyButtonStyle();
-      case ComponentColor.kakao:
-        return _getKakaoButtonStyle();
-      case ComponentColor.green:
-      default:
-        return _getGreenButtonStyle();
-    }
-  }
-
   CdsElevatedIconButton._({
     Key? key,
     required this.onPressed,
@@ -46,7 +32,11 @@ class CdsElevatedIconButton extends StatelessWidget {
   }) =>
       CdsElevatedIconButton._(
         key: key,
-        onPressed: isEnabled ? onPressed : null,
+        onPressed: isEnabled
+            ? isLoading
+                ? () {}
+                : onPressed
+            : null,
         onLongPress: onLongPress,
         clipBehavior: clipBehavior,
         style: ElevatedButton.styleFrom(
@@ -84,7 +74,11 @@ class CdsElevatedIconButton extends StatelessWidget {
   }) =>
       CdsElevatedIconButton._(
         key: key,
-        onPressed: isEnabled ? onPressed : null,
+        onPressed: isEnabled
+            ? isLoading
+                ? () {}
+                : onPressed
+            : null,
         onLongPress: onLongPress,
         clipBehavior: clipBehavior,
         style: ElevatedButton.styleFrom(
@@ -119,7 +113,11 @@ class CdsElevatedIconButton extends StatelessWidget {
   }) =>
       CdsElevatedIconButton._(
         key: key,
-        onPressed: isEnabled ? onPressed : null,
+        onPressed: isEnabled
+            ? isLoading
+                ? () {}
+                : onPressed
+            : null,
         onLongPress: onLongPress,
         clipBehavior: clipBehavior,
         style: ElevatedButton.styleFrom(
@@ -154,7 +152,11 @@ class CdsElevatedIconButton extends StatelessWidget {
   }) =>
       CdsElevatedIconButton._(
         key: key,
-        onPressed: isEnabled ? onPressed : null,
+        onPressed: isEnabled
+            ? isLoading
+                ? () {}
+                : onPressed
+            : null,
         onLongPress: onLongPress,
         clipBehavior: clipBehavior,
         style: ElevatedButton.styleFrom(
@@ -185,6 +187,20 @@ class CdsElevatedIconButton extends StatelessWidget {
         clipBehavior: clipBehavior,
         child: child,
       );
+
+  static ButtonStyle _getButtonStyle(ComponentColor color) {
+    switch (color) {
+      case ComponentColor.blue:
+        return _getBlueButtonStyle();
+      case ComponentColor.grey:
+        return _getGreyButtonStyle();
+      case ComponentColor.kakao:
+        return _getKakaoButtonStyle();
+      case ComponentColor.green:
+      default:
+        return _getGreenButtonStyle();
+    }
+  }
 
   static ButtonStyle _getGreenButtonStyle() {
     return ButtonStyle(

@@ -8,20 +8,6 @@ class CdsTextButton extends StatelessWidget {
   final Widget child;
   final ButtonStyle? style;
 
-  static ButtonStyle _getButtonStyle(ComponentColor color) {
-    switch (color) {
-      case ComponentColor.blue:
-        return _getBlueButtonStyle();
-      case ComponentColor.grey:
-        return _getGreyButtonStyle();
-      case ComponentColor.red:
-        return _getRedButtonStyle();
-      case ComponentColor.green:
-      default:
-        return _getGreenButtonStyle();
-    }
-  }
-
   CdsTextButton._({
     Key? key,
     required this.onPressed,
@@ -43,7 +29,11 @@ class CdsTextButton extends StatelessWidget {
   }) =>
       CdsTextButton._(
         key: key,
-        onPressed: isEnabled ? onPressed : null,
+        onPressed: isEnabled
+            ? isLoading
+                ? () {}
+                : onPressed
+            : null,
         onLongPress: onLongPress,
         clipBehavior: clipBehavior,
         child: isLoading
@@ -73,7 +63,11 @@ class CdsTextButton extends StatelessWidget {
   }) =>
       CdsTextButton._(
         key: key,
-        onPressed: isEnabled ? onPressed : null,
+        onPressed: isEnabled
+            ? isLoading
+                ? () {}
+                : onPressed
+            : null,
         onLongPress: onLongPress,
         clipBehavior: clipBehavior,
         child: isLoading
@@ -103,7 +97,11 @@ class CdsTextButton extends StatelessWidget {
   }) =>
       CdsTextButton._(
         key: key,
-        onPressed: isEnabled ? onPressed : null,
+        onPressed: isEnabled
+            ? isLoading
+                ? () {}
+                : onPressed
+            : null,
         onLongPress: onLongPress,
         clipBehavior: clipBehavior,
         child: isLoading
@@ -130,6 +128,20 @@ class CdsTextButton extends StatelessWidget {
         clipBehavior: clipBehavior,
         child: child,
       );
+
+  static ButtonStyle _getButtonStyle(ComponentColor color) {
+    switch (color) {
+      case ComponentColor.blue:
+        return _getBlueButtonStyle();
+      case ComponentColor.grey:
+        return _getGreyButtonStyle();
+      case ComponentColor.red:
+        return _getRedButtonStyle();
+      case ComponentColor.green:
+      default:
+        return _getGreenButtonStyle();
+    }
+  }
 
   static ButtonStyle _getGreenButtonStyle() {
     return ButtonStyle(
