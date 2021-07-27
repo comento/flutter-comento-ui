@@ -12,7 +12,6 @@ class TextArea extends StatefulWidget {
 
 class _TextAreaState extends State<TextArea> {
   final textController = TextEditingController();
-  final labelController = TextEditingController();
   final underlinedController = TextEditingController();
   String value = '';
 
@@ -34,6 +33,17 @@ class _TextAreaState extends State<TextArea> {
             autocorrect: false,
             hintText:
                 widget.k.text(label: 'hintText', initial: 'placeholder'),
+          ),
+          CdsOutlinedTextArea(
+            controller: underlinedController,
+            onChanged: (value) {
+              setState(() {
+                this.value = value;
+              });
+            },
+            autocorrect: false,
+            hintText:
+            widget.k.text(label: 'hintText', initial: 'placeholder'),
           ),
           Text(value),
         ],
