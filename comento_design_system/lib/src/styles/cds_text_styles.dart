@@ -6,8 +6,10 @@ import 'cds_colors.dart';
 class CdsTextStyles {
   CdsTextStyles._();
 
-  static const TextStyle spoqaHanSansStyle =
-      const TextStyle(fontFamily: 'SpoqaHanSans');
+  static const TextStyle spoqaHanSansStyle = const TextStyle(
+    fontFamily: 'SpoqaHanSans',
+    color: CdsColors.grey850,
+  );
 
   static const TextStyle headline1 = const TextStyle(
     fontFamily: 'SpoqaHanSans',

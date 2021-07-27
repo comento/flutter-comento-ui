@@ -14,6 +14,7 @@ import 'package:flutter_comento_ui/outlined_button/outlined_button_large_full.da
 import 'package:flutter_comento_ui/outlined_button/outlined_button_medium.dart';
 import 'package:flutter_comento_ui/outlined_button/outlined_button_small.dart';
 import 'package:flutter_comento_ui/outlined_text_field/outlined_text_field.dart';
+import 'package:flutter_comento_ui/outlined_text_field/text_area.dart';
 import 'package:flutter_comento_ui/text_button/text_button_large.dart';
 import 'package:flutter_comento_ui/text_button/text_button_medium.dart';
 import 'package:flutter_comento_ui/text_button/text_button_small.dart';
@@ -94,6 +95,11 @@ class MyApp extends StatelessWidget {
         Story(
           name: 'Outlined text field',
           builder: (_, k) => OutlinedTextField(k),
+        ),
+        Story(
+          background: CdsColors.grey100,
+          name: 'Text area',
+          builder: (_, k) => TextArea(k),
         ),
         Story(
           name: 'Circular Progress indicator',

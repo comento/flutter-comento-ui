@@ -12,3 +12,4 @@ export 'components/indicators/cds_thick_circular_progress_indicator.dart';
 export 'components/inputs/cds_outlined_text_field.dart';
 export 'components/inputs/cds_outlined_label_text_field.dart';
 export 'components/inputs/cds_underlined_text_field.dart';
+export 'components/inputs/cds_text_area.dart';
