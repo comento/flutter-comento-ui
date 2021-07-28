@@ -13,6 +13,7 @@ class TextArea extends StatefulWidget {
 class _TextAreaState extends State<TextArea> {
   final textController = TextEditingController();
   final underlinedController = TextEditingController();
+  final replyController = TextEditingController();
   String value = '';
 
   @override
@@ -20,33 +21,48 @@ class _TextAreaState extends State<TextArea> {
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       behavior: HitTestBehavior.translucent,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          CdsTextArea(
-            controller: textController,
-            onChanged: (value) {
-              setState(() {
-                this.value = value;
-              });
-            },
-            autocorrect: false,
-            hintText:
-                widget.k.text(label: 'hintText', initial: 'placeholder'),
-          ),
-          CdsOutlinedTextArea(
-            controller: underlinedController,
-            onChanged: (value) {
-              setState(() {
-                this.value = value;
-              });
-            },
-            autocorrect: false,
-            hintText:
-            widget.k.text(label: 'hintText', initial: 'placeholder'),
-          ),
-          Text(value),
-        ],
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            CdsTextArea(
+              controller: textController,
+              onChanged: (value) {
+                setState(() {
+                  this.value = value;
+                });
+              },
+              autocorrect: false,
+              hintText:
+                  widget.k.text(label: 'hintText', initial: 'placeholder'),
+            ),
+            SizedBox(height: 20),
+            CdsOutlinedTextArea(
+              controller: underlinedController,
+              onChanged: (value) {
+                setState(() {
+                  this.value = value;
+                });
+              },
+              autocorrect: false,
+              hintText:
+                  widget.k.text(label: 'hintText', initial: 'placeholder'),
+            ),
+            SizedBox(height: 20),
+            CdsReplyArea(
+              controller: replyController,
+              onChanged: (value) {
+                setState(() {
+                  this.value = value;
+                });
+              },
+              autocorrect: false,
+              hintText:
+                  widget.k.text(label: 'hintText', initial: 'placeholder'),
+            ),
+            SizedBox(height: 20),
+            Text(value),
+          ],
+        ),
       ),
     );
   }
