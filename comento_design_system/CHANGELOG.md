@@ -13,3 +13,7 @@
 ## 0.0.4
 
 * Add Button Components
+
+## 0.0.5
+
+* Add input Components
