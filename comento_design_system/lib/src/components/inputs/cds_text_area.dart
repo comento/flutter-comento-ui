@@ -57,7 +57,7 @@ class _CdsTextAreaState extends State<CdsTextArea> {
   InputDecoration _getInputDecoration() => InputDecoration(
         contentPadding: const EdgeInsets.all(16),
         border: InputBorder.none,
-        fillColor: Colors.white,
+        fillColor: CdsColors.white,
         filled: true,
         hintStyle: TextStyle(color: CdsColors.grey300),
         hintText: widget.hintText,

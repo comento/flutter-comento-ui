@@ -68,7 +68,7 @@ class _CdsOutlinedTextAreaState extends State<CdsOutlinedTextArea> {
           ),
           borderRadius: BorderRadius.zero,
         ),
-        fillColor: Colors.white,
+        fillColor: CdsColors.white,
         filled: true,
         hintStyle: TextStyle(color: CdsColors.grey300),
         hintText: widget.hintText,
