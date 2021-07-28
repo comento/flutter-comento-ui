@@ -96,7 +96,7 @@ class MyApp extends StatelessWidget {
           builder: (_, k) => TextField(k),
         ),
         Story(
-          background: CdsColors.grey100,
+          background: CdsColors.grey000,
           name: 'Text area',
           builder: (_, k) => TextArea(k),
         ),
