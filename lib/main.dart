@@ -1,5 +1,5 @@
 import 'package:comento_design_system/comento_design_system.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_comento_ui/elevated_button/elevated_button_large.dart';
 import 'package:flutter_comento_ui/elevated_button/elevated_button_large_full.dart';
 import 'package:flutter_comento_ui/elevated_button/elevated_button_medium.dart';
@@ -13,11 +13,11 @@ import 'package:flutter_comento_ui/outlined_button/outlined_button_large.dart';
 import 'package:flutter_comento_ui/outlined_button/outlined_button_large_full.dart';
 import 'package:flutter_comento_ui/outlined_button/outlined_button_medium.dart';
 import 'package:flutter_comento_ui/outlined_button/outlined_button_small.dart';
-import 'package:flutter_comento_ui/outlined_text_field/outlined_text_field.dart';
-import 'package:flutter_comento_ui/outlined_text_field/text_area.dart';
+import 'package:flutter_comento_ui/text_area/text_area.dart';
 import 'package:flutter_comento_ui/text_button/text_button_large.dart';
 import 'package:flutter_comento_ui/text_button/text_button_medium.dart';
 import 'package:flutter_comento_ui/text_button/text_button_small.dart';
+import 'package:flutter_comento_ui/text_field/text_field.dart';
 import 'package:storybook_flutter/storybook_flutter.dart';
 
 import 'elevated_icon_button/elevated_icon_button_large.dart';
@@ -30,7 +30,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Storybook(
-      theme: ThemeData(canvasColor: CdsColors.white),
       children: [
         Story(
           name: 'Elevated button - small',
@@ -93,8 +92,8 @@ class MyApp extends StatelessWidget {
           builder: (_, k) => TextButtonLarge(k),
         ),
         Story(
-          name: 'Outlined text field',
-          builder: (_, k) => OutlinedTextField(k),
+          name: 'Text field',
+          builder: (_, k) => TextField(k),
         ),
         Story(
           background: CdsColors.grey100,

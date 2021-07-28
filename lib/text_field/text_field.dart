@@ -2,15 +2,15 @@ import 'package:comento_design_system/comento_design_system.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:storybook_flutter/storybook_flutter.dart';
 
-class OutlinedTextField extends StatefulWidget {
+class TextField extends StatefulWidget {
   final KnobsBuilder k;
-  OutlinedTextField(this.k);
+  TextField(this.k);
 
   @override
-  _OutlinedTextFieldState createState() => _OutlinedTextFieldState();
+  _TextFieldState createState() => _TextFieldState();
 }
 
-class _OutlinedTextFieldState extends State<OutlinedTextField> {
+class _TextFieldState extends State<TextField> {
   final textController = TextEditingController();
   final labelController = TextEditingController();
   final underlinedController = TextEditingController();
