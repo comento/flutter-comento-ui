@@ -67,7 +67,7 @@ class _CdsTextAreaState extends State<CdsTextArea> {
   Widget build(BuildContext context) {
     return TextFormField(
       keyboardType: TextInputType.multiline,
-      maxLines: 10,
+      maxLines: 100000,
       controller: _controller,
       focusNode: _focusNode,
       onChanged: (value) {

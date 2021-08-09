@@ -1,5 +1,7 @@
 // enums
 export 'components/component_enums.dart';
+// appBars
+export 'components/app_bars/cds_app_bar.dart';
 // buttons
 export 'components/buttons/cds_elevated_button.dart';
 export 'components/buttons/cds_elevated_icon_button.dart';
