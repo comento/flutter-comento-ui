@@ -17,3 +17,5 @@ export 'components/inputs/cds_underlined_text_field.dart';
 export 'components/inputs/cds_text_area.dart';
 export 'components/inputs/cds_outlined_text_area.dart';
 export 'components/inputs/cds_reply_area.dart';
+// tooltips
+export 'components/tooltips/cds_tooltip.dart';
