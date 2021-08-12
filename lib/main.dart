@@ -21,6 +21,7 @@ import 'package:flutter_comento_ui/text_field/text_field.dart';
 import 'package:storybook_flutter/storybook_flutter.dart';
 
 import 'elevated_icon_button/elevated_icon_button_large.dart';
+import 'rating_button/rating_button.dart';
 
 void main() {
   runApp(MyApp());
@@ -90,6 +91,10 @@ class MyApp extends StatelessWidget {
         Story(
           name: 'Text button - large',
           builder: (_, k) => TextButtonLarge(k),
+        ),
+        Story(
+          name: 'Rating button',
+          builder: (_, k) => RatingButton(k),
         ),
         Story(
           name: 'Text field',
