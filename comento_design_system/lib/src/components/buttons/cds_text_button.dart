@@ -48,6 +48,7 @@ class CdsTextButton extends StatelessWidget {
           ),
           padding: EdgeInsets.symmetric(horizontal: 8),
           minimumSize: const Size(36, 24),
+          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
         ).merge(_getButtonStyle(color)),
       );
 
@@ -82,6 +83,7 @@ class CdsTextButton extends StatelessWidget {
           ),
           padding: EdgeInsets.symmetric(horizontal: 12),
           minimumSize: const Size(60, 36),
+          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
         ).merge(_getButtonStyle(color)),
       );
 
@@ -116,6 +118,7 @@ class CdsTextButton extends StatelessWidget {
           ),
           padding: EdgeInsets.symmetric(horizontal: 14),
           minimumSize: const Size(76, 48),
+          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
         ).merge(_getButtonStyle(color)),
       );
 
