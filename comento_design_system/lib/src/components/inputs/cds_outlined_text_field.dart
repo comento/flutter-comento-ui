@@ -17,7 +17,7 @@ class CdsOutlinedTextField extends StatefulWidget {
     this.onChanged,
     this.autovalidateMode = AutovalidateMode.onUserInteraction,
     this.validator,
-    this.autocorrect = true,
+    this.autocorrect = false,
     this.obscureText = false,
     this.hintText,
   })  : receivedController = controller,

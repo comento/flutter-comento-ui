@@ -12,7 +12,7 @@ class CdsTextArea extends StatefulWidget {
     TextEditingController? controller,
     FocusNode? focusNode,
     this.onChanged,
-    this.autocorrect = true,
+    this.autocorrect = false,
     this.hintText,
   })  : receivedController = controller,
         receivedFocusNode = focusNode,

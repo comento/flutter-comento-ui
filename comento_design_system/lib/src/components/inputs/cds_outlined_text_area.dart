@@ -12,7 +12,7 @@ class CdsOutlinedTextArea extends StatefulWidget {
     TextEditingController? controller,
     FocusNode? focusNode,
     this.onChanged,
-    this.autocorrect = true,
+    this.autocorrect = false,
     this.hintText,
   })  : receivedController = controller,
         receivedFocusNode = focusNode,
@@ -78,7 +78,7 @@ class _CdsOutlinedTextAreaState extends State<CdsOutlinedTextArea> {
   Widget build(BuildContext context) {
     return TextFormField(
       keyboardType: TextInputType.multiline,
-      maxLines: 10,
+      maxLines: 100000,
       controller: _controller,
       focusNode: _focusNode,
       onChanged: (value) {
