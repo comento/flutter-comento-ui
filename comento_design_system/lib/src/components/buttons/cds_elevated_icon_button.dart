@@ -24,7 +24,7 @@ class CdsElevatedIconButton extends StatelessWidget {
     required VoidCallback? onPressed,
     VoidCallback? onLongPress,
     Clip clipBehavior = Clip.none,
-    required ComponentColor color,
+    CdsComponentColor color = CdsComponentColor.green,
     required String text,
     bool isEnabled = true,
     bool isLoading = false,
@@ -66,7 +66,7 @@ class CdsElevatedIconButton extends StatelessWidget {
     required VoidCallback? onPressed,
     VoidCallback? onLongPress,
     Clip clipBehavior = Clip.none,
-    required ComponentColor color,
+    CdsComponentColor color = CdsComponentColor.green,
     required String text,
     bool isEnabled = true,
     bool isLoading = false,
@@ -105,7 +105,7 @@ class CdsElevatedIconButton extends StatelessWidget {
     required VoidCallback? onPressed,
     VoidCallback? onLongPress,
     Clip clipBehavior = Clip.none,
-    required ComponentColor color,
+    CdsComponentColor color = CdsComponentColor.green,
     required String text,
     bool isEnabled = true,
     bool isLoading = false,
@@ -144,7 +144,7 @@ class CdsElevatedIconButton extends StatelessWidget {
     required VoidCallback? onPressed,
     VoidCallback? onLongPress,
     Clip clipBehavior = Clip.none,
-    required ComponentColor color,
+    CdsComponentColor color = CdsComponentColor.green,
     required String text,
     bool isEnabled = true,
     bool isLoading = false,
@@ -188,15 +188,15 @@ class CdsElevatedIconButton extends StatelessWidget {
         child: child,
       );
 
-  static ButtonStyle _getButtonStyle(ComponentColor color) {
+  static ButtonStyle _getButtonStyle(CdsComponentColor color) {
     switch (color) {
-      case ComponentColor.blue:
+      case CdsComponentColor.blue:
         return _getBlueButtonStyle();
-      case ComponentColor.grey:
+      case CdsComponentColor.grey:
         return _getGreyButtonStyle();
-      case ComponentColor.kakao:
+      case CdsComponentColor.kakao:
         return _getKakaoButtonStyle();
-      case ComponentColor.green:
+      case CdsComponentColor.green:
       default:
         return _getGreenButtonStyle();
     }

@@ -8,29 +8,29 @@ class CdsCircularProgressIndicator extends StatelessWidget {
   final double size;
   final double strokeWidth;
 
-  static Color _getProgressColor(ComponentColor color) {
+  static Color _getProgressColor(CdsComponentColor color) {
     switch (color) {
-      case ComponentColor.blue:
+      case CdsComponentColor.blue:
         return CdsColors.blue600;
-      case ComponentColor.red:
+      case CdsComponentColor.red:
         return CdsColors.red600;
-      case ComponentColor.grey:
+      case CdsComponentColor.grey:
         return CdsColors.grey500;
-      case ComponentColor.green:
+      case CdsComponentColor.green:
       default:
         return CdsColors.green600;
     }
   }
 
-  static Color _getBackgroundColor(ComponentColor color) {
+  static Color _getBackgroundColor(CdsComponentColor color) {
     switch (color) {
-      case ComponentColor.blue:
+      case CdsComponentColor.blue:
         return CdsColors.blue100;
-      case ComponentColor.red:
+      case CdsComponentColor.red:
         return CdsColors.red100;
-      case ComponentColor.grey:
+      case CdsComponentColor.grey:
         return CdsColors.grey200;
-      case ComponentColor.green:
+      case CdsComponentColor.green:
       default:
         return CdsColors.green100;
     }
@@ -44,7 +44,7 @@ class CdsCircularProgressIndicator extends StatelessWidget {
   });
 
   factory CdsCircularProgressIndicator.small({
-    required ComponentColor color,
+    CdsComponentColor color = CdsComponentColor.green,
   }) =>
       CdsCircularProgressIndicator._(
         progressColor: _getProgressColor(color),
@@ -54,7 +54,7 @@ class CdsCircularProgressIndicator extends StatelessWidget {
       );
 
   factory CdsCircularProgressIndicator.medium({
-    required ComponentColor color,
+    CdsComponentColor color = CdsComponentColor.green,
   }) =>
       CdsCircularProgressIndicator._(
         progressColor: _getProgressColor(color),
@@ -64,7 +64,7 @@ class CdsCircularProgressIndicator extends StatelessWidget {
       );
 
   factory CdsCircularProgressIndicator.large({
-    required ComponentColor color,
+    CdsComponentColor color = CdsComponentColor.green,
   }) =>
       CdsCircularProgressIndicator._(
         progressColor: _getProgressColor(color),
