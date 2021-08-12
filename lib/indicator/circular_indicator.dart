@@ -10,40 +10,40 @@ class CircularIndicator extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         CdsCircularProgressIndicator.small(
-          color: ComponentColor.green,
+          color: CdsComponentColor.green,
         ),
         CdsCircularProgressIndicator.small(
-          color: ComponentColor.red,
+          color: CdsComponentColor.red,
         ),
         CdsCircularProgressIndicator.small(
-          color: ComponentColor.grey,
+          color: CdsComponentColor.grey,
         ),
         CdsCircularProgressIndicator.small(
-          color: ComponentColor.blue,
+          color: CdsComponentColor.blue,
         ),
         CdsCircularProgressIndicator.medium(
-          color: ComponentColor.green,
+          color: CdsComponentColor.green,
         ),
         CdsCircularProgressIndicator.medium(
-          color: ComponentColor.red,
+          color: CdsComponentColor.red,
         ),
         CdsCircularProgressIndicator.medium(
-          color: ComponentColor.grey,
+          color: CdsComponentColor.grey,
         ),
         CdsCircularProgressIndicator.medium(
-          color: ComponentColor.blue,
+          color: CdsComponentColor.blue,
         ),
         CdsCircularProgressIndicator.large(
-          color: ComponentColor.green,
+          color: CdsComponentColor.green,
         ),
         CdsCircularProgressIndicator.large(
-          color: ComponentColor.red,
+          color: CdsComponentColor.red,
         ),
         CdsCircularProgressIndicator.large(
-          color: ComponentColor.grey,
+          color: CdsComponentColor.grey,
         ),
         CdsCircularProgressIndicator.large(
-          color: ComponentColor.blue,
+          color: CdsComponentColor.blue,
         ),
       ],
     );

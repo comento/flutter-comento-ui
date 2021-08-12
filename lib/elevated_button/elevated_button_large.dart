@@ -10,21 +10,21 @@ class ElevatedButtonLarge extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         CdsElevatedButton.large(
-          color: ComponentColor.green,
+          color: CdsComponentColor.green,
           isEnabled: k.boolean(label: 'Enabled', initial: true),
           isLoading: k.boolean(label: 'Loading', initial: false),
           onPressed: () {},
           text: k.text(label: 'Text', initial: 'Button'),
         ),
         CdsElevatedButton.large(
-          color: ComponentColor.blue,
+          color: CdsComponentColor.blue,
           isEnabled: k.boolean(label: 'Enabled', initial: true),
           isLoading: k.boolean(label: 'Loading', initial: false),
           onPressed: () {},
           text: k.text(label: 'Text', initial: 'Button'),
         ),
         CdsElevatedButton.large(
-          color: ComponentColor.grey,
+          color: CdsComponentColor.grey,
           isEnabled: k.boolean(label: 'Enabled', initial: true),
           isLoading: k.boolean(label: 'Loading', initial: false),
           onPressed: () {},

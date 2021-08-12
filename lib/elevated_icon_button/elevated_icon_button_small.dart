@@ -11,7 +11,7 @@ class ElevatedIconButtonSmall extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         CdsElevatedIconButton.small(
-          color: ComponentColor.green,
+          color: CdsComponentColor.green,
           isEnabled: k.boolean(label: 'Enabled', initial: true),
           isLoading: k.boolean(label: 'Loading', initial: false),
           onPressed: () {},
@@ -19,7 +19,7 @@ class ElevatedIconButtonSmall extends StatelessWidget {
           icon: Image.asset('assets/images/icons/add.png'),
         ),
         CdsElevatedIconButton.small(
-          color: ComponentColor.blue,
+          color: CdsComponentColor.blue,
           isEnabled: k.boolean(label: 'Enabled', initial: true),
           isLoading: k.boolean(label: 'Loading', initial: false),
           onPressed: () {},
@@ -27,7 +27,7 @@ class ElevatedIconButtonSmall extends StatelessWidget {
           icon: Image.asset('assets/images/icons/add.png'),
         ),
         CdsElevatedIconButton.small(
-          color: ComponentColor.grey,
+          color: CdsComponentColor.grey,
           isEnabled: k.boolean(label: 'Enabled', initial: true),
           isLoading: k.boolean(label: 'Loading', initial: false),
           onPressed: () {},
@@ -38,7 +38,7 @@ class ElevatedIconButtonSmall extends StatelessWidget {
           ),
         ),
         CdsElevatedIconButton.small(
-          color: ComponentColor.kakao,
+          color: CdsComponentColor.kakao,
           isEnabled: k.boolean(label: 'Enabled', initial: true),
           isLoading: k.boolean(label: 'Loading', initial: false),
           onPressed: () {},

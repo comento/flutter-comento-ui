@@ -10,40 +10,40 @@ class ThickCircularIndicator extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         CdsThickCircularProgressIndicator.small(
-          color: ComponentColor.green,
+          color: CdsComponentColor.green,
         ),
         CdsThickCircularProgressIndicator.small(
-          color: ComponentColor.red,
+          color: CdsComponentColor.red,
         ),
         CdsThickCircularProgressIndicator.small(
-          color: ComponentColor.grey,
+          color: CdsComponentColor.grey,
         ),
         CdsThickCircularProgressIndicator.small(
-          color: ComponentColor.blue,
+          color: CdsComponentColor.blue,
         ),
         CdsThickCircularProgressIndicator.medium(
-          color: ComponentColor.green,
+          color: CdsComponentColor.green,
         ),
         CdsThickCircularProgressIndicator.medium(
-          color: ComponentColor.red,
+          color: CdsComponentColor.red,
         ),
         CdsThickCircularProgressIndicator.medium(
-          color: ComponentColor.grey,
+          color: CdsComponentColor.grey,
         ),
         CdsThickCircularProgressIndicator.medium(
-          color: ComponentColor.blue,
+          color: CdsComponentColor.blue,
         ),
         CdsThickCircularProgressIndicator.large(
-          color: ComponentColor.green,
+          color: CdsComponentColor.green,
         ),
         CdsThickCircularProgressIndicator.large(
-          color: ComponentColor.red,
+          color: CdsComponentColor.red,
         ),
         CdsThickCircularProgressIndicator.large(
-          color: ComponentColor.grey,
+          color: CdsComponentColor.grey,
         ),
         CdsThickCircularProgressIndicator.large(
-          color: ComponentColor.blue,
+          color: CdsComponentColor.blue,
         ),
       ],
     );
