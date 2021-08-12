@@ -1,6 +1,8 @@
 import 'package:comento_design_system/comento_design_system.dart';
 import 'package:flutter/material.dart';
 
+import '../../strings.dart';
+
 class CdsReplyArea extends StatefulWidget {
   final TextEditingController? receivedController;
   final FocusNode? receivedFocusNode;
@@ -96,7 +98,10 @@ class _CdsReplyAreaState extends State<CdsReplyArea> {
         ),
         IconButton(
           onPressed: null,
-          icon: Image.asset('assets/images/icons/keyline.png'),
+          icon: Image.asset(
+            'assets/images/icons/keyline.png',
+            package: packageName,
+          ),
         ),
       ],
     );

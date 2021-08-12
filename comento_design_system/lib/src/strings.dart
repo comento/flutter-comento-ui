@@ -1,0 +1,1 @@
+const String packageName = 'comento_design_system';

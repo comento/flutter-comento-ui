@@ -24,28 +24,34 @@ class _TextAreaState extends State<TextArea> {
       child: SingleChildScrollView(
         child: Column(
           children: [
-            CdsTextArea(
-              controller: textController,
-              onChanged: (value) {
-                setState(() {
-                  this.value = value;
-                });
-              },
-              autocorrect: false,
-              hintText:
-                  widget.k.text(label: 'hintText', initial: 'placeholder'),
+            SizedBox(
+              height: 500,
+              child: CdsTextArea(
+                controller: textController,
+                onChanged: (value) {
+                  setState(() {
+                    this.value = value;
+                  });
+                },
+                autocorrect: false,
+                hintText:
+                    widget.k.text(label: 'hintText', initial: 'placeholder'),
+              ),
             ),
             SizedBox(height: 20),
-            CdsOutlinedTextArea(
-              controller: underlinedController,
-              onChanged: (value) {
-                setState(() {
-                  this.value = value;
-                });
-              },
-              autocorrect: false,
-              hintText:
-                  widget.k.text(label: 'hintText', initial: 'placeholder'),
+            SizedBox(
+              height: 500,
+              child: CdsOutlinedTextArea(
+                controller: underlinedController,
+                onChanged: (value) {
+                  setState(() {
+                    this.value = value;
+                  });
+                },
+                autocorrect: false,
+                hintText:
+                    widget.k.text(label: 'hintText', initial: 'placeholder'),
+              ),
             ),
             SizedBox(height: 20),
             CdsReplyArea(
