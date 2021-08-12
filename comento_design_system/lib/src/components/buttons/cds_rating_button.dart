@@ -14,7 +14,7 @@ class CdsRatingButton extends StatelessWidget {
 
   CdsRatingButton({
     Key? key,
-    required this.onPressed,
+    this.onPressed,
     this.onLongPress,
     this.clipBehavior = Clip.none,
     required this.icon,
@@ -24,7 +24,7 @@ class CdsRatingButton extends StatelessWidget {
   })  : style = TextButton.styleFrom(
           textStyle: CdsTextStyles.bodyText2,
           padding: EdgeInsets.zero,
-          minimumSize: const Size(88, 28),
+          fixedSize: const Size(88, 28),
         ).merge(_getButtonStyle(color)),
         super(key: key);
 
@@ -35,7 +35,7 @@ class CdsRatingButton extends StatelessWidget {
         onPressed: onPressed,
         onLongPress: onLongPress,
         child: Row(
-          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             icon,
             SizedBox(width: 4),
