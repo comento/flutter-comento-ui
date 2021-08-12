@@ -1,5 +1,5 @@
 
-enum ComponentColor {
+enum CdsComponentColor {
   green,
   blue,
   grey,
