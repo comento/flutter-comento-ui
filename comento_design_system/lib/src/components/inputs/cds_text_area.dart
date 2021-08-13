@@ -59,7 +59,7 @@ class _CdsTextAreaState extends State<CdsTextArea> {
         border: InputBorder.none,
         fillColor: CdsColors.white,
         filled: true,
-        hintStyle: TextStyle(color: CdsColors.grey300),
+        hintStyle: TextStyle(color: CdsColors.grey400),
         hintText: widget.hintText,
       );
 
