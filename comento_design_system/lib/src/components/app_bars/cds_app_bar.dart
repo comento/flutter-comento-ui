@@ -4,31 +4,34 @@ import '../../../comento_design_system.dart';
 import '../../strings.dart';
 
 class CdsAppBar extends StatelessWidget implements PreferredSizeWidget {
-  final double _leadingWidth = 40;
   final Widget? leading;
+  final double? leadingWidth;
   final Widget? title;
   final List<Widget>? actions;
   final bool? centerTitle;
+  final PreferredSize? bottom;
 
   CdsAppBar({
     this.leading,
+    this.leadingWidth = 40,
     this.title,
     this.actions,
     this.centerTitle,
+    this.bottom,
   });
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
       leading: leading ?? _getAppBarLeading(context),
-      leadingWidth: _leadingWidth,
+      leadingWidth: leadingWidth,
       title: title,
       centerTitle: centerTitle,
       actions: actions,
       backgroundColor: CdsColors.white,
       elevation: 0,
       titleSpacing: 8,
-      bottom: _buildBottomBorder(),
+      bottom: bottom ?? _buildBottomBorder(),
     );
   }
 
@@ -49,13 +52,6 @@ class CdsAppBar extends StatelessWidget implements PreferredSizeWidget {
     final ModalRoute<Object?>? parentRoute = ModalRoute.of(context);
     final bool canPop = parentRoute?.canPop ?? false;
     Widget? leading = canPop ? CdsBackButton() : null;
-    if (leading != null) {
-      leading = new ConstrainedBox(
-        constraints: BoxConstraints.tightFor(width: _leadingWidth),
-        child: leading,
-      );
-    }
-
     return leading;
   }
 }
