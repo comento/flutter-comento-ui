@@ -17,3 +17,9 @@
 ## 0.0.5
 
 * Add input Components
+
+## 0.0.6
+
+* Add app bar
+* Add tooltip
+* Add avatar
