@@ -57,6 +57,10 @@ class CdsAppBar extends StatelessWidget implements PreferredSizeWidget {
 }
 
 class CdsBackButton extends StatelessWidget {
+  final Function? onPressed;
+
+  CdsBackButton({this.onPressed});
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -68,7 +72,7 @@ class CdsBackButton extends StatelessWidget {
         ),
         tooltip: MaterialLocalizations.of(context).backButtonTooltip,
         onPressed: () {
-          Navigator.of(context).maybePop();
+          onPressed != null ? onPressed!() : Navigator.of(context).maybePop();
         },
         padding: EdgeInsets.zero,
         constraints: BoxConstraints(),
