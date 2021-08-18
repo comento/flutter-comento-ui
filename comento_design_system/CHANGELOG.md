@@ -23,3 +23,7 @@
 * Add app bar
 * Add tooltip
 * Add avatar
+
+## 0.0.7
+
+* Add alert dialog
