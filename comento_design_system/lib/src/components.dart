@@ -22,3 +22,5 @@ export 'components/inputs/cds_outlined_text_area.dart';
 export 'components/inputs/cds_reply_area.dart';
 // tooltips
 export 'components/tooltips/cds_tooltip.dart';
+// modals
+export 'components/modals/cds_alert_dialog.dart';
