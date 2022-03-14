@@ -77,7 +77,7 @@ class _CdsTextAreaState extends State<CdsTextArea> {
       autocorrect: widget.autocorrect,
       cursorColor: CdsColors.grey400,
       decoration: _getInputDecoration(),
-      style: CdsTextStyles.spoqaHanSansStyle,
+      style: CdsTextStyles.pretendardStyle,
     );
   }
 }

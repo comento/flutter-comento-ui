@@ -114,7 +114,7 @@ class _CdsOutlinedTextFieldState extends State<CdsOutlinedTextField> {
       validator: widget.validator,
       cursorColor: isValid ? CdsColors.grey400 : CdsColors.error,
       decoration: _getInputDecoration(),
-      style: CdsTextStyles.spoqaHanSansStyle,
+      style: CdsTextStyles.pretendardStyle,
     );
   }
 }

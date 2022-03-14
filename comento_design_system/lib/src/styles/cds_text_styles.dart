@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../strings.dart';
@@ -7,97 +6,106 @@ import 'cds_colors.dart';
 class CdsTextStyles {
   CdsTextStyles._();
 
-  static const TextStyle spoqaHanSansStyle = const TextStyle(
-    fontFamily: 'SpoqaHanSans',
-    color: CdsColors.grey850,
+  static const String fontFamily = 'Pretendard';
+
+  static const FontWeight light = FontWeight.w300;
+  static const FontWeight regular = FontWeight.w400;
+  static const FontWeight medium = FontWeight.w500;
+  static const FontWeight semiBold = FontWeight.w600;
+
+  static const TextStyle pretendardStyle = const TextStyle(
+    fontFamily: fontFamily,
+    color: CdsColors.black,
     package: packageName,
   );
 
   static const TextStyle headline1 = const TextStyle(
-    fontFamily: 'SpoqaHanSans',
+    fontFamily: fontFamily,
     fontSize: 32,
-    color: CdsColors.grey850,
-    fontWeight: FontWeight.w700,
-    height: 1.25,
+    color: CdsColors.black,
+    fontWeight: semiBold,
+    height: 1.26,
     package: packageName,
   );
   static const TextStyle headline2 = const TextStyle(
-    fontFamily: 'SpoqaHanSans',
+    fontFamily: fontFamily,
     fontSize: 28,
-    color: CdsColors.grey850,
-    fontWeight: FontWeight.w700,
-    height: 1.38,
+    color: CdsColors.black,
+    fontWeight: semiBold,
+    height: 1.28,
     package: packageName,
   );
   static const TextStyle headline3 = const TextStyle(
-    fontFamily: 'SpoqaHanSans',
+    fontFamily: fontFamily,
     fontSize: 26,
-    color: CdsColors.grey850,
-    fontWeight: FontWeight.w700,
-    height: 1.3,
+    color: CdsColors.black,
+    fontWeight: semiBold,
+    height: 1.28,
     package: packageName,
   );
   static const TextStyle headline4 = const TextStyle(
-    fontFamily: 'SpoqaHanSans',
+    fontFamily: fontFamily,
     fontSize: 24,
-    color: CdsColors.grey850,
-    fontWeight: FontWeight.w700,
-    height: 1.25,
+    color: CdsColors.black,
+    fontWeight: semiBold,
+    height: 1.28,
     package: packageName,
   );
   static const TextStyle headline5 = const TextStyle(
-    fontFamily: 'SpoqaHanSans',
+    fontFamily: fontFamily,
     fontSize: 22,
-    color: CdsColors.grey850,
-    fontWeight: FontWeight.w400,
-    height: 1.3,
+    color: CdsColors.black,
+    fontWeight: semiBold,
+    height: 1.26,
     package: packageName,
   );
   static const TextStyle headline6 = const TextStyle(
-    fontFamily: 'SpoqaHanSans',
+    fontFamily: fontFamily,
     fontSize: 18,
-    color: CdsColors.grey850,
-    fontWeight: FontWeight.w700,
-    height: 1.35,
+    color: CdsColors.black,
+    fontWeight: regular,
+    height: 1.38,
     package: packageName,
   );
   static const TextStyle bodyText1 = const TextStyle(
-    fontFamily: 'SpoqaHanSans',
+    fontFamily: fontFamily,
     fontSize: 16,
-    color: CdsColors.grey850,
-    fontWeight: FontWeight.w400,
-    height: 1.5,
+    color: CdsColors.black,
+    fontWeight: regular,
+    height: 1.54,
     package: packageName,
   );
   static const TextStyle bodyText2 = const TextStyle(
-    fontFamily: 'SpoqaHanSans',
+    fontFamily: fontFamily,
     fontSize: 14,
-    color: CdsColors.grey850,
-    fontWeight: FontWeight.w400,
-    height: 1.45,
+    color: CdsColors.black,
+    fontWeight: regular,
+    height: 1.4,
     package: packageName,
   );
   static const TextStyle caption = const TextStyle(
-    fontFamily: 'SpoqaHanSans',
+    fontFamily: fontFamily,
     fontSize: 12,
-    color: CdsColors.grey850,
-    fontWeight: FontWeight.w300,
-    height: 1.15,
+    color: CdsColors.black,
+    fontWeight: regular,
+    height: 1.22,
     package: packageName,
   );
+
   /// caption2
   static const TextStyle overline = const TextStyle(
-    fontFamily: 'SpoqaHanSans',
+    fontFamily: fontFamily,
     fontSize: 10,
-    color: CdsColors.grey850,
-    fontWeight: FontWeight.w300,
-    height: 1.15,
+    color: CdsColors.black,
+    fontWeight: regular,
+    height: 1.26,
     package: packageName,
   );
+
   static const TextStyle button = const TextStyle(
-    fontFamily: 'SpoqaHanSans',
+    fontFamily: fontFamily,
     fontSize: 14,
-    fontWeight: FontWeight.w700,
+    fontWeight: semiBold,
     package: packageName,
   );
 

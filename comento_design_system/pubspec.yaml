@@ -1,6 +1,6 @@
 name: comento_design_system
 description: Comento Design System and UI components for Comento applications built on Flutter.
-version: 0.0.7
+version: 0.0.9
 homepage: https://comento.kr
 
 environment:
@@ -20,13 +20,13 @@ flutter:
   assets:
     - assets/images/icons/
   fonts:
-    - family: SpoqaHanSans
+    - family: Pretendard
       fonts:
-        - asset: assets/fonts/SpoqaHanSansBold.ttf
-          weight: 700
-        - asset: assets/fonts/SpoqaHanSansRegular.ttf
-          weight: 400
-        - asset: assets/fonts/SpoqaHanSansLight.ttf
+        - asset: assets/fonts/Pretendard-Light.otf
           weight: 300
-        - asset: assets/fonts/SpoqaHanSansThin.ttf
-          weight: 100
+        - asset: assets/fonts/Pretendard-Regular.otf
+          weight: 400
+        - asset: assets/fonts/Pretendard-Medium.otf
+          weight: 500
+        - asset: assets/fonts/Pretendard-SemiBold.otf
+          weight: 600

@@ -110,7 +110,7 @@ class _CdsUnderlinedTextFieldState extends State<CdsUnderlinedTextField> {
       validator: widget.validator,
       cursorColor: isValid ? CdsColors.grey400 : CdsColors.error,
       decoration: _getInputDecoration(),
-      style: CdsTextStyles.spoqaHanSansStyle,
+      style: CdsTextStyles.pretendardStyle,
     );
   }
 }

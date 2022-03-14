@@ -93,7 +93,7 @@ class _CdsReplyAreaState extends State<CdsReplyArea> {
             autocorrect: widget.autocorrect,
             cursorColor: CdsColors.grey400,
             decoration: _getInputDecoration(),
-            style: CdsTextStyles.spoqaHanSansStyle,
+            style: CdsTextStyles.pretendardStyle,
           ),
         ),
         IconButton(

@@ -27,3 +27,11 @@
 ## 0.0.7
 
 * Add alert dialog
+
+## 0.0.8
+
+* change colors
+
+## 0.0.9
+
+* change fonts

@@ -27,7 +27,8 @@ class CdsOutlinedLabelTextField extends StatefulWidget {
         super();
 
   @override
-  _CdsOutlinedLabelStateTextField createState() => _CdsOutlinedLabelStateTextField();
+  _CdsOutlinedLabelStateTextField createState() =>
+      _CdsOutlinedLabelStateTextField();
 }
 
 class _CdsOutlinedLabelStateTextField extends State<CdsOutlinedLabelTextField> {
@@ -123,7 +124,7 @@ class _CdsOutlinedLabelStateTextField extends State<CdsOutlinedLabelTextField> {
       validator: widget.validator,
       cursorColor: isValid ? CdsColors.comento : CdsColors.error,
       decoration: _getInputDecoration(),
-      style: CdsTextStyles.spoqaHanSansStyle,
+      style: CdsTextStyles.pretendardStyle,
     );
   }
 }
