@@ -124,7 +124,7 @@ class CdsElevatedIconButton extends StatelessWidget {
           textStyle: CdsTextStyles.button.merge(
             TextStyle(fontSize: 16),
           ),
-          padding: EdgeInsets.only(left: 17.25, right: 14),
+          padding: EdgeInsets.only(left: 16),
           minimumSize: const Size(76, 48),
         ).merge(_getButtonStyle(color)),
         child: isLoading
@@ -132,8 +132,8 @@ class CdsElevatedIconButton extends StatelessWidget {
             : Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  SizedBox(width: 11.5, height: 11.5, child: icon),
-                  SizedBox(width: 5.25),
+                  SizedBox(width: 24, height: 24, child: icon),
+                  SizedBox(width: 10),
                   Text(text),
                 ],
               ),
@@ -163,16 +163,16 @@ class CdsElevatedIconButton extends StatelessWidget {
           textStyle: CdsTextStyles.button.merge(
             TextStyle(fontSize: 16),
           ),
-          padding: EdgeInsets.only(left: 17.25, right: 14),
+          padding: EdgeInsets.only(left: 16),
           minimumSize: const Size(76, 48),
         ).merge(_getButtonStyle(color)),
         child: isLoading
             ? CdsThickCircularProgressIndicator.medium(color: color)
             : Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  SizedBox(width: 11.5, height: 11.5, child: icon),
-                  SizedBox(width: 5.25),
+                  SizedBox(width: 24, height: 24, child: icon),
+                  SizedBox(width: 10),
                   Text(text),
                 ],
               ),
@@ -189,17 +189,27 @@ class CdsElevatedIconButton extends StatelessWidget {
       );
 
   static ButtonStyle _getButtonStyle(CdsComponentColor color) {
-    switch (color) {
-      case CdsComponentColor.blue:
-        return _getBlueButtonStyle();
-      case CdsComponentColor.grey:
-        return _getGreyButtonStyle();
-      case CdsComponentColor.kakao:
-        return _getKakaoButtonStyle();
-      case CdsComponentColor.green:
-      default:
-        return _getGreenButtonStyle();
-    }
+    var defaultButtonStyle = _getDefaultButtonStyle();
+    return defaultButtonStyle.merge(
+      {
+        CdsComponentColor.blue: _getBlueButtonStyle(),
+        CdsComponentColor.grey: _getGreyButtonStyle(),
+        CdsComponentColor.green: _getGreenButtonStyle(),
+        CdsComponentColor.kakao: _getKakaoButtonStyle(),
+        CdsComponentColor.black: _getBlackButtonStyle(),
+      }[color],
+    );
+  }
+
+  static ButtonStyle _getDefaultButtonStyle() {
+    return ButtonStyle(
+      shape: MaterialStateProperty.all(
+        RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(8),
+        ),
+      ),
+      elevation: MaterialStateProperty.all(0),
+    );
   }
 
   static ButtonStyle _getGreenButtonStyle() {
@@ -212,12 +222,6 @@ class CdsElevatedIconButton extends StatelessWidget {
         if (states.contains(MaterialState.disabled)) return CdsColors.green100;
         return CdsColors.green600;
       }),
-      shape: MaterialStateProperty.all(
-        RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(CdsSizes.buttonRadius),
-        ),
-      ),
-      elevation: MaterialStateProperty.all(0),
       overlayColor: MaterialStateProperty.all(CdsColors.green800),
     );
   }
@@ -232,12 +236,6 @@ class CdsElevatedIconButton extends StatelessWidget {
         if (states.contains(MaterialState.disabled)) return CdsColors.grey000;
         return CdsColors.grey100;
       }),
-      shape: MaterialStateProperty.all(
-        RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(CdsSizes.buttonRadius),
-        ),
-      ),
-      elevation: MaterialStateProperty.all(0),
       overlayColor: MaterialStateProperty.all(CdsColors.grey200),
     );
   }
@@ -252,13 +250,21 @@ class CdsElevatedIconButton extends StatelessWidget {
         if (states.contains(MaterialState.disabled)) return CdsColors.grey000;
         return CdsColors.kakao;
       }),
-      shape: MaterialStateProperty.all(
-        RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(CdsSizes.buttonRadius),
-        ),
-      ),
-      elevation: MaterialStateProperty.all(0),
       overlayColor: MaterialStateProperty.all(CdsColors.yellow400),
+    );
+  }
+
+  static ButtonStyle _getBlackButtonStyle() {
+    return ButtonStyle(
+      foregroundColor: MaterialStateProperty.resolveWith((states) {
+        if (states.contains(MaterialState.disabled)) return CdsColors.grey200;
+        return CdsColors.white;
+      }),
+      backgroundColor: MaterialStateProperty.resolveWith((states) {
+        if (states.contains(MaterialState.disabled)) return CdsColors.grey850;
+        return CdsColors.black;
+      }),
+      overlayColor: MaterialStateProperty.all(CdsColors.grey600),
     );
   }
 
@@ -272,12 +278,6 @@ class CdsElevatedIconButton extends StatelessWidget {
         if (states.contains(MaterialState.disabled)) return CdsColors.blue100;
         return CdsColors.blue600;
       }),
-      shape: MaterialStateProperty.all(
-        RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(CdsSizes.buttonRadius),
-        ),
-      ),
-      elevation: MaterialStateProperty.all(0),
       overlayColor: MaterialStateProperty.all(CdsColors.blue800),
     );
   }

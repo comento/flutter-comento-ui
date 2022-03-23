@@ -105,7 +105,7 @@ class CdsTextStyles {
   static const TextStyle button = const TextStyle(
     fontFamily: fontFamily,
     fontSize: 14,
-    fontWeight: semiBold,
+    fontWeight: regular,
     package: packageName,
   );
 

@@ -142,7 +142,7 @@ class CdsElevatedButton extends StatelessWidget {
           textStyle: CdsTextStyles.button.merge(
             TextStyle(fontSize: 16),
           ),
-          padding: EdgeInsets.symmetric(horizontal: 14),
+          padding: EdgeInsets.symmetric(horizontal: 18),
           minimumSize: const Size(76, 48),
         ).merge(_getButtonStyle(color)),
       );
@@ -173,7 +173,7 @@ class CdsElevatedButton extends StatelessWidget {
           textStyle: CdsTextStyles.button.merge(
             TextStyle(fontSize: 16),
           ),
-          padding: EdgeInsets.symmetric(horizontal: 14),
+          padding: EdgeInsets.symmetric(horizontal: 18),
           minimumSize: const Size(double.infinity, 48),
         ).merge(_getButtonStyle(color)),
       );
@@ -189,15 +189,25 @@ class CdsElevatedButton extends StatelessWidget {
       );
 
   static ButtonStyle _getButtonStyle(CdsComponentColor color) {
-    switch (color) {
-      case CdsComponentColor.blue:
-        return _getBlueButtonStyle();
-      case CdsComponentColor.grey:
-        return _getGreyButtonStyle();
-      case CdsComponentColor.green:
-      default:
-        return _getGreenButtonStyle();
-    }
+    var defaultButtonStyle = _getDefaultButtonStyle();
+    return defaultButtonStyle.merge(
+      {
+        CdsComponentColor.blue: _getBlueButtonStyle(),
+        CdsComponentColor.grey: _getGreyButtonStyle(),
+        CdsComponentColor.green: _getGreenButtonStyle(),
+      }[color],
+    );
+  }
+
+  static ButtonStyle _getDefaultButtonStyle() {
+    return ButtonStyle(
+      shape: MaterialStateProperty.all(
+        RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(8),
+        ),
+      ),
+      elevation: MaterialStateProperty.all(0),
+    );
   }
 
   static ButtonStyle _getGreenButtonStyle() {
@@ -210,12 +220,6 @@ class CdsElevatedButton extends StatelessWidget {
         if (states.contains(MaterialState.disabled)) return CdsColors.green100;
         return CdsColors.green600;
       }),
-      shape: MaterialStateProperty.all(
-        RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(CdsSizes.buttonRadius),
-        ),
-      ),
-      elevation: MaterialStateProperty.all(0),
       overlayColor: MaterialStateProperty.all(CdsColors.green800),
     );
   }
@@ -230,12 +234,6 @@ class CdsElevatedButton extends StatelessWidget {
         if (states.contains(MaterialState.disabled)) return CdsColors.grey000;
         return CdsColors.grey100;
       }),
-      shape: MaterialStateProperty.all(
-        RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(CdsSizes.buttonRadius),
-        ),
-      ),
-      elevation: MaterialStateProperty.all(0),
       overlayColor: MaterialStateProperty.all(CdsColors.grey200),
     );
   }
@@ -250,12 +248,6 @@ class CdsElevatedButton extends StatelessWidget {
         if (states.contains(MaterialState.disabled)) return CdsColors.blue100;
         return CdsColors.blue600;
       }),
-      shape: MaterialStateProperty.all(
-        RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(CdsSizes.buttonRadius),
-        ),
-      ),
-      elevation: MaterialStateProperty.all(0),
       overlayColor: MaterialStateProperty.all(CdsColors.blue800),
     );
   }

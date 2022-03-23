@@ -35,3 +35,7 @@
 ## 0.0.9
 
 * change fonts
+
+## 0.0.10
+
+* change button
