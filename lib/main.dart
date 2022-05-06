@@ -21,6 +21,7 @@ import 'package:flutter_comento_ui/text_field/text_field.dart';
 import 'package:storybook_flutter/storybook_flutter.dart';
 
 import 'elevated_icon_button/elevated_icon_button_large.dart';
+import 'icons/icons.dart';
 import 'rating_button/rating_button.dart';
 
 void main() {
@@ -113,6 +114,7 @@ class MyApp extends StatelessWidget {
           name: 'Thick Circular Progress indicator',
           builder: (_, k) => ThickCircularIndicator(k),
         ),
+        Story(name: 'CustomIcons', builder: (_, k) => Icons(k)),
       ],
     );
   }

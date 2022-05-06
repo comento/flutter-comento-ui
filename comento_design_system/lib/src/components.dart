@@ -24,3 +24,5 @@ export 'components/inputs/cds_reply_area.dart';
 // export 'components/tooltips/cds_tooltip.dart';
 // modals
 export 'components/modals/cds_alert_dialog.dart';
+// icons
+export 'components/icons/custom_icons.dart';
