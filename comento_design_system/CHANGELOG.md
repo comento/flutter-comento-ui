@@ -39,3 +39,7 @@
 ## 0.0.10
 
 * change button
+
+## 0.0.11
+
+* custom icons
