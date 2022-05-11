@@ -43,3 +43,7 @@
 ## 0.0.11
 
 * custom icons
+
+## 0.0.12
+
+* custom icons
