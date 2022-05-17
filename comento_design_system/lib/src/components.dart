@@ -17,6 +17,7 @@ export 'components/indicators/cds_thick_circular_progress_indicator.dart';
 export 'components/inputs/cds_outlined_text_field.dart';
 export 'components/inputs/cds_outlined_label_text_field.dart';
 export 'components/inputs/cds_underlined_text_field.dart';
+export 'components/inputs/cds_search_text_field.dart';
 export 'components/inputs/cds_text_area.dart';
 export 'components/inputs/cds_outlined_text_area.dart';
 export 'components/inputs/cds_reply_area.dart';
@@ -26,3 +27,5 @@ export 'components/inputs/cds_reply_area.dart';
 export 'components/modals/cds_alert_dialog.dart';
 // icons
 export 'components/icons/custom_icons.dart';
+// chips
+export 'components/chips/cds_clickable_chip.dart';

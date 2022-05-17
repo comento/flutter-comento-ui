@@ -157,7 +157,7 @@ class CdsTextButton extends StatelessWidget {
       }),
       shape: MaterialStateProperty.all(
         RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(CdsSizes.buttonRadius),
+          borderRadius: BorderRadius.circular(CdsUI.buttonRadius),
         ),
       ),
     );
@@ -174,7 +174,7 @@ class CdsTextButton extends StatelessWidget {
       }),
       shape: MaterialStateProperty.all(
         RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(CdsSizes.buttonRadius),
+          borderRadius: BorderRadius.circular(CdsUI.buttonRadius),
         ),
       ),
     );
@@ -191,7 +191,7 @@ class CdsTextButton extends StatelessWidget {
       }),
       shape: MaterialStateProperty.all(
         RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(CdsSizes.buttonRadius),
+          borderRadius: BorderRadius.circular(CdsUI.buttonRadius),
         ),
       ),
     );
@@ -208,7 +208,7 @@ class CdsTextButton extends StatelessWidget {
       }),
       shape: MaterialStateProperty.all(
         RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(CdsSizes.buttonRadius),
+          borderRadius: BorderRadius.circular(CdsUI.buttonRadius),
         ),
       ),
     );

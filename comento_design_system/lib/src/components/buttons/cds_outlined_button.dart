@@ -184,7 +184,7 @@ class CdsOutlinedButton extends StatelessWidget {
       }),
       shape: MaterialStateProperty.all(
         RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(CdsSizes.buttonRadius),
+          borderRadius: BorderRadius.circular(CdsUI.buttonRadius),
         ),
       ),
       backgroundColor: MaterialStateProperty.all(CdsColors.white),
@@ -208,7 +208,7 @@ class CdsOutlinedButton extends StatelessWidget {
       }),
       shape: MaterialStateProperty.all(
         RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(CdsSizes.buttonRadius),
+          borderRadius: BorderRadius.circular(CdsUI.buttonRadius),
         ),
       ),
       backgroundColor: MaterialStateProperty.all(CdsColors.white),
@@ -232,7 +232,7 @@ class CdsOutlinedButton extends StatelessWidget {
       }),
       shape: MaterialStateProperty.all(
         RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(CdsSizes.buttonRadius),
+          borderRadius: BorderRadius.circular(CdsUI.buttonRadius),
         ),
       ),
       backgroundColor: MaterialStateProperty.all(CdsColors.white),
@@ -256,7 +256,7 @@ class CdsOutlinedButton extends StatelessWidget {
       }),
       shape: MaterialStateProperty.all(
         RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(CdsSizes.buttonRadius),
+          borderRadius: BorderRadius.circular(CdsUI.buttonRadius),
         ),
       ),
       backgroundColor: MaterialStateProperty.all(CdsColors.white),

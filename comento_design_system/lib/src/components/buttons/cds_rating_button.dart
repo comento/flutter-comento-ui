@@ -63,7 +63,7 @@ class CdsRatingButton extends StatelessWidget {
       foregroundColor: MaterialStateProperty.all(CdsColors.green600),
       shape: MaterialStateProperty.all(
         RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(CdsSizes.buttonRadius),
+          borderRadius: BorderRadius.circular(CdsUI.buttonRadius),
         ),
       ),
       elevation: MaterialStateProperty.all(0),
@@ -76,7 +76,7 @@ class CdsRatingButton extends StatelessWidget {
       foregroundColor: MaterialStateProperty.all(CdsColors.grey400),
       shape: MaterialStateProperty.all(
         RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(CdsSizes.buttonRadius),
+          borderRadius: BorderRadius.circular(CdsUI.buttonRadius),
         ),
       ),
       elevation: MaterialStateProperty.all(0),
@@ -89,7 +89,7 @@ class CdsRatingButton extends StatelessWidget {
       foregroundColor: MaterialStateProperty.all(CdsColors.red600),
       shape: MaterialStateProperty.all(
         RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(CdsSizes.buttonRadius),
+          borderRadius: BorderRadius.circular(CdsUI.buttonRadius),
         ),
       ),
       elevation: MaterialStateProperty.all(0),

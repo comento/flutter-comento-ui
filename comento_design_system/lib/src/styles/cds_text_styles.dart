@@ -19,6 +19,11 @@ class CdsTextStyles {
     package: packageName,
   );
 
+  static const TextStyle noHeight = const TextStyle(
+    height: 1.0,
+    package: packageName,
+  );
+
   static const TextStyle headline1 = const TextStyle(
     fontFamily: fontFamily,
     fontSize: 32,
