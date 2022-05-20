@@ -24,6 +24,8 @@ class CdsClickableChip extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+      onTap: onPressed,
+      onLongPress: onLongPress,
       child: Container(
         padding: _buildPadding(),
         height: _buildHeight(),

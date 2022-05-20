@@ -22,7 +22,7 @@ class CdsSearchTextField extends StatefulWidget {
     this.onSearch,
     this.autovalidateMode = AutovalidateMode.onUserInteraction,
     this.validator,
-    this.autocorrect = true,
+    this.autocorrect = false,
     this.obscureText = false,
     this.hintText,
     this.initialFocus = false,

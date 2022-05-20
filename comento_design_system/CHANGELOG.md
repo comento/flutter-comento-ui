@@ -47,3 +47,11 @@
 ## 0.0.12
 
 * custom icons
+
+## 0.0.13
+
+* search text field
+
+## 0.0.14
+
+* circular progress indicator

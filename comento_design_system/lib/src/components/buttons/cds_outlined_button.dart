@@ -196,7 +196,7 @@ class CdsOutlinedButton extends StatelessWidget {
     return ButtonStyle(
       foregroundColor: MaterialStateProperty.resolveWith((states) {
         if (states.contains(MaterialState.disabled)) return CdsColors.grey100;
-        return CdsColors.grey500;
+        return CdsColors.grey600;
       }),
       side: MaterialStateProperty.resolveWith((states) {
         if (states.contains(MaterialState.disabled))

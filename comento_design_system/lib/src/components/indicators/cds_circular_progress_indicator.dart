@@ -18,7 +18,7 @@ class CdsCircularProgressIndicator extends StatelessWidget {
         return CdsColors.grey500;
       case CdsComponentColor.green:
       default:
-        return CdsColors.green600;
+        return CdsColors.blue600;
     }
   }
 
@@ -32,7 +32,7 @@ class CdsCircularProgressIndicator extends StatelessWidget {
         return CdsColors.grey200;
       case CdsComponentColor.green:
       default:
-        return CdsColors.green100;
+        return CdsColors.blue100;
     }
   }
 
@@ -49,7 +49,7 @@ class CdsCircularProgressIndicator extends StatelessWidget {
       CdsCircularProgressIndicator._(
         progressColor: _getProgressColor(color),
         backgroundColor: _getBackgroundColor(color),
-        size: 12,
+        size: 12 - 3,
         strokeWidth: 1.5,
       );
 
@@ -59,8 +59,8 @@ class CdsCircularProgressIndicator extends StatelessWidget {
       CdsCircularProgressIndicator._(
         progressColor: _getProgressColor(color),
         backgroundColor: _getBackgroundColor(color),
-        size: 20,
-        strokeWidth: 2.5,
+        size: 16 - 4,
+        strokeWidth: 2,
       );
 
   factory CdsCircularProgressIndicator.large({
@@ -69,18 +69,30 @@ class CdsCircularProgressIndicator extends StatelessWidget {
       CdsCircularProgressIndicator._(
         progressColor: _getProgressColor(color),
         backgroundColor: _getBackgroundColor(color),
-        size: 28,
-        strokeWidth: 3.5,
+        size: 20 - 6,
+        strokeWidth: 3,
+      );
+
+  factory CdsCircularProgressIndicator.xLarge({
+    CdsComponentColor color = CdsComponentColor.green,
+  }) =>
+      CdsCircularProgressIndicator._(
+        progressColor: _getProgressColor(color),
+        backgroundColor: _getBackgroundColor(color),
+        size: 24 - 6,
+        strokeWidth: 3,
       );
 
   @override
-  Widget build(BuildContext context) => SizedBox(
-        height: size,
-        width: size,
-        child: CircularProgressIndicator(
-          color: progressColor,
-          backgroundColor: backgroundColor,
-          strokeWidth: strokeWidth,
+  Widget build(BuildContext context) => Center(
+        child: SizedBox(
+          height: size,
+          width: size,
+          child: CircularProgressIndicator(
+            color: progressColor,
+            backgroundColor: backgroundColor,
+            strokeWidth: strokeWidth,
+          ),
         ),
       );
 }
