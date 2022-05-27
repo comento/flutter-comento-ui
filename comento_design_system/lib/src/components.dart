@@ -2,6 +2,7 @@
 export 'components/component_enums.dart';
 // appBars
 export 'components/app_bars/cds_app_bar.dart';
+export 'components/app_bars/cds_sub_app_bar.dart';
 // avatars
 export 'components/avatars/cds_avatar.dart';
 // buttons

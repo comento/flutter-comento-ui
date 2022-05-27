@@ -55,3 +55,7 @@
 ## 0.0.14
 
 * circular progress indicator
+
+## 0.0.15
+
+* sub app bar
