@@ -63,3 +63,7 @@
 ## 0.0.16
 
 * progress bar
+
+## 0.0.17
+
+* dimmer

@@ -23,6 +23,7 @@ class CdsColors {
 // color
   static const Color black = const Color(0xFF000000);
   static const Color white = const Color(0xFFFFFFFF);
+  static final Color dimmer = const Color(0xFF000000).withOpacity(0.6);
 
   static const Color grey900 = const Color(0xFF040505);
   static const Color grey850 = const Color(0xFF202325);
