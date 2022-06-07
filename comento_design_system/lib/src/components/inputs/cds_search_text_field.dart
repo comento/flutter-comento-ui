@@ -83,6 +83,8 @@ class _CdsSearchTextFieldState extends State<CdsSearchTextField> {
           if (widget.onChanged == null) return;
           return widget.onChanged!(value);
         },
+        textInputAction: TextInputAction.go,
+        onFieldSubmitted: widget.onSearch == null ? null : widget.onSearch!,
         autovalidateMode: widget.autovalidateMode,
         autocorrect: widget.autocorrect,
         obscureText: widget.obscureText,
