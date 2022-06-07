@@ -67,3 +67,7 @@
 ## 0.0.17
 
 * dimmer
+
+## 0.0.18
+
+* search textField testInput
