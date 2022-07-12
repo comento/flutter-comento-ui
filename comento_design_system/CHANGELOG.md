@@ -79,3 +79,7 @@
 ## 0.0.20
 
 * ui max fix
+
+## 0.0.21
+
+* icon plus_2xl

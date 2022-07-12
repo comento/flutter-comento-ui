@@ -10,7 +10,7 @@ class Icons extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         IconButton(
-          icon: Icon(CustomIcons.edu_large_line),
+          icon: Icon(CustomIcons.icon_edu_large_line),
           onPressed: () => null,
         ),
       ],
