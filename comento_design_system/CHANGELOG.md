@@ -84,6 +84,6 @@
 
 * icon plus_2xl
 
-## 0.0.21
+## 0.0.22
 
 * icon_analytics_medium_line...
