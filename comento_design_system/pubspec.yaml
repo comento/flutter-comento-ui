@@ -1,6 +1,6 @@
 name: comento_design_system
 description: Comento Design System and UI components for Comento applications built on Flutter.
-version: 0.0.21
+version: 0.0.22
 homepage: https://comento.kr
 
 environment:
