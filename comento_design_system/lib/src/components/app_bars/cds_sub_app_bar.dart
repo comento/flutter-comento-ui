@@ -16,6 +16,7 @@ class CdsSubAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(top: CdsUI.headerHeight),
+      width: double.infinity,
       height: CdsUI.subHeaderHeight,
       decoration: BoxDecoration(
         color: CdsColors.white,
