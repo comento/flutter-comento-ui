@@ -87,3 +87,8 @@
 ## 0.0.22
 
 * icon_analytics_medium_line...
+
+## 0.0.23
+
+* subAppBar width
+* toast

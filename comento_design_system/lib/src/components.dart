@@ -28,5 +28,8 @@ export 'components/inputs/cds_reply_area.dart';
 export 'components/modals/cds_alert_dialog.dart';
 // icons
 export 'components/icons/custom_icons.dart';
+export 'components/icons/custom_icons_helper.dart';
 // chips
 export 'components/chips/cds_clickable_chip.dart';
+// toasts
+export 'components/toast/cds_toast.dart';
