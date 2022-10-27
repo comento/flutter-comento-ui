@@ -92,3 +92,7 @@
 
 * subAppBar width
 * toast
+
+## 0.0.24
+
+* icon fix
