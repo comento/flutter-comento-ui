@@ -88,10 +88,12 @@ class CdsCircularProgressIndicator extends StatelessWidget {
         child: SizedBox(
           height: size,
           width: size,
-          child: CircularProgressIndicator(
-            color: progressColor,
-            backgroundColor: backgroundColor,
-            strokeWidth: strokeWidth,
+          child: RepaintBoundary(
+            child: CircularProgressIndicator(
+              color: progressColor,
+              backgroundColor: backgroundColor,
+              strokeWidth: strokeWidth,
+            ),
           ),
         ),
       );
