@@ -25,7 +25,8 @@ export 'components/inputs/cds_reply_area.dart';
 // tooltips
 // export 'components/tooltips/cds_tooltip.dart';
 // modals
-export 'components/modals/cds_alert_dialog.dart';
+export 'components/modals/cds_alert_modal.dart';
+export 'components/modals/cds_permission_modal.dart';
 // icons
 export 'components/icons/custom_icons.dart';
 export 'components/icons/custom_icons_helper.dart';
