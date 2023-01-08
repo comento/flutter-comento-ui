@@ -1,20 +1,16 @@
 import 'package:comento_design_system/comento_design_system.dart';
 import 'package:flutter/material.dart';
 
-class CdsClickableChip extends StatelessWidget {
+class CdsChip extends StatelessWidget {
   final String text;
-  final VoidCallback? onPressed;
-  final VoidCallback? onLongPress;
   final Color color;
   final Color? textColor;
   final CdsSize size;
   final CdsType type;
 
-  CdsClickableChip(
+  CdsChip(
     this.text, {
     Key? key,
-    required this.onPressed,
-    this.onLongPress,
     this.size = CdsSize.medium,
     this.color = CdsColors.primary,
     this.textColor,
@@ -24,8 +20,6 @@ class CdsClickableChip extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: onPressed,
-      onLongPress: onLongPress,
       child: Container(
         padding: _buildPadding(),
         height: _buildHeight(),
@@ -52,7 +46,7 @@ class CdsClickableChip extends StatelessWidget {
         color: textColor ?? color,
         fontSize: _buildFontSize(),
         fontWeight: FontWeight.w400,
-        height: size == CdsSize.small ? 1 : 1.25,
+        height: size == CdsSize.small ? 1.1 : 1.25,
       ),
     );
   }
@@ -107,13 +101,13 @@ class CdsClickableChip extends StatelessWidget {
   BorderRadius _buildBorderRadius() {
     switch (size) {
       case CdsSize.small:
-        return BorderRadius.circular(8);
+        return BorderRadius.circular(4);
       case CdsSize.medium:
-        return BorderRadius.circular(12);
+        return BorderRadius.circular(6);
       case CdsSize.large:
-        return BorderRadius.circular(15);
+        return BorderRadius.circular(6);
       case CdsSize.xLarge:
-        return BorderRadius.circular(17);
+        return BorderRadius.circular(8);
     }
   }
 
@@ -121,22 +115,22 @@ class CdsClickableChip extends StatelessWidget {
     switch (size) {
       case CdsSize.small:
         return EdgeInsets.symmetric(
-          horizontal: 6,
+          horizontal: 4,
           vertical: 1.5,
         );
       case CdsSize.medium:
         return EdgeInsets.symmetric(
-          horizontal: 10,
+          horizontal: 8,
           vertical: 4.5,
         );
       case CdsSize.large:
         return EdgeInsets.symmetric(
-          horizontal: 12,
+          horizontal: 10,
           vertical: 5,
         );
       case CdsSize.xLarge:
         return EdgeInsets.symmetric(
-          horizontal: 14,
+          horizontal: 12,
           vertical: 5,
         );
     }

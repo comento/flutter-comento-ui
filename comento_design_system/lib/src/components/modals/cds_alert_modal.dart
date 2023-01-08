@@ -15,6 +15,7 @@ class CdsAlertModal extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.all(Radius.circular(10.0)),
       ),
+      insetPadding: EdgeInsets.symmetric(horizontal: 24),
       elevation: 0,
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -26,22 +27,26 @@ class CdsAlertModal extends StatelessWidget {
           ),
           SizedBox(height: 25),
           _buildDivider(),
-          SizedBox(
-            height: 48,
-            child: _buildAction(context),
-          ),
+          _buildAction(context),
         ],
       ),
     );
   }
 
   Widget _buildAction(BuildContext context) {
-    return Expanded(
-      child: CdsTextButton.large(
-        text: '확인',
-        color: CdsComponentColor.grey,
-        onPressed: () => Navigator.of(context).pop(),
-      ),
+    return Row(
+      children: [
+        Expanded(
+          child: CdsTextButton.large(
+            text: '확인',
+            color: CdsComponentColor.grey,
+            onPressed: () {
+              Navigator.of(context).pop();
+              if (onConfirmed != null) onConfirmed!();
+            },
+          ),
+        ),
+      ],
     );
   }
 

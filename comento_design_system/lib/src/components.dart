@@ -31,6 +31,7 @@ export 'components/modals/cds_permission_modal.dart';
 export 'components/icons/custom_icons.dart';
 export 'components/icons/custom_icons_helper.dart';
 // chips
+export 'components/chips/cds_chip.dart';
 export 'components/chips/cds_clickable_chip.dart';
 // toasts
 export 'components/toast/cds_toast.dart';

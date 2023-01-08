@@ -20,6 +20,7 @@ class CdsPermissionModal extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.all(Radius.circular(10.0)),
       ),
+      insetPadding: EdgeInsets.symmetric(horizontal: 24),
       elevation: 0,
       child: Column(
         mainAxisSize: MainAxisSize.min,

@@ -24,32 +24,40 @@ class CdsOutlinedButton extends StatelessWidget {
     Clip clipBehavior = Clip.none,
     CdsComponentColor color = CdsComponentColor.green,
     required String text,
+    Widget? icon,
+    double? iconMargin,
     bool isEnabled = true,
     bool isLoading = false,
-  }) =>
-      CdsOutlinedButton._(
-        key: key,
-        onPressed: isEnabled
-            ? isLoading
-                ? () {}
-                : onPressed
-            : null,
-        onLongPress: onLongPress,
-        clipBehavior: clipBehavior,
-        child: isLoading
-            ? CdsCircularProgressIndicator.small(color: color)
-            : Text(text),
-        style: OutlinedButton.styleFrom(
-          textStyle: CdsTextStyles.button.merge(
-            TextStyle(
-              fontSize: 10,
-              fontWeight: FontWeight.w400,
-            ),
+  }) {
+    Widget printChild = _buildChild(
+      isLoading: isLoading,
+      loadingIndicator: CdsCircularProgressIndicator.small(color: color),
+      icon: icon,
+      text: text,
+      iconMargin: iconMargin,
+    );
+    return CdsOutlinedButton._(
+      key: key,
+      onPressed: isEnabled
+          ? isLoading
+              ? () {}
+              : onPressed
+          : null,
+      onLongPress: onLongPress,
+      clipBehavior: clipBehavior,
+      child: printChild,
+      style: OutlinedButton.styleFrom(
+        textStyle: CdsTextStyles.button.merge(
+          TextStyle(
+            fontSize: 10,
+            fontWeight: FontWeight.w400,
           ),
-          padding: EdgeInsets.symmetric(horizontal: 8),
-          minimumSize: const Size(36, 24),
-        ).merge(_getButtonStyle(color)),
-      );
+        ),
+        padding: EdgeInsets.symmetric(horizontal: 8),
+        minimumSize: const Size(36, 24),
+      ).merge(_getButtonStyle(color)),
+    );
+  }
 
   factory CdsOutlinedButton.medium({
     Key? key,
@@ -58,29 +66,76 @@ class CdsOutlinedButton extends StatelessWidget {
     Clip clipBehavior = Clip.none,
     CdsComponentColor color = CdsComponentColor.green,
     required String text,
+    Widget? icon,
+    double? iconMargin,
     bool isEnabled = true,
     bool isLoading = false,
-  }) =>
-      CdsOutlinedButton._(
-        key: key,
-        onPressed: isEnabled
-            ? isLoading
-                ? () {}
-                : onPressed
-            : null,
-        onLongPress: onLongPress,
-        clipBehavior: clipBehavior,
-        child: isLoading
-            ? CdsCircularProgressIndicator.small(color: color)
-            : Text(text),
-        style: OutlinedButton.styleFrom(
-          textStyle: CdsTextStyles.button.merge(
-            TextStyle(fontSize: 14),
-          ),
-          padding: EdgeInsets.symmetric(horizontal: 12),
-          minimumSize: const Size(60, 36),
-        ).merge(_getButtonStyle(color)),
-      );
+  }) {
+    Widget printChild = _buildChild(
+      isLoading: isLoading,
+      loadingIndicator: CdsCircularProgressIndicator.small(color: color),
+      icon: icon,
+      text: text,
+      iconMargin: iconMargin,
+    );
+    return CdsOutlinedButton._(
+      key: key,
+      onPressed: isEnabled
+          ? isLoading
+              ? () {}
+              : onPressed
+          : null,
+      onLongPress: onLongPress,
+      clipBehavior: clipBehavior,
+      child: printChild,
+      style: OutlinedButton.styleFrom(
+        textStyle: CdsTextStyles.button.merge(
+          TextStyle(fontSize: 14),
+        ),
+        padding: EdgeInsets.symmetric(horizontal: 12),
+        minimumSize: const Size(60, 36),
+      ).merge(_getButtonStyle(color)),
+    );
+  }
+
+  factory CdsOutlinedButton.mediumFull({
+    Key? key,
+    required VoidCallback? onPressed,
+    VoidCallback? onLongPress,
+    Clip clipBehavior = Clip.none,
+    CdsComponentColor color = CdsComponentColor.green,
+    required String text,
+    Widget? icon,
+    double? iconMargin,
+    bool isEnabled = true,
+    bool isLoading = false,
+  }) {
+    Widget printChild = _buildChild(
+      isLoading: isLoading,
+      loadingIndicator: CdsCircularProgressIndicator.small(color: color),
+      icon: icon,
+      text: text,
+      iconMargin: iconMargin,
+    );
+    return CdsOutlinedButton._(
+      key: key,
+      onPressed: isEnabled
+          ? isLoading
+              ? () {}
+              : onPressed
+          : null,
+      onLongPress: onLongPress,
+      clipBehavior: clipBehavior,
+      child: printChild,
+      style: OutlinedButton.styleFrom(
+        textStyle: CdsTextStyles.button.merge(
+          TextStyle(fontSize: 14),
+        ),
+        padding: EdgeInsets.symmetric(horizontal: 12),
+        minimumSize: const Size(double.infinity, 36),
+      ).merge(_getButtonStyle(color)),
+    );
+  }
 
   factory CdsOutlinedButton.large({
     Key? key,
@@ -89,29 +144,37 @@ class CdsOutlinedButton extends StatelessWidget {
     Clip clipBehavior = Clip.none,
     CdsComponentColor color = CdsComponentColor.green,
     required String text,
+    Widget? icon,
+    double? iconMargin,
     bool isEnabled = true,
     bool isLoading = false,
-  }) =>
-      CdsOutlinedButton._(
-        key: key,
-        onPressed: isEnabled
-            ? isLoading
-                ? () {}
-                : onPressed
-            : null,
-        onLongPress: onLongPress,
-        clipBehavior: clipBehavior,
-        child: isLoading
-            ? CdsCircularProgressIndicator.medium(color: color)
-            : Text(text),
-        style: OutlinedButton.styleFrom(
-          textStyle: CdsTextStyles.button.merge(
-            TextStyle(fontSize: 16),
-          ),
-          padding: EdgeInsets.symmetric(horizontal: 14),
-          minimumSize: const Size(76, 48),
-        ).merge(_getButtonStyle(color)),
-      );
+  }) {
+    Widget printChild = _buildChild(
+      isLoading: isLoading,
+      loadingIndicator: CdsCircularProgressIndicator.medium(color: color),
+      icon: icon,
+      text: text,
+      iconMargin: iconMargin,
+    );
+    return CdsOutlinedButton._(
+      key: key,
+      onPressed: isEnabled
+          ? isLoading
+              ? () {}
+              : onPressed
+          : null,
+      onLongPress: onLongPress,
+      clipBehavior: clipBehavior,
+      child: printChild,
+      style: OutlinedButton.styleFrom(
+        textStyle: CdsTextStyles.button.merge(
+          TextStyle(fontSize: 16),
+        ),
+        padding: EdgeInsets.symmetric(horizontal: 14),
+        minimumSize: const Size(76, 48),
+      ).merge(_getButtonStyle(color)),
+    );
+  }
 
   factory CdsOutlinedButton.largeFull({
     Key? key,
@@ -120,29 +183,59 @@ class CdsOutlinedButton extends StatelessWidget {
     Clip clipBehavior = Clip.none,
     CdsComponentColor color = CdsComponentColor.green,
     required String text,
+    Widget? icon,
+    double? iconMargin,
     bool isEnabled = true,
     bool isLoading = false,
-  }) =>
-      CdsOutlinedButton._(
-        key: key,
-        onPressed: isEnabled
-            ? isLoading
-                ? () {}
-                : onPressed
-            : null,
-        onLongPress: onLongPress,
-        clipBehavior: clipBehavior,
-        child: isLoading
-            ? CdsCircularProgressIndicator.medium(color: color)
-            : Text(text),
-        style: OutlinedButton.styleFrom(
-          textStyle: CdsTextStyles.button.merge(
-            TextStyle(fontSize: 16),
-          ),
-          padding: EdgeInsets.symmetric(horizontal: 14),
-          minimumSize: const Size(double.infinity, 48),
-        ).merge(_getButtonStyle(color)),
-      );
+  }) {
+    Widget printChild = _buildChild(
+      isLoading: isLoading,
+      loadingIndicator: CdsCircularProgressIndicator.medium(color: color),
+      icon: icon,
+      text: text,
+      iconMargin: iconMargin,
+    );
+    return CdsOutlinedButton._(
+      key: key,
+      onPressed: isEnabled
+          ? isLoading
+              ? () {}
+              : onPressed
+          : null,
+      onLongPress: onLongPress,
+      clipBehavior: clipBehavior,
+      child: printChild,
+      style: OutlinedButton.styleFrom(
+        textStyle: CdsTextStyles.button.merge(
+          TextStyle(fontSize: 16),
+        ),
+        padding: EdgeInsets.symmetric(horizontal: 14),
+        minimumSize: const Size(double.infinity, 48),
+      ).merge(_getButtonStyle(color)),
+    );
+  }
+
+  static Widget _buildChild({
+    required bool isLoading,
+    required Widget loadingIndicator,
+    Widget? icon,
+    required String text,
+    double? iconMargin,
+  }) {
+    Widget printChild = isLoading
+        ? loadingIndicator
+        : icon != null
+            ? Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  icon,
+                  SizedBox(width: iconMargin),
+                  Text(text),
+                ],
+              )
+            : Text(text);
+    return printChild;
+  }
 
   @override
   Widget build(BuildContext context) => OutlinedButton(
@@ -170,6 +263,7 @@ class CdsOutlinedButton extends StatelessWidget {
 
   static ButtonStyle _getGreenButtonStyle() {
     return ButtonStyle(
+      tapTargetSize: MaterialTapTargetSize.shrinkWrap,
       foregroundColor: MaterialStateProperty.resolveWith((states) {
         if (states.contains(MaterialState.disabled)) return CdsColors.green100;
         return CdsColors.green600;
@@ -194,6 +288,7 @@ class CdsOutlinedButton extends StatelessWidget {
 
   static ButtonStyle _getGreyButtonStyle() {
     return ButtonStyle(
+      tapTargetSize: MaterialTapTargetSize.shrinkWrap,
       foregroundColor: MaterialStateProperty.resolveWith((states) {
         if (states.contains(MaterialState.disabled)) return CdsColors.grey100;
         return CdsColors.grey600;
@@ -218,6 +313,7 @@ class CdsOutlinedButton extends StatelessWidget {
 
   static ButtonStyle _getBlueButtonStyle() {
     return ButtonStyle(
+      tapTargetSize: MaterialTapTargetSize.shrinkWrap,
       foregroundColor: MaterialStateProperty.resolveWith((states) {
         if (states.contains(MaterialState.disabled)) return CdsColors.blue100;
         return CdsColors.blue600;
@@ -242,6 +338,7 @@ class CdsOutlinedButton extends StatelessWidget {
 
   static ButtonStyle _getRedButtonStyle() {
     return ButtonStyle(
+      tapTargetSize: MaterialTapTargetSize.shrinkWrap,
       foregroundColor: MaterialStateProperty.resolveWith((states) {
         if (states.contains(MaterialState.disabled)) return CdsColors.red100;
         return CdsColors.red600;
