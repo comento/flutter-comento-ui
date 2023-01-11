@@ -21,7 +21,8 @@ class CdsToast {
     required String message,
     CdsToastType? type = CdsToastType.basic,
     CdsToastPosition? position = CdsToastPosition.top,
-    IconData? icon,
+    IconData? prefixIcon,
+    Widget? suffix,
     Duration? duration = const Duration(milliseconds: 3000),
     Color? backgroundColor,
     Color? color,
@@ -30,7 +31,8 @@ class CdsToast {
       _buildContent(
         message: message,
         type: type,
-        icon: icon,
+        prefixIcon: prefixIcon,
+        suffix: suffix,
         backgroundColor: backgroundColor,
         color: color,
       ),
@@ -103,41 +105,48 @@ class CdsToast {
 
   static Widget _buildContent({
     required String message,
-    IconData? icon,
+    IconData? prefixIcon,
+    Widget? suffix,
     CdsToastType? type,
     Color? backgroundColor,
     Color? color,
   }) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
-      decoration: BoxDecoration(
-        color: _backgroundColor(type, backgroundColor),
-        borderRadius: BorderRadius.circular(8.0),
-      ),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          if (icon != null)
-            Container(
-              margin: EdgeInsets.only(right: 4.0),
-              width: 24.0,
-              height: 24.0,
-              child: Icon(
-                icon,
-                color: _color(color),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: CdsUI.widthPadding),
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+        decoration: BoxDecoration(
+          color: _backgroundColor(type, backgroundColor),
+          borderRadius: BorderRadius.circular(8.0),
+        ),
+        child: Row(
+          mainAxisSize: MainAxisSize.max,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            if (prefixIcon != null)
+              Container(
+                margin: EdgeInsets.only(right: 4.0),
+                width: 24.0,
+                height: 24.0,
+                child: Icon(
+                  prefixIcon,
+                  color: _color(color),
+                ),
+              ),
+            Expanded(
+              child: Container(
+                margin: EdgeInsets.only(bottom: 2.0),
+                child: Text(
+                  message,
+                  style: CdsTextStyles.bodyText2.merge(
+                    TextStyle(color: _color(color)),
+                  ),
+                ),
               ),
             ),
-          Container(
-            margin: EdgeInsets.only(bottom: 2.0),
-            child: Text(
-              message,
-              style: CdsTextStyles.bodyText2.merge(
-                TextStyle(color: _color(color)),
-              ),
-            ),
-          ),
-        ],
+            if (suffix != null) suffix,
+          ],
+        ),
       ),
     );
   }
