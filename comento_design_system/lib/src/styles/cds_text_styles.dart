@@ -66,9 +66,17 @@ class CdsTextStyles {
   );
   static const TextStyle headline6 = const TextStyle(
     fontFamily: fontFamily,
+    fontSize: 20,
+    color: CdsColors.black,
+    fontWeight: semiBold,
+    height: 1.26,
+    package: packageName,
+  );
+  static const TextStyle headline7 = const TextStyle(
+    fontFamily: fontFamily,
     fontSize: 18,
     color: CdsColors.black,
-    fontWeight: regular,
+    fontWeight: medium,
     height: 1.38,
     package: packageName,
   );
