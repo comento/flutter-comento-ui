@@ -381,6 +381,10 @@ class CustomIconsHelper {
         return CustomIcons.icon_writing_medium_line;
       case 'iconwritingsmallline':
         return CustomIcons.icon_writing_small_line;
+      case 'iconclasslargeline':
+        return CustomIcons.icon_class_large_line;
+      case 'iconbusinesscaselargeline':
+        return CustomIcons.icon_businesscase_large_line;
       default:
         return Icons.error;
     }
