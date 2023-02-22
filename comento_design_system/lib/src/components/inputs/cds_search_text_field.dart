@@ -7,18 +7,21 @@ class CdsSearchTextField extends StatefulWidget {
   final TextEditingController? receivedController;
   final FocusNode? receivedFocusNode;
   final ValueChanged<String>? onChanged;
+  final void Function(bool hasFocus)? onFocusChanged;
   final SearchClicked? onSearch;
   final AutovalidateMode autovalidateMode;
   final FormFieldValidator<String>? validator;
   final bool autocorrect;
   final bool obscureText;
   final bool initialFocus;
+  final String? initialValue;
   final String? hintText;
 
   CdsSearchTextField({
     TextEditingController? controller,
     FocusNode? focusNode,
     this.onChanged,
+    this.onFocusChanged,
     this.onSearch,
     this.autovalidateMode = AutovalidateMode.onUserInteraction,
     this.validator,
@@ -26,6 +29,7 @@ class CdsSearchTextField extends StatefulWidget {
     this.obscureText = false,
     this.hintText,
     this.initialFocus = false,
+    this.initialValue,
   })  : receivedController = controller,
         receivedFocusNode = focusNode,
         super();
@@ -46,8 +50,17 @@ class _CdsSearchTextFieldState extends State<CdsSearchTextField> {
     _focusNode = widget.receivedFocusNode ?? FocusNode();
     _controller.addListener(_handleControllerChanged);
     _focusNode.addListener(_handleFocusNodeChanged);
+    if (widget.onFocusChanged != null) {
+      _focusNode.addListener(() => widget.onFocusChanged!(_focusNode.hasFocus));
+    }
     if (widget.initialFocus) {
       _focusNode.requestFocus();
+    }
+    if (widget.initialValue != null) {
+      _controller.text = widget.initialValue!;
+      if (widget.onChanged != null) {
+        widget.onChanged!(_controller.text);
+      }
     }
   }
 
@@ -74,7 +87,7 @@ class _CdsSearchTextFieldState extends State<CdsSearchTextField> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 40,
+      height: 32,
       child: TextFormField(
         controller: _controller,
         focusNode: _focusNode,
@@ -83,7 +96,7 @@ class _CdsSearchTextFieldState extends State<CdsSearchTextField> {
           if (widget.onChanged == null) return;
           return widget.onChanged!(value);
         },
-        textInputAction: TextInputAction.go,
+        textInputAction: TextInputAction.search,
         onFieldSubmitted: widget.onSearch == null ? null : widget.onSearch!,
         autovalidateMode: widget.autovalidateMode,
         autocorrect: widget.autocorrect,
@@ -91,26 +104,31 @@ class _CdsSearchTextFieldState extends State<CdsSearchTextField> {
         validator: widget.validator,
         cursorColor: isValid ? CdsColors.grey400 : CdsColors.error,
         decoration: _getInputDecoration(),
-        style: CdsTextStyles.pretendardStyle
-            .merge(TextStyle(color: CdsColors.grey800)),
+        style:
+            CdsTextStyles.bodyText2.merge(TextStyle(color: CdsColors.grey800)),
       ),
     );
   }
 
   InputDecoration _getInputDecoration() => InputDecoration(
         filled: true,
-        fillColor: _focusNode.hasFocus ? CdsColors.grey100 : CdsColors.grey000,
+        fillColor: CdsColors.grey100,
         border: _buildBorder(),
         focusedBorder: _buildBorder(),
         disabledBorder: _buildBorder(),
         enabledBorder: _buildBorder(),
         errorBorder: _buildBorder(),
         focusedErrorBorder: _buildBorder(),
-        contentPadding: const EdgeInsets.only(left: 14),
         errorStyle: TextStyle(color: CdsColors.error),
-        hintStyle: TextStyle(color: CdsColors.grey400),
+        contentPadding: EdgeInsets.zero,
+        hintStyle: CdsTextStyles.bodyText2.merge(
+          TextStyle(
+            color: CdsColors.grey400,
+          ),
+        ),
         hintText: widget.hintText,
-        suffixIcon: _buildActions(),
+        prefixIcon: _buildSearchButton(),
+        suffixIcon: value.isNotEmpty ? _buildClearButton() : null,
       );
 
   OutlineInputBorder _buildBorder() {
@@ -120,40 +138,36 @@ class _CdsSearchTextFieldState extends State<CdsSearchTextField> {
     );
   }
 
-  Widget _buildActions() {
+  Widget _buildSearchButton() {
     return Container(
-      width: 64,
-      padding: const EdgeInsets.only(right: 12),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.end,
-        children: [
-          if (value.isNotEmpty) _buildClearButton(),
-          SizedBox(width: 8),
-          _buildSearchButton(),
-        ],
+      margin: EdgeInsets.only(
+        left: 14,
+        right: 16,
+      ),
+      child: GestureDetector(
+        onTap: widget.onSearch == null
+            ? null
+            : () => widget.onSearch!(_controller.value.text),
+        child: Icon(
+          CustomIcons.icon_search_large_line,
+          color: CdsColors.grey500,
+          size: 16,
+        ),
       ),
     );
   }
 
   GestureDetector _buildClearButton() {
     return GestureDetector(
-      onTap: () => _controller.clear(),
+      onTap: () {
+        _controller.clear();
+        if (widget.onChanged == null) return;
+        return widget.onChanged!(value);
+      },
       child: Icon(
         CustomIcons.icon_closeround_medium_fill,
-        color: CdsColors.grey300,
-        size: 14,
-      ),
-    );
-  }
-
-  GestureDetector _buildSearchButton() {
-    return GestureDetector(
-      onTap: widget.onSearch == null
-          ? null
-          : () => widget.onSearch!(_controller.value.text),
-      child: Icon(
-        CustomIcons.icon_search_large_line,
-        color: CdsColors.grey500,
+        color: CdsColors.grey400,
+        size: 16,
       ),
     );
   }
