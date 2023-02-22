@@ -1,82 +1,100 @@
 import 'package:flutter/material.dart';
 
 import '../../../comento_design_system.dart';
-import '../../strings.dart';
 
 class CdsAppBar extends StatelessWidget implements PreferredSizeWidget {
   final Widget? leading;
   final double? leadingWidth;
   final Widget? title;
   final List<Widget>? actions;
-  final bool? centerTitle;
-  final PreferredSize? bottom;
+  final double? actionsSpacing;
+  final bool centerTitle;
+  final bool isBottomBorderRequired;
+  final EdgeInsets? margin;
 
   CdsAppBar({
     this.leading,
-    this.leadingWidth = 40,
+    this.leadingWidth,
     this.title,
     this.actions,
-    this.centerTitle,
-    this.bottom,
+    this.actionsSpacing,
+    this.centerTitle = false,
+    this.isBottomBorderRequired = true,
+    this.margin,
   });
 
   @override
-  Widget build(BuildContext context) {
-    return AppBar(
-      leading: leading ?? _getAppBarLeading(context),
-      leadingWidth: leadingWidth,
-      title: title,
-      centerTitle: centerTitle,
-      actions: actions,
-      backgroundColor: CdsColors.white,
-      elevation: 0,
-      titleSpacing: 8,
-      bottom: bottom ?? _buildBottomBorder(),
-    );
-  }
+  Size get preferredSize => const Size.fromHeight(CdsUI.headerHeight);
 
-  PreferredSize _buildBottomBorder() {
-    return PreferredSize(
+  @override
+  Widget build(BuildContext context) {
+    return SafeArea(
       child: Container(
-        color: CdsColors.grey100,
-        height: 1.0,
+        margin: margin,
+        color: CdsColors.white,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            _buildContents(context),
+            _buildBottomBorder(context),
+          ],
+        ),
       ),
-      preferredSize: Size.fromHeight(1.0),
     );
   }
 
-  @override
-  Size get preferredSize => Size.fromHeight(49);
-
-  Widget? _getAppBarLeading(BuildContext context) {
-    final ModalRoute<Object?>? parentRoute = ModalRoute.of(context);
-    final bool canPop = parentRoute?.canPop ?? false;
-    Widget? leading = canPop ? CdsBackButton() : null;
-    return leading;
-  }
-}
-
-class CdsBackButton extends StatelessWidget {
-  final Function? onPressed;
-
-  CdsBackButton({this.onPressed});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.only(left: 16),
-      child: IconButton(
-        icon: Image.asset(
-          'assets/images/icons/backward.png',
-          package: packageName,
+  Widget _buildContents(BuildContext context) {
+    return Expanded(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: CdsUI.widthPadding),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            if (leading != null) _buildLeading(context),
+            _buildTitle(context),
+            if (actions != null) _buildActions(context),
+          ],
         ),
-        tooltip: MaterialLocalizations.of(context).backButtonTooltip,
-        onPressed: () {
-          onPressed != null ? onPressed!() : Navigator.of(context).maybePop();
-        },
-        padding: EdgeInsets.zero,
-        constraints: BoxConstraints(),
       ),
+    );
+  }
+
+  Widget _buildLeading(BuildContext context) {
+    return leading!;
+  }
+
+  Widget _buildTitle(BuildContext context) {
+    return Expanded(
+      child: title != null
+          ? Align(
+              alignment: centerTitle ? Alignment.center : Alignment.centerLeft,
+              child: title!,
+            )
+          : const SizedBox.shrink(),
+    );
+  }
+
+  Widget _buildActions(BuildContext context) {
+    return Row(
+      children: [
+        for (int i = 0; i < actions!.length; i++)
+          Container(
+            margin: EdgeInsets.only(
+              right: actionsSpacing == null || i == actions!.length - 1
+                  ? 0
+                  : actionsSpacing!,
+            ),
+            child: actions![i],
+          ),
+      ],
+    );
+  }
+
+  Widget _buildBottomBorder(BuildContext context) {
+    if (!isBottomBorderRequired) return const SizedBox.shrink();
+    return Container(
+      color: CdsColors.grey200,
+      height: 1.0,
     );
   }
 }
