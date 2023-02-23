@@ -84,6 +84,11 @@ class _CdsSearchTextFieldState extends State<CdsSearchTextField> {
 
   String get value => _controller.value.text;
 
+  void _onSearch(String value) {
+    if (value.isEmpty) return;
+    if (widget.onSearch != null) widget.onSearch!(value);
+  }
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -97,7 +102,7 @@ class _CdsSearchTextFieldState extends State<CdsSearchTextField> {
           return widget.onChanged!(value);
         },
         textInputAction: TextInputAction.search,
-        onFieldSubmitted: widget.onSearch == null ? null : widget.onSearch!,
+        onFieldSubmitted: _onSearch,
         autovalidateMode: widget.autovalidateMode,
         autocorrect: widget.autocorrect,
         obscureText: widget.obscureText,
@@ -145,9 +150,7 @@ class _CdsSearchTextFieldState extends State<CdsSearchTextField> {
         right: 16,
       ),
       child: GestureDetector(
-        onTap: widget.onSearch == null
-            ? null
-            : () => widget.onSearch!(_controller.value.text),
+        onTap: () => _onSearch(_controller.value.text),
         child: Icon(
           CustomIcons.icon_search_large_line,
           color: CdsColors.grey500,
