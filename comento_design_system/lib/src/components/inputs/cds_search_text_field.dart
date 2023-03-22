@@ -16,6 +16,7 @@ class CdsSearchTextField extends StatefulWidget {
   final bool initialFocus;
   final String? initialValue;
   final String? hintText;
+  final int? maxLength;
 
   CdsSearchTextField({
     TextEditingController? controller,
@@ -30,6 +31,7 @@ class CdsSearchTextField extends StatefulWidget {
     this.hintText,
     this.initialFocus = false,
     this.initialValue,
+    this.maxLength,
   })  : receivedController = controller,
         receivedFocusNode = focusNode,
         super();
@@ -95,6 +97,7 @@ class _CdsSearchTextFieldState extends State<CdsSearchTextField> {
       height: 32,
       child: TextFormField(
         controller: _controller,
+        maxLength: widget.maxLength,
         focusNode: _focusNode,
         onChanged: (value) {
           _isInitial = false;
@@ -121,6 +124,7 @@ class _CdsSearchTextFieldState extends State<CdsSearchTextField> {
         border: _buildBorder(),
         focusedBorder: _buildBorder(),
         disabledBorder: _buildBorder(),
+        counterText: '',
         enabledBorder: _buildBorder(),
         errorBorder: _buildBorder(),
         focusedErrorBorder: _buildBorder(),
