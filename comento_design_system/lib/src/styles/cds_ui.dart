@@ -8,5 +8,5 @@ class CdsUI {
   static const webviewProgressBarHeight = 2.0;
   static const headerHeight = 52.0 + webviewProgressBarHeight;
   static const subHeaderHeight = 45.0;
-  static const BottomNavigationHeight = 52.0;
+  static const BottomNavigationHeight = 61.0;
 }

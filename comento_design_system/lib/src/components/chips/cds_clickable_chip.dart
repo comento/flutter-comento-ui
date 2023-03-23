@@ -7,6 +7,7 @@ class CdsClickableChip extends StatelessWidget {
   final VoidCallback? onLongPress;
   final Color color;
   final Color? textColor;
+  final Color? backgroundColor;
   final CdsSize size;
   final CdsType type;
 
@@ -18,6 +19,7 @@ class CdsClickableChip extends StatelessWidget {
     this.size = CdsSize.medium,
     this.color = CdsColors.primary,
     this.textColor,
+    this.backgroundColor = CdsColors.white,
     this.type = CdsType.outlined,
   }) : super(key: key);
 
@@ -75,7 +77,7 @@ class CdsClickableChip extends StatelessWidget {
       case CdsType.fill:
         return color;
       case CdsType.outlined:
-        return null;
+        return backgroundColor;
     }
   }
 
