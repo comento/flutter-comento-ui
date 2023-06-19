@@ -36,6 +36,7 @@ class CdsColors {
   static const Color grey250 = const Color(0xFFE1E4E6);
   static const Color grey200 = const Color(0xFFEAECEE);
   static const Color grey100 = const Color(0xFFF3F4F5);
+  static const Color grey050 = const Color(0xFFF7F8F8);
   static const Color grey000 = const Color(0xFFFCFCFC);
 
   static const Color green800 = const Color(0xFF038542);
