@@ -52,10 +52,10 @@ class CdsBasicModal extends StatelessWidget {
       text: confirmButtonName,
       color: CdsComponentColor.blue,
       onPressed: () {
+        Navigator.of(context).pop();
         if (onConfirmed != null) {
           onConfirmed!();
         }
-        Navigator.of(context).pop();
       },
     );
   }
@@ -98,10 +98,10 @@ class CdsBasicModal extends StatelessWidget {
       right: 12,
       child: GestureDetector(
         onTap: () {
+          Navigator.of(context).pop();
           if (onClosed != null) {
             onClosed!();
           }
-          Navigator.of(context).pop();
         },
         child: Icon(
           CustomIcons.icon_close_xlarge_line,
