@@ -65,7 +65,10 @@ class _CdsUnderlinedTextFieldState extends State<CdsUnderlinedTextField> {
       _isInitial || widget.validator?.call(_controller.value.text) == null;
 
   InputDecoration _getInputDecoration() => InputDecoration(
-        contentPadding: const EdgeInsets.only(left: 4, right: 4),
+        contentPadding: const EdgeInsets.symmetric(
+          horizontal: 4,
+          vertical: 12,
+        ),
         labelStyle: TextStyle(color: CdsColors.grey300),
         errorStyle: TextStyle(color: CdsColors.error),
         focusedBorder: const UnderlineInputBorder(
@@ -92,25 +95,31 @@ class _CdsUnderlinedTextFieldState extends State<CdsUnderlinedTextField> {
           color: CdsColors.grey300,
         ),
         hintText: widget.hintText,
+        isDense: true,
       );
 
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      controller: _controller,
-      focusNode: _focusNode,
-      onChanged: (value) {
-        _isInitial = false;
-        if (widget.onChanged == null) return;
-        return widget.onChanged!(value);
-      },
-      autovalidateMode: widget.autovalidateMode,
-      autocorrect: widget.autocorrect,
-      obscureText: widget.obscureText,
-      validator: widget.validator,
-      cursorColor: isValid ? CdsColors.grey400 : CdsColors.error,
-      decoration: _getInputDecoration(),
-      style: CdsTextStyles.pretendardStyle,
+    return SizedBox(
+      height: 40,
+      child: TextFormField(
+        controller: _controller,
+        focusNode: _focusNode,
+        onChanged: (value) {
+          _isInitial = false;
+          if (widget.onChanged == null) return;
+          return widget.onChanged!(value);
+        },
+        autovalidateMode: widget.autovalidateMode,
+        autocorrect: widget.autocorrect,
+        obscureText: widget.obscureText,
+        validator: widget.validator,
+        cursorColor: isValid ? CdsColors.grey400 : CdsColors.error,
+        decoration: _getInputDecoration(),
+        style: CdsTextStyles.pretendardStyle.merge(
+          TextStyle(height: 1.0),
+        ),
+      ),
     );
   }
 }
