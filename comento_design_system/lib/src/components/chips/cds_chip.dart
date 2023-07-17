@@ -7,6 +7,7 @@ class CdsChip extends StatelessWidget {
   final Color? textColor;
   final CdsSize size;
   final CdsType type;
+  final Function()? onClose;
 
   CdsChip(
     this.text, {
@@ -15,6 +16,7 @@ class CdsChip extends StatelessWidget {
     this.color = CdsColors.primary,
     this.textColor,
     this.type = CdsType.outlined,
+    this.onClose,
   }) : super(key: key);
 
   @override
@@ -28,15 +30,33 @@ class CdsChip extends StatelessWidget {
           borderRadius: _buildBorderRadius(),
           border: _buildBorder(),
         ),
-        child: _buildText(),
+        child: _buildContents(),
       ),
     );
   }
 
-  Text _buildText() {
-    return Text(
+  Widget _buildContents() {
+    final textWidget = Text(
       text,
       style: _buildTextStyle(),
+    );
+    if (onClose == null) {
+      return textWidget;
+    }
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        textWidget,
+        SizedBox(width: _buildIconMargin()),
+        GestureDetector(
+          onTap: onClose,
+          child: Icon(
+            CustomIcons.icon_close_small_line,
+            size: _buildIconSize(),
+            color: textColor,
+          ),
+        ),
+      ],
     );
   }
 
@@ -133,6 +153,28 @@ class CdsChip extends StatelessWidget {
           horizontal: 12,
           vertical: 5,
         );
+    }
+  }
+
+  double _buildIconSize() {
+    switch (size) {
+      case CdsSize.small:
+      case CdsSize.medium:
+        return 12;
+      case CdsSize.large:
+      case CdsSize.xLarge:
+        return 16;
+    }
+  }
+
+  double _buildIconMargin() {
+    switch (size) {
+      case CdsSize.small:
+        return 2;
+      case CdsSize.medium:
+      case CdsSize.large:
+      case CdsSize.xLarge:
+        return 4;
     }
   }
 }
