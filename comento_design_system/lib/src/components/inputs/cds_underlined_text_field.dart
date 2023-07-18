@@ -9,6 +9,7 @@ class CdsUnderlinedTextField extends StatefulWidget {
   final FormFieldValidator<String>? validator;
   final bool autocorrect;
   final bool obscureText;
+  final bool readOnly;
   final String? hintText;
 
   CdsUnderlinedTextField({
@@ -19,6 +20,7 @@ class CdsUnderlinedTextField extends StatefulWidget {
     this.validator,
     this.autocorrect = true,
     this.obscureText = false,
+    this.readOnly = false,
     this.hintText,
   })  : receivedController = controller,
         receivedFocusNode = focusNode,
@@ -71,9 +73,9 @@ class _CdsUnderlinedTextFieldState extends State<CdsUnderlinedTextField> {
         ),
         labelStyle: TextStyle(color: CdsColors.grey300),
         errorStyle: TextStyle(color: CdsColors.error),
-        focusedBorder: const UnderlineInputBorder(
+        focusedBorder: UnderlineInputBorder(
           borderSide: BorderSide(
-            color: CdsColors.grey400,
+            color: widget.readOnly ? CdsColors.grey250 : CdsColors.grey400,
           ),
         ),
         enabledBorder: const UnderlineInputBorder(
@@ -92,7 +94,7 @@ class _CdsUnderlinedTextFieldState extends State<CdsUnderlinedTextField> {
           ),
         ),
         hintStyle: TextStyle(
-          color: CdsColors.grey300,
+          color: widget.readOnly ? CdsColors.grey800 : CdsColors.grey300,
         ),
         hintText: widget.hintText,
         isDense: true,
@@ -103,6 +105,7 @@ class _CdsUnderlinedTextFieldState extends State<CdsUnderlinedTextField> {
     return SizedBox(
       height: 40,
       child: TextFormField(
+        readOnly: widget.readOnly,
         controller: _controller,
         focusNode: _focusNode,
         onChanged: (value) {
