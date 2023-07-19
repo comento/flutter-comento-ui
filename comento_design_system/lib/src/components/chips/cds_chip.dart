@@ -53,7 +53,7 @@ class CdsChip extends StatelessWidget {
           child: Icon(
             CustomIcons.icon_close_small_line,
             size: _buildIconSize(),
-            color: textColor,
+            color: textColor?.withOpacity(0.8),
           ),
         ),
       ],
