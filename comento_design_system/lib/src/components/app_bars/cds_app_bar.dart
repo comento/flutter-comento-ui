@@ -7,6 +7,7 @@ class CdsAppBar extends StatelessWidget implements PreferredSizeWidget {
   final Widget? title;
   final List<Widget>? actions;
   final double? actionsSpacing;
+  final double? actionsWidth;
   final bool centerTitle;
   final bool isBottomBorderRequired;
   final EdgeInsets? margin;
@@ -16,6 +17,7 @@ class CdsAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.title,
     this.actions,
     this.actionsSpacing,
+    this.actionsWidth,
     this.centerTitle = false,
     this.isBottomBorderRequired = true,
     this.margin,
@@ -23,6 +25,13 @@ class CdsAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Size get preferredSize => const Size.fromHeight(CdsUI.headerHeight);
+
+  double get _defaultActionsWidth {
+    if (actions == null) return 0;
+    final actionsWidth = actions!.length * 28.0;
+    final actionsMarginWidth = (actions!.length - 1) * 8.0;
+    return actionsWidth + actionsMarginWidth;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -45,12 +54,11 @@ class CdsAppBar extends StatelessWidget implements PreferredSizeWidget {
     return Expanded(
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: CdsUI.widthPadding),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
+        child: Stack(
           children: [
-            if (leading != null) _buildLeading(context),
+            _buildLeading(context),
             _buildTitle(context),
-            if (actions != null) _buildActions(context),
+            _buildActions(context),
           ],
         ),
       ),
@@ -58,33 +66,46 @@ class CdsAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   Widget _buildLeading(BuildContext context) {
-    return leading!;
+    if (leading == null) return const SizedBox.shrink();
+    return Align(
+      alignment: Alignment.centerLeft,
+      child: leading!,
+    );
   }
 
   Widget _buildTitle(BuildContext context) {
-    return Expanded(
-      child: title != null
-          ? Align(
-              alignment: centerTitle ? Alignment.center : Alignment.centerLeft,
-              child: title!,
-            )
-          : const SizedBox.shrink(),
+    if (title == null) return const SizedBox.shrink();
+    final margin = EdgeInsets.only(
+      left: leading == null || centerTitle ? 0 : 28.0,
+      right: actions == null || centerTitle
+          ? 0
+          : actionsWidth ?? _defaultActionsWidth,
+    );
+    return Align(
+      alignment: centerTitle ? Alignment.center : Alignment.centerLeft,
+      child: Container(
+        margin: margin,
+        child: title!,
+      ),
     );
   }
 
   Widget _buildActions(BuildContext context) {
-    return Row(
-      children: [
-        for (int i = 0; i < actions!.length; i++)
-          Container(
-            margin: EdgeInsets.only(
-              right: actionsSpacing == null || i == actions!.length - 1
-                  ? 0
-                  : actionsSpacing!,
+    if (actions == null) return const SizedBox.shrink();
+    return Align(
+      alignment: Alignment.centerRight,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          for (int i = 0; i < actions!.length; i++)
+            Container(
+              margin: EdgeInsets.only(
+                left: actionsSpacing == null || i == 0 ? 0 : actionsSpacing!,
+              ),
+              child: actions![i],
             ),
-            child: actions![i],
-          ),
-      ],
+        ],
+      ),
     );
   }
 
