@@ -4,7 +4,6 @@ import '../../../comento_design_system.dart';
 
 class CdsAppBar extends StatelessWidget implements PreferredSizeWidget {
   final Widget? leading;
-  final double? leadingWidth;
   final Widget? title;
   final List<Widget>? actions;
   final double? actionsSpacing;
@@ -14,7 +13,6 @@ class CdsAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   CdsAppBar({
     this.leading,
-    this.leadingWidth,
     this.title,
     this.actions,
     this.actionsSpacing,
