@@ -254,7 +254,7 @@ class CdsElevatedButton extends StatelessWidget {
     return ButtonStyle(
       foregroundColor: MaterialStateProperty.resolveWith((states) {
         if (states.contains(MaterialState.disabled)) return CdsColors.grey200;
-        return CdsColors.grey700;
+        return CdsColors.grey600;
       }),
       backgroundColor: MaterialStateProperty.resolveWith((states) {
         if (states.contains(MaterialState.disabled)) return CdsColors.grey000;
