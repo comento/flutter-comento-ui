@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:comento_design_system/comento_design_system.dart';
 import 'package:flutter/material.dart';
 
@@ -24,7 +22,7 @@ class CdsElevatedIconButton extends StatelessWidget {
     required VoidCallback? onPressed,
     VoidCallback? onLongPress,
     Clip clipBehavior = Clip.none,
-    CdsComponentColor color = CdsComponentColor.green,
+    CdsComponentColor color = CdsComponentColor.blue,
     required String text,
     bool isEnabled = true,
     bool isLoading = false,
@@ -66,7 +64,7 @@ class CdsElevatedIconButton extends StatelessWidget {
     required VoidCallback? onPressed,
     VoidCallback? onLongPress,
     Clip clipBehavior = Clip.none,
-    CdsComponentColor color = CdsComponentColor.green,
+    CdsComponentColor color = CdsComponentColor.blue,
     required String text,
     bool isEnabled = true,
     bool isLoading = false,
@@ -105,7 +103,7 @@ class CdsElevatedIconButton extends StatelessWidget {
     required VoidCallback? onPressed,
     VoidCallback? onLongPress,
     Clip clipBehavior = Clip.none,
-    CdsComponentColor color = CdsComponentColor.green,
+    CdsComponentColor color = CdsComponentColor.blue,
     required String text,
     bool isEnabled = true,
     bool isLoading = false,
@@ -144,7 +142,7 @@ class CdsElevatedIconButton extends StatelessWidget {
     required VoidCallback? onPressed,
     VoidCallback? onLongPress,
     Clip clipBehavior = Clip.none,
-    CdsComponentColor color = CdsComponentColor.green,
+    CdsComponentColor color = CdsComponentColor.blue,
     required String text,
     bool isEnabled = true,
     bool isLoading = false,

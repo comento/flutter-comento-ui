@@ -1,8 +1,5 @@
 import 'package:comento_design_system/comento_design_system.dart';
-import 'package:comento_design_system/src/components/indicators/cds_thick_circular_progress_indicator.dart';
 import 'package:flutter/material.dart';
-
-import '../component_enums.dart';
 
 class CdsElevatedButton extends StatelessWidget {
   final VoidCallback? onPressed;
@@ -25,7 +22,7 @@ class CdsElevatedButton extends StatelessWidget {
     required VoidCallback? onPressed,
     VoidCallback? onLongPress,
     Clip clipBehavior = Clip.none,
-    CdsComponentColor color = CdsComponentColor.green,
+    CdsComponentColor color = CdsComponentColor.blue,
     required String text,
     bool isEnabled = true,
     bool isLoading = false,
@@ -59,7 +56,7 @@ class CdsElevatedButton extends StatelessWidget {
     required VoidCallback? onPressed,
     VoidCallback? onLongPress,
     Clip clipBehavior = Clip.none,
-    CdsComponentColor color = CdsComponentColor.green,
+    CdsComponentColor color = CdsComponentColor.blue,
     required String text,
     bool isEnabled = true,
     bool isLoading = false,
@@ -90,7 +87,7 @@ class CdsElevatedButton extends StatelessWidget {
     required VoidCallback? onPressed,
     VoidCallback? onLongPress,
     Clip clipBehavior = Clip.none,
-    CdsComponentColor color = CdsComponentColor.green,
+    CdsComponentColor color = CdsComponentColor.blue,
     required String text,
     bool isEnabled = true,
     bool isLoading = false,
@@ -121,7 +118,7 @@ class CdsElevatedButton extends StatelessWidget {
     required VoidCallback? onPressed,
     VoidCallback? onLongPress,
     Clip clipBehavior = Clip.none,
-    CdsComponentColor color = CdsComponentColor.green,
+    CdsComponentColor color = CdsComponentColor.blue,
     required String text,
     bool isEnabled = true,
     bool isLoading = false,
@@ -152,7 +149,7 @@ class CdsElevatedButton extends StatelessWidget {
     required VoidCallback? onPressed,
     VoidCallback? onLongPress,
     Clip clipBehavior = Clip.none,
-    CdsComponentColor color = CdsComponentColor.green,
+    CdsComponentColor color = CdsComponentColor.blue,
     required String text,
     bool isEnabled = true,
     bool isLoading = false,
