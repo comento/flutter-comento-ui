@@ -175,6 +175,35 @@ class CdsElevatedButton extends StatelessWidget {
         ).merge(_getButtonStyle(color)),
       );
 
+  factory CdsElevatedButton.xLargeFull({
+    Key? key,
+    required VoidCallback? onPressed,
+    VoidCallback? onLongPress,
+    Clip clipBehavior = Clip.none,
+    CdsComponentColor color = CdsComponentColor.blue,
+    required String text,
+    bool isEnabled = true,
+    bool isLoading = false,
+  }) =>
+      CdsElevatedButton._(
+        key: key,
+        onPressed: isEnabled
+            ? isLoading
+                ? () {}
+                : onPressed
+            : null,
+        onLongPress: onLongPress,
+        clipBehavior: clipBehavior,
+        child: isLoading
+            ? CdsThickCircularProgressIndicator.large(color: color)
+            : Text(text),
+        style: ElevatedButton.styleFrom(
+          textStyle: CdsTextStyles.headline7,
+          padding: EdgeInsets.symmetric(horizontal: 26),
+          minimumSize: const Size(double.infinity, 60),
+        ).merge(_getButtonStyle(color)),
+      );
+
   @override
   Widget build(BuildContext context) => ElevatedButton(
         style: style,
