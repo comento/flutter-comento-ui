@@ -81,25 +81,25 @@ class _CdsOutlinedLabelStateTextField extends State<CdsOutlinedLabelTextField> {
           borderSide: BorderSide(
             color: CdsColors.comento,
           ),
-          borderRadius: BorderRadius.all(Radius.circular(2)),
+          borderRadius: BorderRadius.all(Radius.circular(4)),
         ),
         enabledBorder: const OutlineInputBorder(
           borderSide: BorderSide(
             color: CdsColors.grey250,
           ),
-          borderRadius: BorderRadius.all(Radius.circular(2)),
+          borderRadius: BorderRadius.all(Radius.circular(4)),
         ),
         focusedErrorBorder: const OutlineInputBorder(
           borderSide: BorderSide(
             color: CdsColors.error,
           ),
-          borderRadius: BorderRadius.all(Radius.circular(2)),
+          borderRadius: BorderRadius.all(Radius.circular(4)),
         ),
         errorBorder: const OutlineInputBorder(
           borderSide: BorderSide(
             color: CdsColors.grey250,
           ),
-          borderRadius: BorderRadius.all(Radius.circular(2)),
+          borderRadius: BorderRadius.all(Radius.circular(4)),
         ),
         hintStyle: TextStyle(
           color: CdsColors.grey300,

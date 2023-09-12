@@ -13,6 +13,7 @@ export 'components/buttons/cds_text_button.dart';
 // chips
 export 'components/chips/cds_chip.dart';
 export 'components/chips/cds_clickable_chip.dart';
+export 'components/chips/cds_toggle_chip.dart';
 export 'components/component_enums.dart';
 // icons
 export 'components/icons/custom_icons.dart';
