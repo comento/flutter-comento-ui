@@ -5,12 +5,15 @@ class CdsOutlinedTextField extends StatefulWidget {
   final TextEditingController? receivedController;
   final FocusNode? receivedFocusNode;
   final ValueChanged<String>? onChanged;
+  final void Function()? onTap;
   final void Function(FocusNode focusNode)? onTapOutside;
   final AutovalidateMode autovalidateMode;
   final FormFieldValidator<String>? validator;
   final bool autocorrect;
   final int? maxLength;
   final bool obscureText;
+  final bool readOnly;
+  final String? initialValue;
   final String? hintText;
   final String? errorText;
   final String? successText;
@@ -20,13 +23,16 @@ class CdsOutlinedTextField extends StatefulWidget {
     TextEditingController? controller,
     FocusNode? focusNode,
     this.onChanged,
+    this.onTap,
     this.onTapOutside,
     this.autovalidateMode = AutovalidateMode.onUserInteraction,
     this.validator,
     this.autocorrect = false,
     this.maxLength,
     this.obscureText = false,
+    this.initialValue,
     this.hintText,
+    this.readOnly = false,
     this.errorText,
     this.successText,
     this.suffix,
@@ -56,19 +62,23 @@ class _CdsOutlinedTextFieldState extends State<CdsOutlinedTextField> {
     } else {
       _focusNode = widget.receivedFocusNode!;
     }
-    _controller.addListener(_handleControllerChanged);
-    _focusNode.addListener(_handleControllerChanged);
+    _controller.addListener(emitSetState);
+    _focusNode.addListener(emitSetState);
+    if (widget.initialValue != null) {
+      _controller.text = widget.initialValue!;
+    }
   }
 
   @override
   void dispose() {
-    _controller.removeListener(_handleControllerChanged);
+    _controller.removeListener(emitSetState);
+    _focusNode.removeListener(emitSetState);
     if (widget.receivedController == null) _controller.dispose();
     if (widget.receivedFocusNode == null) _focusNode.dispose();
     super.dispose();
   }
 
-  void _handleControllerChanged() {
+  void emitSetState() {
     setState(() {});
   }
 
@@ -85,9 +95,9 @@ class _CdsOutlinedTextFieldState extends State<CdsOutlinedTextField> {
   InputDecoration _getInputDecoration() => InputDecoration(
         contentPadding: const EdgeInsets.symmetric(horizontal: 16),
         labelStyle: TextStyle(color: CdsColors.grey300),
-        focusedBorder: const OutlineInputBorder(
+        focusedBorder: OutlineInputBorder(
           borderSide: BorderSide(
-            color: CdsColors.grey400,
+            color: widget.readOnly ? CdsColors.grey250 : CdsColors.grey400,
           ),
           borderRadius: BorderRadius.all(Radius.circular(4)),
         ),
@@ -122,7 +132,7 @@ class _CdsOutlinedTextFieldState extends State<CdsOutlinedTextField> {
         ),
         hintText: widget.hintText,
         counterText: '',
-        suffix: isEmpty ? null : widget.suffix,
+        suffixIcon: isEmpty ? null : widget.suffix,
       );
 
   @override
@@ -137,11 +147,14 @@ class _CdsOutlinedTextFieldState extends State<CdsOutlinedTextField> {
       },
       onTap: () {
         _isInitial = false;
+        if (widget.onTap == null) return;
+        widget.onTap!();
       },
       onTapOutside: (_) {
         if (widget.onTapOutside == null) return;
         widget.onTapOutside!(_focusNode);
       },
+      readOnly: widget.readOnly,
       maxLength: widget.maxLength,
       autovalidateMode: widget.autovalidateMode,
       autocorrect: widget.autocorrect,

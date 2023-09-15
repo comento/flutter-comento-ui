@@ -11,17 +11,29 @@ class CdsUnderlinedTextField extends StatefulWidget {
   final bool obscureText;
   final bool readOnly;
   final String? hintText;
+  final void Function()? onTap;
+  final void Function(FocusNode focusNode)? onTapOutside;
+  final int? maxLength;
+  final String? errorText;
+  final String? successText;
+  final Widget? suffix;
 
   CdsUnderlinedTextField({
     TextEditingController? controller,
     FocusNode? focusNode,
     this.onChanged,
+    this.onTap,
+    this.onTapOutside,
     this.autovalidateMode = AutovalidateMode.onUserInteraction,
     this.validator,
-    this.autocorrect = true,
+    this.autocorrect = false,
+    this.maxLength,
     this.obscureText = false,
-    this.readOnly = false,
     this.hintText,
+    this.readOnly = false,
+    this.errorText,
+    this.successText,
+    this.suffix,
   })  : receivedController = controller,
         receivedFocusNode = focusNode,
         super();
@@ -48,29 +60,36 @@ class _CdsUnderlinedTextFieldState extends State<CdsUnderlinedTextField> {
     } else {
       _focusNode = widget.receivedFocusNode!;
     }
-    _controller.addListener(_handleControllerChanged);
+    _controller.addListener(emitSetState);
+    _focusNode.addListener(emitSetState);
   }
 
   @override
   void dispose() {
-    _controller.removeListener(_handleControllerChanged);
+    _controller.removeListener(emitSetState);
+    _focusNode.removeListener(emitSetState);
     if (widget.receivedController == null) _controller.dispose();
     if (widget.receivedFocusNode == null) _focusNode.dispose();
     super.dispose();
   }
 
-  void _handleControllerChanged() {
+  void emitSetState() {
     setState(() {});
   }
 
+  bool get isEmpty => _controller.text.isEmpty;
+
   bool get isValid =>
-      _isInitial || widget.validator?.call(_controller.value.text) == null;
+      _isInitial || errorText == null || widget.successText != null;
+
+  String? get errorText {
+    final validatorText = widget.validator?.call(_controller.value.text);
+    return validatorText ?? widget.errorText;
+  }
 
   InputDecoration _getInputDecoration() => InputDecoration(
-        contentPadding: const EdgeInsets.symmetric(
-          horizontal: 4,
-          vertical: 12,
-        ),
+        contentPadding:
+            const EdgeInsets.symmetric(horizontal: 4, vertical: 11.5),
         labelStyle: TextStyle(color: CdsColors.grey300),
         errorStyle: TextStyle(color: CdsColors.error),
         focusedBorder: UnderlineInputBorder(
@@ -102,25 +121,37 @@ class _CdsUnderlinedTextFieldState extends State<CdsUnderlinedTextField> {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 40,
-      child: TextFormField(
-        readOnly: widget.readOnly,
-        controller: _controller,
-        focusNode: _focusNode,
-        onChanged: (value) {
-          _isInitial = false;
-          if (widget.onChanged == null) return;
-          return widget.onChanged!(value);
-        },
-        autovalidateMode: widget.autovalidateMode,
-        autocorrect: widget.autocorrect,
-        obscureText: widget.obscureText,
-        validator: widget.validator,
-        cursorColor: isValid ? CdsColors.grey400 : CdsColors.error,
-        decoration: _getInputDecoration(),
-        style: CdsTextStyles.pretendardStyle.merge(
-          TextStyle(height: 1.0),
+    return TextFormField(
+      controller: _controller,
+      focusNode: _focusNode,
+      onChanged: (value) {
+        _isInitial = false;
+        if (widget.onChanged == null) return;
+        return widget.onChanged!(value);
+      },
+      onTap: () {
+        _isInitial = false;
+        if (widget.onTap == null) return;
+        widget.onTap!();
+      },
+      onTapOutside: (_) {
+        if (widget.onTapOutside == null) return;
+        widget.onTapOutside!(_focusNode);
+      },
+      readOnly: widget.readOnly,
+      maxLength: widget.maxLength,
+      autovalidateMode: widget.autovalidateMode,
+      autocorrect: widget.autocorrect,
+      obscureText: widget.obscureText,
+      validator: widget.validator,
+      cursorColor: isValid || isEmpty ? CdsColors.grey400 : CdsColors.error,
+      decoration: _getInputDecoration(),
+      style: CdsTextStyles.bodyText1.merge(
+        TextStyle(
+          color: isValid || !_focusNode.hasFocus
+              ? CdsColors.grey800
+              : CdsColors.error,
+          height: 1.54,
         ),
       ),
     );

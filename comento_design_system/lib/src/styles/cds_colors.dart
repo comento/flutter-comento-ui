@@ -65,6 +65,8 @@ class CdsColors {
   static const Color blue800 = const Color(0xFF1B5192);
   static const Color blue600 = const Color(0xFF2A7DE1);
   static const Color blue400 = const Color(0xFF6EA7EB);
+  static const Color blue300 = const Color(0xFF90BBEF);
+  static const Color blue200 = const Color(0xFFB2D0F4);
   static const Color blue100 = const Color(0xFFD4E5F9);
   static const Color blue000 = const Color(0xFFF7FAFE);
 
