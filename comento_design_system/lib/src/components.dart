@@ -10,8 +10,8 @@ export 'components/buttons/cds_elevated_icon_button.dart';
 export 'components/buttons/cds_outlined_button.dart';
 export 'components/buttons/cds_rating_button.dart';
 export 'components/buttons/cds_text_button.dart';
-// checkBoxs
-export 'components/check_box/cds_check_box.dart';
+// checkBoxes
+export 'components/check_boxs/cds_check_box.dart';
 // chips
 export 'components/chips/cds_chip.dart';
 export 'components/chips/cds_clickable_chip.dart';
@@ -39,3 +39,5 @@ export 'components/modals/cds_basic_modal.dart';
 export 'components/modals/cds_permission_modal.dart';
 // toasts
 export 'components/toast/cds_toast.dart';
+// animatedIcons
+export 'components/animated_icons/animated_icons.dart';
