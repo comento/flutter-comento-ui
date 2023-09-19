@@ -73,6 +73,7 @@ class CdsChip extends StatelessWidget {
 
   double _buildFontSize() {
     switch (size) {
+      case CdsSize.xSmall:
       case CdsSize.small:
         return 10;
       case CdsSize.medium:
@@ -107,6 +108,7 @@ class CdsChip extends StatelessWidget {
 
   double _buildHeight() {
     switch (size) {
+      case CdsSize.xSmall:
       case CdsSize.small:
         return 16;
       case CdsSize.medium:
@@ -120,6 +122,7 @@ class CdsChip extends StatelessWidget {
 
   BorderRadius _buildBorderRadius() {
     switch (size) {
+      case CdsSize.xSmall:
       case CdsSize.small:
         return BorderRadius.circular(4);
       case CdsSize.medium:
@@ -133,6 +136,7 @@ class CdsChip extends StatelessWidget {
 
   EdgeInsets _buildPadding() {
     switch (size) {
+      case CdsSize.xSmall:
       case CdsSize.small:
         return EdgeInsets.symmetric(
           horizontal: 4,
@@ -158,6 +162,7 @@ class CdsChip extends StatelessWidget {
 
   double _buildIconSize() {
     switch (size) {
+      case CdsSize.xSmall:
       case CdsSize.small:
       case CdsSize.medium:
         return 12;
@@ -169,6 +174,7 @@ class CdsChip extends StatelessWidget {
 
   double _buildIconMargin() {
     switch (size) {
+      case CdsSize.xSmall:
       case CdsSize.small:
         return 2;
       case CdsSize.medium:

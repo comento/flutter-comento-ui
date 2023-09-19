@@ -10,6 +10,8 @@ export 'components/buttons/cds_elevated_icon_button.dart';
 export 'components/buttons/cds_outlined_button.dart';
 export 'components/buttons/cds_rating_button.dart';
 export 'components/buttons/cds_text_button.dart';
+// checkBoxs
+export 'components/check_box/cds_check_box.dart';
 // chips
 export 'components/chips/cds_chip.dart';
 export 'components/chips/cds_clickable_chip.dart';
