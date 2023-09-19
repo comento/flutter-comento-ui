@@ -49,14 +49,29 @@ class CdsClickableChip extends StatelessWidget {
   }
 
   TextStyle _buildTextStyle() {
+    final height = _buildTextHeight();
     return CdsTextStyles.pretendardStyle.merge(
       TextStyle(
         color: textColor ?? color,
         fontSize: _buildFontSize(),
         fontWeight: FontWeight.w400,
-        height: size == CdsSize.small ? 1 : 1.25,
+        height: height,
       ),
     );
+  }
+
+  double _buildTextHeight() {
+    switch (size) {
+      case CdsSize.xSmall:
+      case CdsSize.small:
+        return 1;
+      case CdsSize.medium:
+        return 1.25;
+      case CdsSize.large:
+        return 1.25;
+      case CdsSize.xLarge:
+        return 1.3;
+    }
   }
 
   double _buildFontSize() {
