@@ -4,6 +4,7 @@ import '../../../comento_design_system.dart';
 
 class CdsAppBar extends StatelessWidget implements PreferredSizeWidget {
   final Widget? leading;
+  final void Function(BuildContext context)? leadingAction;
   final Widget? title;
   final List<Widget>? actions;
   final double? actionsSpacing;
@@ -14,6 +15,7 @@ class CdsAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   CdsAppBar({
     this.leading,
+    this.leadingAction,
     this.title,
     this.actions,
     this.actionsSpacing,
@@ -53,7 +55,7 @@ class CdsAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget _buildContents(BuildContext context) {
     return Expanded(
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: CdsUI.widthPadding),
+        padding: const EdgeInsets.only(right: CdsUI.widthPadding),
         child: Stack(
           children: [
             _buildLeading(context),
@@ -69,14 +71,24 @@ class CdsAppBar extends StatelessWidget implements PreferredSizeWidget {
     if (leading == null) return const SizedBox.shrink();
     return Align(
       alignment: Alignment.centerLeft,
-      child: leading!,
+      child: GestureDetector(
+        behavior: HitTestBehavior.translucent,
+        child: Container(
+          height: double.infinity,
+          padding: const EdgeInsets.only(left: CdsUI.widthPadding),
+          child: leading!,
+        ),
+        onTap: leadingAction == null ? null : () => leadingAction!(context),
+      ),
     );
   }
 
   Widget _buildTitle(BuildContext context) {
     if (title == null) return const SizedBox.shrink();
     final margin = EdgeInsets.only(
-      left: leading == null || centerTitle ? 0 : 28.0,
+      left: leading == null || centerTitle
+          ? CdsUI.widthPadding
+          : 28.0 + CdsUI.widthPadding,
       right: actions == null || centerTitle
           ? 0
           : actionsWidth ?? _defaultActionsWidth,
