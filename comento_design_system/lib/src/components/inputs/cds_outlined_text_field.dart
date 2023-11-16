@@ -13,6 +13,7 @@ class CdsOutlinedTextField extends StatefulWidget {
   final int? maxLength;
   final bool obscureText;
   final bool readOnly;
+  final bool hideErrorOnEmpty;
   final String? initialValue;
   final String? hintText;
   final String? errorText;
@@ -24,7 +25,7 @@ class CdsOutlinedTextField extends StatefulWidget {
     FocusNode? focusNode,
     this.onChanged,
     this.onTap,
-    this.onTapOutside,
+    this.onTapOutside = defaultOnTapOutside,
     this.autovalidateMode = AutovalidateMode.onUserInteraction,
     this.validator,
     this.autocorrect = false,
@@ -32,6 +33,7 @@ class CdsOutlinedTextField extends StatefulWidget {
     this.obscureText = false,
     this.initialValue,
     this.hintText,
+    this.hideErrorOnEmpty = true,
     this.readOnly = false,
     this.errorText,
     this.successText,
@@ -117,7 +119,7 @@ class _CdsOutlinedTextFieldState extends State<CdsOutlinedTextField> {
         helperStyle: CdsTextStyles.caption.merge(
           TextStyle(color: CdsColors.blue600),
         ),
-        errorText: isEmpty ? null : widget.errorText,
+        errorText: isEmpty && widget.hideErrorOnEmpty ? null : widget.errorText,
         errorStyle: CdsTextStyles.caption.merge(
           TextStyle(color: CdsColors.error),
         ),
@@ -172,4 +174,8 @@ class _CdsOutlinedTextFieldState extends State<CdsOutlinedTextField> {
       ),
     );
   }
+}
+
+void defaultOnTapOutside(FocusNode focusNode) {
+  focusNode.unfocus();
 }
