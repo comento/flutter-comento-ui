@@ -215,6 +215,44 @@ class CdsOutlinedButton extends StatelessWidget {
     );
   }
 
+  factory CdsOutlinedButton.backIconFull({
+    Key? key,
+    required VoidCallback? onPressed,
+    VoidCallback? onLongPress,
+    Clip clipBehavior = Clip.none,
+    CdsComponentColor color = CdsComponentColor.blue,
+    required String text,
+    required Widget icon,
+    double? iconMargin,
+    bool isEnabled = true,
+    bool isLoading = false,
+  }) {
+    return CdsOutlinedButton._(
+      key: key,
+      onPressed: isEnabled
+          ? isLoading
+              ? () {}
+              : onPressed
+          : null,
+      onLongPress: onLongPress,
+      clipBehavior: clipBehavior,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(text),
+          icon,
+        ],
+      ),
+      style: OutlinedButton.styleFrom(
+        textStyle: CdsTextStyles.button.merge(
+          TextStyle(fontSize: 16),
+        ),
+        padding: EdgeInsets.symmetric(horizontal: 14),
+        minimumSize: const Size(double.infinity, 48),
+      ).merge(_getButtonStyle(color)),
+    );
+  }
+
   static Widget _buildChild({
     required bool isLoading,
     required Widget loadingIndicator,
