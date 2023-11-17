@@ -63,6 +63,7 @@ class _CdsTextAreaState extends State<CdsTextArea> {
         filled: true,
         hintStyle: TextStyle(color: CdsColors.grey400),
         hintText: widget.hintText,
+        counterText: '',
       );
 
   @override
