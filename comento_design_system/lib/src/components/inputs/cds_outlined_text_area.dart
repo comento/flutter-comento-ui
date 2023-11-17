@@ -13,6 +13,7 @@ class CdsOutlinedTextArea extends StatefulWidget {
   final bool hideErrorOnEmpty;
   final String? hintText;
   final int? maxLength;
+  final double height;
   final String? errorText;
 
   CdsOutlinedTextArea({
@@ -20,6 +21,7 @@ class CdsOutlinedTextArea extends StatefulWidget {
     FocusNode? focusNode,
     this.onChanged,
     this.onTap,
+    required this.height,
     this.autovalidateMode = AutovalidateMode.onUserInteraction,
     this.onTapOutside = defaultOnTapOutside,
     this.autocorrect = false,
@@ -118,31 +120,34 @@ class _CdsOutlinedTextAreaState extends State<CdsOutlinedTextArea> {
 
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      keyboardType: TextInputType.multiline,
-      maxLines: 100000,
-      controller: _controller,
-      autovalidateMode: widget.autovalidateMode,
-      maxLength: widget.maxLength,
-      focusNode: _focusNode,
-      onChanged: (value) {
-        _isInitial = false;
-        if (widget.onChanged == null) return;
-        return widget.onChanged!(value);
-      },
-      onTap: () {
-        _isInitial = false;
-        if (widget.onTap == null) return;
-        widget.onTap!();
-      },
-      onTapOutside: (_) {
-        if (widget.onTapOutside == null) return;
-        widget.onTapOutside!(_focusNode);
-      },
-      autocorrect: widget.autocorrect,
-      cursorColor: CdsColors.grey400,
-      decoration: _getInputDecoration(),
-      style: CdsTextStyles.pretendardStyle,
+    return SizedBox(
+      height: widget.height,
+      child: TextFormField(
+        keyboardType: TextInputType.multiline,
+        maxLines: 100000,
+        controller: _controller,
+        autovalidateMode: widget.autovalidateMode,
+        maxLength: widget.maxLength,
+        focusNode: _focusNode,
+        onChanged: (value) {
+          _isInitial = false;
+          if (widget.onChanged == null) return;
+          return widget.onChanged!(value);
+        },
+        onTap: () {
+          _isInitial = false;
+          if (widget.onTap == null) return;
+          widget.onTap!();
+        },
+        onTapOutside: (_) {
+          if (widget.onTapOutside == null) return;
+          widget.onTapOutside!(_focusNode);
+        },
+        autocorrect: widget.autocorrect,
+        cursorColor: CdsColors.grey400,
+        decoration: _getInputDecoration(),
+        style: CdsTextStyles.pretendardStyle,
+      ),
     );
   }
 }
