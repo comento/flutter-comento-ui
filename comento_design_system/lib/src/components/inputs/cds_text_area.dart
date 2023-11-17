@@ -6,12 +6,14 @@ class CdsTextArea extends StatefulWidget {
   final FocusNode? receivedFocusNode;
   final ValueChanged<String>? onChanged;
   final bool autocorrect;
+  final double height;
   final String? hintText;
 
   CdsTextArea({
     TextEditingController? controller,
     FocusNode? focusNode,
     this.onChanged,
+    required this.height,
     this.autocorrect = false,
     this.hintText,
   })  : receivedController = controller,
@@ -65,19 +67,22 @@ class _CdsTextAreaState extends State<CdsTextArea> {
 
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      keyboardType: TextInputType.multiline,
-      maxLines: 100000,
-      controller: _controller,
-      focusNode: _focusNode,
-      onChanged: (value) {
-        if (widget.onChanged == null) return;
-        return widget.onChanged!(value);
-      },
-      autocorrect: widget.autocorrect,
-      cursorColor: CdsColors.grey400,
-      decoration: _getInputDecoration(),
-      style: CdsTextStyles.pretendardStyle,
+    return SizedBox(
+      height: widget.height,
+      child: TextFormField(
+        keyboardType: TextInputType.multiline,
+        maxLines: 100000,
+        controller: _controller,
+        focusNode: _focusNode,
+        onChanged: (value) {
+          if (widget.onChanged == null) return;
+          return widget.onChanged!(value);
+        },
+        autocorrect: widget.autocorrect,
+        cursorColor: CdsColors.grey400,
+        decoration: _getInputDecoration(),
+        style: CdsTextStyles.pretendardStyle,
+      ),
     );
   }
 }
