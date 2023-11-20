@@ -13,7 +13,7 @@ class CdsOutlinedTextField extends StatefulWidget {
   final int? maxLength;
   final bool obscureText;
   final bool readOnly;
-  final bool hideErrorOnEmpty;
+  final bool ignoreErrorOnEmpty;
   final String? initialValue;
   final String? hintText;
   final String? errorText;
@@ -25,7 +25,7 @@ class CdsOutlinedTextField extends StatefulWidget {
     FocusNode? focusNode,
     this.onChanged,
     this.onTap,
-    this.onTapOutside = defaultOnTapOutside,
+    void Function(FocusNode focusNode)? onTapOutside,
     this.autovalidateMode = AutovalidateMode.onUserInteraction,
     this.validator,
     this.autocorrect = false,
@@ -33,13 +33,14 @@ class CdsOutlinedTextField extends StatefulWidget {
     this.obscureText = false,
     this.initialValue,
     this.hintText,
-    this.hideErrorOnEmpty = true,
+    this.ignoreErrorOnEmpty = true,
     this.readOnly = false,
     this.errorText,
     this.successText,
     this.suffix,
   })  : receivedController = controller,
         receivedFocusNode = focusNode,
+        onTapOutside = onTapOutside ?? defaultOnTapOutside,
         super();
 
   @override
@@ -87,31 +88,49 @@ class _CdsOutlinedTextFieldState extends State<CdsOutlinedTextField> {
   bool get isEmpty => _controller.text.isEmpty;
 
   bool get isValid =>
-      _isInitial || errorText == null || widget.successText != null;
+      _isInitial ||
+      _errorState == FieldErrorState.none ||
+      widget.successText != null;
 
-  String? get errorText {
+  String? get _errorText {
     final validatorText = widget.validator?.call(_controller.value.text);
     return validatorText ?? widget.errorText;
+  }
+
+  FieldErrorState get _errorState {
+    if (_errorText == null) {
+      return FieldErrorState.none;
+    }
+    if (isEmpty) {
+      return widget.ignoreErrorOnEmpty
+          ? FieldErrorState.hideAll
+          : FieldErrorState.hideErrorText;
+    }
+    return FieldErrorState.showAll;
   }
 
   InputDecoration _getInputDecoration() => InputDecoration(
         contentPadding: const EdgeInsets.symmetric(horizontal: 16),
         labelStyle: TextStyle(color: CdsColors.grey300),
+        enabledBorder: OutlineInputBorder(
+          borderSide: BorderSide(
+            color: switch (_errorState) {
+              FieldErrorState.hideErrorText => CdsColors.error,
+              FieldErrorState.showAll => CdsColors.error,
+              _ => CdsColors.grey250,
+            },
+          ),
+          borderRadius: BorderRadius.all(Radius.circular(4)),
+        ),
         focusedBorder: OutlineInputBorder(
           borderSide: BorderSide(
-            color: widget.readOnly ? CdsColors.grey250 : CdsColors.grey400,
-          ),
-          borderRadius: BorderRadius.all(Radius.circular(4)),
-        ),
-        enabledBorder: const OutlineInputBorder(
-          borderSide: BorderSide(
-            color: CdsColors.grey250,
-          ),
-          borderRadius: BorderRadius.all(Radius.circular(4)),
-        ),
-        focusedErrorBorder: const OutlineInputBorder(
-          borderSide: BorderSide(
-            color: CdsColors.error,
+            color: widget.readOnly
+                ? CdsColors.grey250
+                : switch (_errorState) {
+                    FieldErrorState.hideErrorText => CdsColors.error,
+                    FieldErrorState.showAll => CdsColors.error,
+                    _ => CdsColors.grey400,
+                  },
           ),
           borderRadius: BorderRadius.all(Radius.circular(4)),
         ),
@@ -119,18 +138,21 @@ class _CdsOutlinedTextFieldState extends State<CdsOutlinedTextField> {
         helperStyle: CdsTextStyles.caption.merge(
           TextStyle(color: CdsColors.blue600),
         ),
-        errorText: isEmpty && widget.hideErrorOnEmpty ? null : widget.errorText,
-        errorStyle: CdsTextStyles.caption.merge(
-          TextStyle(color: CdsColors.error),
-        ),
-        errorBorder: const OutlineInputBorder(
-          borderSide: BorderSide(
-            color: CdsColors.grey250,
-          ),
-          borderRadius: BorderRadius.all(Radius.circular(4)),
-        ),
+        error: switch (_errorState) {
+          FieldErrorState.none => null,
+          FieldErrorState.hideAll => null,
+          FieldErrorState.hideErrorText => null,
+          _ => Text(
+              _errorText!,
+              style: CdsTextStyles.caption.merge(
+                TextStyle(color: CdsColors.error),
+              ),
+            ),
+        },
         hintStyle: TextStyle(
-          color: CdsColors.grey300,
+          color: _errorState == FieldErrorState.none
+              ? CdsColors.grey300
+              : CdsColors.error,
         ),
         hintText: widget.hintText,
         counterText: '',
@@ -162,18 +184,22 @@ class _CdsOutlinedTextFieldState extends State<CdsOutlinedTextField> {
       autocorrect: widget.autocorrect,
       obscureText: widget.obscureText,
       validator: widget.validator,
-      cursorColor: isValid || isEmpty ? CdsColors.grey400 : CdsColors.error,
+      cursorColor: switch (_errorState) {
+        FieldErrorState.hideErrorText => CdsColors.error,
+        FieldErrorState.showAll => CdsColors.error,
+        _ => CdsColors.grey400,
+      },
       decoration: _getInputDecoration(),
-      style: CdsTextStyles.bodyText1.merge(
-        TextStyle(
-          color: isValid || !_focusNode.hasFocus
-              ? CdsColors.grey800
-              : CdsColors.error,
-          height: 1.54,
-        ),
-      ),
+      style: CdsTextStyles.bodyText1.copyWith(color: CdsColors.grey800),
     );
   }
+}
+
+enum FieldErrorState {
+  none,
+  hideAll,
+  hideErrorText,
+  showAll,
 }
 
 void defaultOnTapOutside(FocusNode focusNode) {
