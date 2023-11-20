@@ -13,7 +13,7 @@ class CdsOutlinedTextArea extends StatefulWidget {
   final bool ignoreErrorOnEmpty;
   final String? hintText;
   final int? maxLength;
-  final double height;
+  final double areaHeight;
   final String? errorText;
 
   CdsOutlinedTextArea({
@@ -21,7 +21,7 @@ class CdsOutlinedTextArea extends StatefulWidget {
     FocusNode? focusNode,
     this.onChanged,
     this.onTap,
-    required this.height,
+    required this.areaHeight,
     this.autovalidateMode = AutovalidateMode.onUserInteraction,
     void Function(FocusNode focusNode)? onTapOutside,
     this.autocorrect = false,
@@ -123,20 +123,6 @@ class _CdsOutlinedTextAreaState extends State<CdsOutlinedTextArea> {
           ),
           borderRadius: BorderRadius.all(Radius.circular(4)),
         ),
-        error: switch (_errorState) {
-          FieldErrorState.none => null,
-          FieldErrorState.hideAll => null,
-          FieldErrorState.hideErrorText => null,
-          _ => Text(
-              _errorText!,
-              style: CdsTextStyles.caption.merge(
-                TextStyle(color: CdsColors.error),
-              ),
-            ),
-        },
-        errorStyle: CdsTextStyles.caption.merge(
-          TextStyle(color: CdsColors.error),
-        ),
         fillColor: CdsColors.white,
         filled: true,
         hintStyle: TextStyle(
@@ -151,38 +137,94 @@ class _CdsOutlinedTextAreaState extends State<CdsOutlinedTextArea> {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: widget.height,
-      child: TextFormField(
-        keyboardType: TextInputType.multiline,
-        maxLines: 100000,
-        controller: _controller,
-        autovalidateMode: widget.autovalidateMode,
-        maxLength: widget.maxLength,
-        focusNode: _focusNode,
-        onChanged: (value) {
-          _isInitial = false;
-          if (widget.onChanged == null) return;
-          return widget.onChanged!(value);
-        },
-        onTap: () {
-          _isInitial = false;
-          if (widget.onTap == null) return;
-          widget.onTap!();
-        },
-        onTapOutside: (_) {
-          if (widget.onTapOutside == null) return;
-          widget.onTapOutside!(_focusNode);
-        },
-        autocorrect: widget.autocorrect,
-        cursorColor: switch (_errorState) {
-          FieldErrorState.hideErrorText => CdsColors.error,
-          FieldErrorState.showAll => CdsColors.error,
-          _ => CdsColors.grey400,
-        },
-        decoration: _getInputDecoration(),
-        style: CdsTextStyles.bodyText1.copyWith(color: CdsColors.grey800),
-      ),
+    return Column(
+      children: [
+        SizedBox(
+          height: widget.areaHeight,
+          child: TextFormField(
+            keyboardType: TextInputType.multiline,
+            maxLines: 100000,
+            controller: _controller,
+            autovalidateMode: widget.autovalidateMode,
+            maxLength: widget.maxLength,
+            focusNode: _focusNode,
+            onChanged: (value) {
+              _isInitial = false;
+              if (widget.onChanged == null) return;
+              return widget.onChanged!(value);
+            },
+            onTap: () {
+              _isInitial = false;
+              if (widget.onTap == null) return;
+              widget.onTap!();
+            },
+            onTapOutside: (_) {
+              if (widget.onTapOutside == null) return;
+              widget.onTapOutside!(_focusNode);
+            },
+            autocorrect: widget.autocorrect,
+            cursorColor: switch (_errorState) {
+              FieldErrorState.hideErrorText => CdsColors.error,
+              FieldErrorState.showAll => CdsColors.error,
+              _ => CdsColors.grey400,
+            },
+            decoration: _getInputDecoration(),
+            style: CdsTextStyles.bodyText1.copyWith(color: CdsColors.grey800),
+          ),
+        ),
+        SizedBox(height: 12),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            AnimatedOpacity(
+              duration: Duration(milliseconds: 167),
+              opacity: switch (_errorState) {
+                FieldErrorState.showAll => 1,
+                _ => 0,
+              },
+              child: AnimatedSlide(
+                duration: Duration(milliseconds: 167),
+                offset: Offset(
+                  0.0,
+                  switch (_errorState) {
+                    FieldErrorState.showAll => 0,
+                    _ => -0.25,
+                  },
+                ),
+                child: switch (_errorState) {
+                  FieldErrorState.showAll => Text(
+                      _errorText!,
+                      style: CdsTextStyles.caption.merge(
+                        TextStyle(color: CdsColors.error),
+                      ),
+                    ),
+                  _ => null,
+                },
+              ),
+            ),
+            Text.rich(
+              TextSpan(
+                text: '글자수 : ',
+                style: CdsTextStyles.caption.copyWith(
+                  color: CdsColors.grey400,
+                ),
+                children: [
+                  TextSpan(
+                    text: '${_controller.text.length}',
+                    style: TextStyle(
+                      color: switch (_errorState) {
+                        FieldErrorState.showAll => CdsColors.error,
+                        _ => CdsColors.grey400,
+                      },
+                    ),
+                  ),
+                  TextSpan(text: ' / ${widget.maxLength}'),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ],
     );
   }
 }
