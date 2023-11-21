@@ -10,10 +10,10 @@ class CdsOutlinedTextArea extends StatefulWidget {
   final AutovalidateMode autovalidateMode;
   final FormFieldValidator<String>? validator;
   final bool autocorrect;
-  final bool hideErrorOnEmpty;
+  final bool ignoreErrorOnEmpty;
   final String? hintText;
   final int? maxLength;
-  final double height;
+  final double areaHeight;
   final String? errorText;
 
   CdsOutlinedTextArea({
@@ -21,17 +21,18 @@ class CdsOutlinedTextArea extends StatefulWidget {
     FocusNode? focusNode,
     this.onChanged,
     this.onTap,
-    required this.height,
+    required this.areaHeight,
     this.autovalidateMode = AutovalidateMode.onUserInteraction,
-    this.onTapOutside = defaultOnTapOutside,
+    void Function(FocusNode focusNode)? onTapOutside,
     this.autocorrect = false,
     this.validator,
     this.hintText,
-    this.hideErrorOnEmpty = true,
+    this.ignoreErrorOnEmpty = true,
     this.maxLength,
     this.errorText,
   })  : receivedController = controller,
         receivedFocusNode = focusNode,
+        onTapOutside = onTapOutside ?? defaultOnTapOutside,
         super();
 
   @override
@@ -75,26 +76,46 @@ class _CdsOutlinedTextAreaState extends State<CdsOutlinedTextArea> {
 
   bool get isEmpty => _controller.text.isEmpty;
 
-  bool get isValid => _isInitial || errorText == null;
+  bool get isValid => _isInitial || _errorState == FieldErrorState.none;
 
-  String? get errorText {
+  String? get _errorText {
     final validatorText = widget.validator?.call(_controller.value.text);
     return validatorText ?? widget.errorText;
   }
 
+  FieldErrorState get _errorState {
+    if (_errorText == null) {
+      return FieldErrorState.none;
+    }
+    if (isEmpty) {
+      return widget.ignoreErrorOnEmpty
+          ? FieldErrorState.hideAll
+          : FieldErrorState.hideErrorText;
+    }
+    return FieldErrorState.showAll;
+  }
+
   InputDecoration _getInputDecoration() => InputDecoration(
         contentPadding: const EdgeInsets.all(16),
-        focusedBorder: const OutlineInputBorder(
+        enabledBorder: OutlineInputBorder(
           borderSide: BorderSide(
-            color: CdsColors.grey400,
+            color: switch (_errorState) {
+              FieldErrorState.hideErrorText => CdsColors.error,
+              FieldErrorState.showAll => CdsColors.error,
+              _ => CdsColors.grey250,
+            },
           ),
-          borderRadius: BorderRadius.zero,
+          borderRadius: BorderRadius.all(Radius.circular(4)),
         ),
-        enabledBorder: const OutlineInputBorder(
+        focusedBorder: OutlineInputBorder(
           borderSide: BorderSide(
-            color: CdsColors.grey250,
+            color: switch (_errorState) {
+              FieldErrorState.hideErrorText => CdsColors.error,
+              FieldErrorState.showAll => CdsColors.error,
+              _ => CdsColors.grey400,
+            },
           ),
-          borderRadius: BorderRadius.zero,
+          borderRadius: BorderRadius.all(Radius.circular(4)),
         ),
         focusedErrorBorder: const OutlineInputBorder(
           borderSide: BorderSide(
@@ -102,53 +123,108 @@ class _CdsOutlinedTextAreaState extends State<CdsOutlinedTextArea> {
           ),
           borderRadius: BorderRadius.all(Radius.circular(4)),
         ),
-        errorText: isEmpty && widget.hideErrorOnEmpty ? null : widget.errorText,
-        errorStyle: CdsTextStyles.caption.merge(
-          TextStyle(color: CdsColors.error),
-        ),
-        errorBorder: const OutlineInputBorder(
-          borderSide: BorderSide(
-            color: CdsColors.grey250,
-          ),
-          borderRadius: BorderRadius.all(Radius.circular(4)),
-        ),
         fillColor: CdsColors.white,
         filled: true,
-        hintStyle: TextStyle(color: CdsColors.grey300),
+        hintStyle: TextStyle(
+          color: _errorState == FieldErrorState.none
+              ? CdsColors.grey300
+              : CdsColors.error,
+        ),
         counterText: '',
         hintText: widget.hintText,
+        labelStyle: TextStyle(color: CdsColors.grey300),
       );
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: widget.height,
-      child: TextFormField(
-        keyboardType: TextInputType.multiline,
-        maxLines: 100000,
-        controller: _controller,
-        autovalidateMode: widget.autovalidateMode,
-        maxLength: widget.maxLength,
-        focusNode: _focusNode,
-        onChanged: (value) {
-          _isInitial = false;
-          if (widget.onChanged == null) return;
-          return widget.onChanged!(value);
-        },
-        onTap: () {
-          _isInitial = false;
-          if (widget.onTap == null) return;
-          widget.onTap!();
-        },
-        onTapOutside: (_) {
-          if (widget.onTapOutside == null) return;
-          widget.onTapOutside!(_focusNode);
-        },
-        autocorrect: widget.autocorrect,
-        cursorColor: CdsColors.grey400,
-        decoration: _getInputDecoration(),
-        style: CdsTextStyles.pretendardStyle,
-      ),
+    return Column(
+      children: [
+        SizedBox(
+          height: widget.areaHeight,
+          child: TextFormField(
+            keyboardType: TextInputType.multiline,
+            maxLines: 100000,
+            controller: _controller,
+            autovalidateMode: widget.autovalidateMode,
+            maxLength: widget.maxLength,
+            focusNode: _focusNode,
+            onChanged: (value) {
+              _isInitial = false;
+              if (widget.onChanged == null) return;
+              return widget.onChanged!(value);
+            },
+            onTap: () {
+              _isInitial = false;
+              if (widget.onTap == null) return;
+              widget.onTap!();
+            },
+            onTapOutside: (_) {
+              if (widget.onTapOutside == null) return;
+              widget.onTapOutside!(_focusNode);
+            },
+            autocorrect: widget.autocorrect,
+            cursorColor: switch (_errorState) {
+              FieldErrorState.hideErrorText => CdsColors.error,
+              FieldErrorState.showAll => CdsColors.error,
+              _ => CdsColors.grey400,
+            },
+            decoration: _getInputDecoration(),
+            style: CdsTextStyles.bodyText1.copyWith(color: CdsColors.grey800),
+          ),
+        ),
+        SizedBox(height: 12),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            AnimatedOpacity(
+              duration: Duration(milliseconds: 167),
+              opacity: switch (_errorState) {
+                FieldErrorState.showAll => 1,
+                _ => 0,
+              },
+              child: AnimatedSlide(
+                duration: Duration(milliseconds: 167),
+                offset: Offset(
+                  0.0,
+                  switch (_errorState) {
+                    FieldErrorState.showAll => 0,
+                    _ => -0.25,
+                  },
+                ),
+                child: switch (_errorState) {
+                  FieldErrorState.showAll => Text(
+                      _errorText!,
+                      style: CdsTextStyles.caption.merge(
+                        TextStyle(color: CdsColors.error),
+                      ),
+                    ),
+                  _ => null,
+                },
+              ),
+            ),
+            Text.rich(
+              TextSpan(
+                text: '글자수 : ',
+                style: CdsTextStyles.caption.copyWith(
+                  color: CdsColors.grey400,
+                ),
+                children: [
+                  TextSpan(
+                    text: '${_controller.text.length}',
+                    style: TextStyle(
+                      color: switch (_errorState) {
+                        FieldErrorState.showAll => CdsColors.error,
+                        _ => CdsColors.grey400,
+                      },
+                    ),
+                  ),
+                  TextSpan(text: ' / ${widget.maxLength}'),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ],
     );
   }
 }

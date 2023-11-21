@@ -4,8 +4,7 @@ version: 0.0.24
 homepage: https://comento.kr
 
 environment:
-  sdk: ">=2.12.0 <3.0.0"
-  flutter: ">=1.17.0"
+  sdk: '>=3.1.0 <3.2.0'
 
 dependencies:
   flutter:
