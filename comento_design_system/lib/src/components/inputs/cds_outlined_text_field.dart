@@ -50,7 +50,6 @@ class CdsOutlinedTextField extends StatefulWidget {
 class _CdsOutlinedTextFieldState extends State<CdsOutlinedTextField> {
   late final TextEditingController _controller;
   late final FocusNode _focusNode;
-  bool _isInitial = true;
 
   @override
   void initState() {
@@ -86,11 +85,6 @@ class _CdsOutlinedTextFieldState extends State<CdsOutlinedTextField> {
   }
 
   bool get isEmpty => _controller.text.isEmpty;
-
-  bool get isValid =>
-      _isInitial ||
-      _errorState == FieldErrorState.none ||
-      widget.successText != null;
 
   String? get _errorText {
     final validatorText = widget.validator?.call(_controller.value.text);
@@ -165,12 +159,10 @@ class _CdsOutlinedTextFieldState extends State<CdsOutlinedTextField> {
       controller: _controller,
       focusNode: _focusNode,
       onChanged: (value) {
-        _isInitial = false;
         if (widget.onChanged == null) return;
         return widget.onChanged!(value);
       },
       onTap: () {
-        _isInitial = false;
         if (widget.onTap == null) return;
         widget.onTap!();
       },

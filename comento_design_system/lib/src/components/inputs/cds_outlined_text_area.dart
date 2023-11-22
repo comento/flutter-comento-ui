@@ -42,7 +42,6 @@ class CdsOutlinedTextArea extends StatefulWidget {
 class _CdsOutlinedTextAreaState extends State<CdsOutlinedTextArea> {
   late final TextEditingController _controller;
   late final FocusNode _focusNode;
-  bool _isInitial = true;
 
   @override
   void initState() {
@@ -75,8 +74,6 @@ class _CdsOutlinedTextAreaState extends State<CdsOutlinedTextArea> {
   }
 
   bool get isEmpty => _controller.text.isEmpty;
-
-  bool get isValid => _isInitial || _errorState == FieldErrorState.none;
 
   String? get _errorText {
     final validatorText = widget.validator?.call(_controller.value.text);
@@ -149,12 +146,10 @@ class _CdsOutlinedTextAreaState extends State<CdsOutlinedTextArea> {
             maxLength: widget.maxLength,
             focusNode: _focusNode,
             onChanged: (value) {
-              _isInitial = false;
               if (widget.onChanged == null) return;
               return widget.onChanged!(value);
             },
             onTap: () {
-              _isInitial = false;
               if (widget.onTap == null) return;
               widget.onTap!();
             },
