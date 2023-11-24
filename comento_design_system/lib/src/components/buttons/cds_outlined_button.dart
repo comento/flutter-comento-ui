@@ -239,13 +239,17 @@ class CdsOutlinedButton extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(text),
+          Expanded(
+            child: Text(
+              text,
+            ),
+          ),
           icon,
         ],
       ),
       style: OutlinedButton.styleFrom(
         textStyle: CdsTextStyles.button.merge(
-          TextStyle(fontSize: 16),
+          TextStyle(fontSize: 16, overflow: TextOverflow.ellipsis),
         ),
         padding: EdgeInsets.symmetric(horizontal: 14),
         minimumSize: const Size(double.infinity, 48),
