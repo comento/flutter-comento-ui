@@ -31,6 +31,8 @@ class CdsToggleChip extends StatelessWidget {
 
   Color _buildTextColor() {
     switch (color) {
+      case CdsComponentColor.error:
+        return CdsColors.red600;
       case CdsComponentColor.grey:
       default:
         return isActive ? CdsColors.blue600 : CdsColors.grey700;
@@ -39,6 +41,8 @@ class CdsToggleChip extends StatelessWidget {
 
   Color _buildColor() {
     switch (color) {
+      case CdsComponentColor.error:
+        return CdsColors.red100;
       case CdsComponentColor.grey:
       default:
         return isActive ? CdsColors.blue100 : CdsColors.grey100;
