@@ -11,6 +11,7 @@ class CdsOutlinedTextArea extends StatefulWidget {
   final FormFieldValidator<String>? validator;
   final bool autocorrect;
   final bool ignoreErrorOnEmpty;
+  final bool ignoreErrorOnCondition;
   final String? hintText;
   final int? maxLength;
   final double areaHeight;
@@ -28,6 +29,7 @@ class CdsOutlinedTextArea extends StatefulWidget {
     this.validator,
     this.hintText,
     this.ignoreErrorOnEmpty = true,
+    this.ignoreErrorOnCondition = false,
     this.maxLength,
     this.errorText,
   })  : receivedController = controller,
@@ -84,6 +86,10 @@ class _CdsOutlinedTextAreaState extends State<CdsOutlinedTextArea> {
     if (_errorText == null) {
       return FieldErrorState.none;
     }
+    if (widget.ignoreErrorOnCondition) {
+      return FieldErrorState.hideAll;
+    }
+
     if (isEmpty) {
       return widget.ignoreErrorOnEmpty
           ? FieldErrorState.hideAll
@@ -123,7 +129,8 @@ class _CdsOutlinedTextAreaState extends State<CdsOutlinedTextArea> {
         fillColor: CdsColors.white,
         filled: true,
         hintStyle: TextStyle(
-          color: _errorState == FieldErrorState.none
+          color: _errorState == FieldErrorState.none ||
+                  _errorState == FieldErrorState.hideAll
               ? CdsColors.grey300
               : CdsColors.error,
         ),
