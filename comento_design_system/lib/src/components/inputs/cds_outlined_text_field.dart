@@ -14,7 +14,6 @@ class CdsOutlinedTextField extends StatefulWidget {
   final bool obscureText;
   final bool readOnly;
   final bool ignoreErrorOnEmpty;
-  final bool ignoreErrorOnCondition;
   final String? initialValue;
   final String? hintText;
   final String? errorText;
@@ -35,7 +34,6 @@ class CdsOutlinedTextField extends StatefulWidget {
     this.initialValue,
     this.hintText,
     this.ignoreErrorOnEmpty = true,
-    this.ignoreErrorOnCondition = false,
     this.readOnly = false,
     this.errorText,
     this.successText,
@@ -97,11 +95,6 @@ class _CdsOutlinedTextFieldState extends State<CdsOutlinedTextField> {
     if (_errorText == null) {
       return FieldErrorState.none;
     }
-
-    if (widget.ignoreErrorOnCondition) {
-      return FieldErrorState.hideAll;
-    }
-
     if (isEmpty) {
       return widget.ignoreErrorOnEmpty
           ? FieldErrorState.hideAll
@@ -151,8 +144,7 @@ class _CdsOutlinedTextFieldState extends State<CdsOutlinedTextField> {
             ),
         },
         hintStyle: TextStyle(
-          color: _errorState == FieldErrorState.none ||
-                  _errorState == FieldErrorState.hideAll
+          color: _errorState == FieldErrorState.none
               ? CdsColors.grey300
               : CdsColors.error,
         ),
