@@ -315,8 +315,7 @@ class CdsElevatedButton extends StatelessWidget {
         return CdsColors.grey100;
       }),
       overlayColor: MaterialStateProperty.resolveWith((states) {
-        if (isToggled) return CdsColors.blue200;
-        return CdsColors.grey200;
+        return CdsColors.blue100;
       }),
     );
   }
