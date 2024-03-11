@@ -26,6 +26,7 @@ class CdsToast {
     Duration? duration = const Duration(milliseconds: 3000),
     Color? backgroundColor,
     Color? color,
+    void Function()? onDismiss,
   }) {
     showToastWidget(
       _buildContent(
@@ -50,6 +51,7 @@ class CdsToast {
       reverseEndOffset: _startOffset(position),
       endOffset: _endOffset(position),
       isIgnoring: false,
+      onDismiss: onDismiss,
     );
   }
 
