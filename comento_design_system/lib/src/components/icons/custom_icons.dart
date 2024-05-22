@@ -136,91 +136,91 @@ class CustomIcons {
       IconData(0xe837, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData icon_close_medium_line =
       IconData(0xe838, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData icon_close_small_line =
-      IconData(0xe839, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData icon_close_xlarge_line =
-      IconData(0xe83a, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+      IconData(0xe839, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData icon_closeround_medium_fill =
+      IconData(0xe83a, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData icon_close_small_line =
       IconData(0xe83b, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData icon_closeround_medium_line =
+  static const IconData icon_college_2xlarge_line =
       IconData(0xe83c, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData icon_comment_medium_line =
       IconData(0xe83d, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData icon_college_2xlarge_line =
-      IconData(0xe83e, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData icon_coupon_large_line =
-      IconData(0xe83f, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData icon_coupon_medium_line =
-      IconData(0xe840, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+      IconData(0xe83e, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData icon_discount_medium_line =
-      IconData(0xe841, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+      IconData(0xe83f, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData icon_download_large_line =
+      IconData(0xe840, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData icon_download_xlarge_line =
+      IconData(0xe841, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData icon_edu_large_line =
       IconData(0xe842, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData icon_download_medium_line =
       IconData(0xe843, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData icon_download_xlarge_line =
+  static const IconData icon_closeround_medium_line =
       IconData(0xe844, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData icon_edu_large_fill =
+  static const IconData icon_essay_large_line =
       IconData(0xe845, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData icon_essay_medium_line =
+  static const IconData icon_exclamation_large_fill =
       IconData(0xe846, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData icon_edu_large_line =
-      IconData(0xe847, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData icon_essay_xlarge_line =
-      IconData(0xe848, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData icon_exclamation__medium_line =
+      IconData(0xe847, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData icon_coupon_large_line =
+      IconData(0xe848, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData icon_essay_medium_line =
       IconData(0xe849, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData icon_exclamation_large_line =
       IconData(0xe84a, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData icon_exclamation_large_fill =
+  static const IconData icon_edu_large_fill =
       IconData(0xe84b, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData icon_exclamation_medium_line =
+  static const IconData icon_essay_xlarge_line =
       IconData(0xe84c, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData icon_exclamation_xsmall_line =
-      IconData(0xe84d, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData icon_exclamation_medium_fill =
+      IconData(0xe84d, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData icon_exclamation_medium_line =
       IconData(0xe84e, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData icon_export_medium_line =
+  static const IconData icon_exclamation_small_fill =
       IconData(0xe84f, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData icon_exclamation_small_line =
       IconData(0xe850, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData icon_essay_large_line =
+  static const IconData icon_exclamation_xsmall_line =
       IconData(0xe851, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData icon_file_medium_line =
       IconData(0xe852, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData icon_file_small_line =
       IconData(0xe853, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData icon_exclamation_small_fill =
+  static const IconData icon_filter_large_line =
       IconData(0xe854, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData icon_hamburger_large_line =
       IconData(0xe855, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData icon_filter_large_line =
-      IconData(0xe856, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData icon_import_large_line =
-      IconData(0xe857, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+      IconData(0xe856, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData icon_import_medium_line =
+      IconData(0xe857, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData icon_export_medium_line =
       IconData(0xe858, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData icon_filter_medium_line =
-      IconData(0xe859, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData icon_information_large_fill =
-      IconData(0xe85a, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+      IconData(0xe859, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData icon_information_large_line =
+      IconData(0xe85a, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData icon_filter_medium_line =
       IconData(0xe85b, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData icon_information_medium_fill =
-      IconData(0xe85c, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData icon_information_medium_line =
+      IconData(0xe85c, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData icon_information_medium_fill =
       IconData(0xe85d, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData icon_information_small_fill =
-      IconData(0xe85e, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData icon_information_small_line =
+      IconData(0xe85e, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData icon_information_small_fill =
       IconData(0xe85f, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData icon_interview_medium_line =
+  static const IconData icon_information_xsmall_line =
       IconData(0xe860, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData icon_interview_large_line =
       IconData(0xe861, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData icon_job_2xlarge_line =
       IconData(0xe862, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData icon_information_xsmall_line =
+  static const IconData icon_interview_medium_line =
       IconData(0xe863, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData icon_like_medium_fill =
       IconData(0xe864, fontFamily: _kFontFam, fontPackage: _kFontPkg);
