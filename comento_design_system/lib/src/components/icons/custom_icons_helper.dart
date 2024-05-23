@@ -177,10 +177,6 @@ class CustomIconsHelper {
         return CustomIcons.icon_information_large_fill;
       case 'iconinformationlargeline':
         return CustomIcons.icon_information_large_line;
-      case 'iconinformationmediumfill':
-        return CustomIcons.icon_information_medium_fill;
-      case 'iconinformationmediumline':
-        return CustomIcons.icon_information_medium_line;
       case 'iconinformationsmallfill':
         return CustomIcons.icon_information_small_fill;
       case 'iconinformationsmallline':
@@ -255,10 +251,6 @@ class CustomIconsHelper {
         return CustomIcons.icon_profile_large_fill;
       case 'iconprofilelargeline':
         return CustomIcons.icon_profile_large_line;
-      case 'iconprofilemediumfill':
-        return CustomIcons.icon_profile_medium_fill;
-      case 'iconprofilemediumline':
-        return CustomIcons.icon_profile_medium_line;
       case 'iconprofilesmallfill':
         return CustomIcons.icon_profile_small_fill;
       case 'iconprofilesmallline':
