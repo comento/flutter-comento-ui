@@ -19,7 +19,7 @@ class CdsSearchTextField extends StatefulWidget {
   final int? maxLength;
   final double height;
   final double iconSize;
-  final TextStyle fontStyle;
+  final TextStyle testStyle;
   final double? cursorHeight;
   CdsSearchTextField({
     TextEditingController? controller,
@@ -37,7 +37,7 @@ class CdsSearchTextField extends StatefulWidget {
     this.maxLength,
     this.height = 32,
     this.iconSize = 16,
-    this.fontStyle = CdsTextStyles.bodyText2,
+    this.testStyle = CdsTextStyles.bodyText2,
     this.cursorHeight,
   })  : receivedController = controller,
         receivedFocusNode = focusNode,
@@ -120,7 +120,7 @@ class _CdsSearchTextFieldState extends State<CdsSearchTextField> {
         validator: widget.validator,
         cursorColor: isValid ? CdsColors.grey400 : CdsColors.error,
         decoration: _getInputDecoration(),
-        style: widget.fontStyle.merge(TextStyle(color: CdsColors.grey800)),
+        style: widget.testStyle.merge(TextStyle(color: CdsColors.grey800)),
       ),
     );
   }
@@ -137,7 +137,7 @@ class _CdsSearchTextFieldState extends State<CdsSearchTextField> {
         focusedErrorBorder: _buildBorder(),
         errorStyle: TextStyle(color: CdsColors.error),
         contentPadding: EdgeInsets.zero,
-        hintStyle: widget.fontStyle.merge(
+        hintStyle: widget.testStyle.merge(
           TextStyle(
             color: CdsColors.grey400,
           ),
