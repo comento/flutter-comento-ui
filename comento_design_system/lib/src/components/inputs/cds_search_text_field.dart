@@ -17,7 +17,10 @@ class CdsSearchTextField extends StatefulWidget {
   final String? initialValue;
   final String? hintText;
   final int? maxLength;
-
+  final double height;
+  final double iconSize;
+  final TextStyle testStyle;
+  final double? cursorHeight;
   CdsSearchTextField({
     TextEditingController? controller,
     FocusNode? focusNode,
@@ -32,6 +35,10 @@ class CdsSearchTextField extends StatefulWidget {
     this.initialFocus = false,
     this.initialValue,
     this.maxLength,
+    this.height = 32,
+    this.iconSize = 16,
+    this.testStyle = CdsTextStyles.bodyText2,
+    this.cursorHeight,
   })  : receivedController = controller,
         receivedFocusNode = focusNode,
         super();
@@ -94,8 +101,9 @@ class _CdsSearchTextFieldState extends State<CdsSearchTextField> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 32,
+      height: widget.height,
       child: TextFormField(
+        cursorHeight: widget.cursorHeight,
         controller: _controller,
         maxLength: widget.maxLength,
         focusNode: _focusNode,
@@ -112,8 +120,7 @@ class _CdsSearchTextFieldState extends State<CdsSearchTextField> {
         validator: widget.validator,
         cursorColor: isValid ? CdsColors.grey400 : CdsColors.error,
         decoration: _getInputDecoration(),
-        style:
-            CdsTextStyles.bodyText2.merge(TextStyle(color: CdsColors.grey800)),
+        style: widget.testStyle.merge(TextStyle(color: CdsColors.grey800)),
       ),
     );
   }
@@ -130,7 +137,7 @@ class _CdsSearchTextFieldState extends State<CdsSearchTextField> {
         focusedErrorBorder: _buildBorder(),
         errorStyle: TextStyle(color: CdsColors.error),
         contentPadding: EdgeInsets.zero,
-        hintStyle: CdsTextStyles.bodyText2.merge(
+        hintStyle: widget.testStyle.merge(
           TextStyle(
             color: CdsColors.grey400,
           ),
@@ -158,7 +165,7 @@ class _CdsSearchTextFieldState extends State<CdsSearchTextField> {
         child: Icon(
           CustomIcons.icon_search_large_line,
           color: CdsColors.grey500,
-          size: 16,
+          size: widget.iconSize,
         ),
       ),
     );
