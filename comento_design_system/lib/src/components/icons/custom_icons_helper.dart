@@ -377,6 +377,8 @@ class CustomIconsHelper {
         return CustomIcons.icon_class_large_line;
       case 'iconbusinesscaselargeline':
         return CustomIcons.icon_businesscase_large_line;
+      case 'iconfeedlargeline':
+        return CustomIcons.icon_feed_large_line;
       default:
         return Icons.error;
     }
