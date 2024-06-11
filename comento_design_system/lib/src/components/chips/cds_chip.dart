@@ -75,8 +75,9 @@ class CdsChip extends StatelessWidget {
   double _buildTextHeight() {
     switch (size) {
       case CdsSize.xSmall:
-      case CdsSize.small:
         return 1;
+      case CdsSize.small:
+        return 1.2;
       case CdsSize.medium:
         return 1.25;
       case CdsSize.large:
