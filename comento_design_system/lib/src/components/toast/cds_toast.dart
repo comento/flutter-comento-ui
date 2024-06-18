@@ -120,9 +120,16 @@ class CdsToast {
         decoration: BoxDecoration(
           color: _backgroundColor(type, backgroundColor),
           borderRadius: BorderRadius.circular(8.0),
+          boxShadow: [
+            BoxShadow(
+              color: CdsColors.black.withOpacity(0.06),
+              blurRadius: 7.0,
+              offset: Offset(0, 3),
+            ),
+          ],
         ),
         child: Row(
-          mainAxisSize: MainAxisSize.max,
+          mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             if (prefixIcon != null)
@@ -135,14 +142,14 @@ class CdsToast {
                   color: _color(color),
                 ),
               ),
-            Expanded(
+            Flexible(
               child: Container(
                 margin: EdgeInsets.only(bottom: 2.0),
                 child: Text(
                   message,
-                  style: CdsTextStyles.bodyText2.merge(
-                    TextStyle(color: _color(color)),
-                  ),
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                  style: CdsTextStyles.bodyText2.copyWith(color: _color(color)),
                 ),
               ),
             ),
