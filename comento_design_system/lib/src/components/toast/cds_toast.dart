@@ -116,7 +116,10 @@ class CdsToast {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: CdsUI.widthPadding),
       child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+        padding: const EdgeInsets.symmetric(
+          horizontal: 16,
+          vertical: 14,
+        ),
         decoration: BoxDecoration(
           color: _backgroundColor(type, backgroundColor),
           borderRadius: BorderRadius.circular(8.0),
@@ -144,16 +147,22 @@ class CdsToast {
               ),
             Flexible(
               child: Container(
-                margin: EdgeInsets.only(bottom: 2.0),
                 child: Text(
                   message,
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
-                  style: CdsTextStyles.bodyText2.copyWith(color: _color(color)),
+                  style: CdsTextStyles.bodyText2.copyWith(
+                    color: _color(color),
+                  ),
                 ),
               ),
             ),
-            if (suffix != null) suffix,
+            if (suffix != null) ...[
+              SizedBox(
+                width: 4,
+              ),
+              suffix,
+            ],
           ],
         ),
       ),
