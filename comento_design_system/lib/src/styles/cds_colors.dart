@@ -19,6 +19,7 @@ class CdsColors {
   static const Color error = red600;
   static const Color info = grey600;
   static const Color yellow = yellow600;
+  static const Color link = Color(0xFF006BEB);
 
 // color
   static const Color black = const Color(0xFF000000);
