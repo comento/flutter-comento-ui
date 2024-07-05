@@ -1,9 +1,13 @@
 // enums
 // appBars
+// animatedIcons
+export 'components/animated_icons/animated_icons.dart';
 export 'components/app_bars/cds_app_bar.dart';
 export 'components/app_bars/cds_sub_app_bar.dart';
 // avatars
 export 'components/avatars/cds_avatar.dart';
+// badges
+export 'components/badges/cds_count_badge.dart';
 // buttons
 export 'components/buttons/cds_elevated_button.dart';
 export 'components/buttons/cds_elevated_icon_button.dart';
@@ -39,5 +43,3 @@ export 'components/modals/cds_basic_modal.dart';
 export 'components/modals/cds_permission_modal.dart';
 // toasts
 export 'components/toast/cds_toast.dart';
-// animatedIcons
-export 'components/animated_icons/animated_icons.dart';
