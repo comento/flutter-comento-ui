@@ -197,26 +197,27 @@ class _CdsOutlinedTextAreaState extends State<CdsOutlinedTextArea> {
                 },
               ),
             ),
-            Text.rich(
-              TextSpan(
-                text: '글자수 : ',
-                style: CdsTextStyles.caption.copyWith(
-                  color: CdsColors.grey400,
-                ),
-                children: [
-                  TextSpan(
-                    text: '${_controller.text.length}',
-                    style: TextStyle(
-                      color: switch (_errorState) {
-                        FieldErrorState.showAll => CdsColors.error,
-                        _ => CdsColors.grey400,
-                      },
-                    ),
+            if (widget.maxLength != null)
+              Text.rich(
+                TextSpan(
+                  text: '글자수 : ',
+                  style: CdsTextStyles.caption.copyWith(
+                    color: CdsColors.grey400,
                   ),
-                  TextSpan(text: ' / ${widget.maxLength}'),
-                ],
+                  children: [
+                    TextSpan(
+                      text: '${_controller.text.length}',
+                      style: TextStyle(
+                        color: switch (_errorState) {
+                          FieldErrorState.showAll => CdsColors.error,
+                          _ => CdsColors.grey400,
+                        },
+                      ),
+                    ),
+                    TextSpan(text: ' / ${widget.maxLength}'),
+                  ],
+                ),
               ),
-            ),
           ],
         ),
       ],
