@@ -12,373 +12,373 @@ class CustomIconsHelper {
     final lowerCaseIcon = icon.toLowerCase();
     switch (lowerCaseIcon) {
       case 'iconalarmanswer':
-        return CustomIcons.icon_alarm_answer;
+        return CustomIcons.iconAlarmAnswer;
       case 'iconalarmassignment':
-        return CustomIcons.icon_alarm_assignment;
+        return CustomIcons.iconAlarmAssignment;
       case 'iconalarmcelebrate':
-        return CustomIcons.icon_alarm_celebrate;
+        return CustomIcons.iconAlarmCelebrate;
       case 'iconalarmcreditplus':
-        return CustomIcons.icon_alarm_creditplus;
+        return CustomIcons.iconAlarmCreditPlus;
       case 'iconalarmlargeline':
-        return CustomIcons.icon_alarm_large_line;
+        return CustomIcons.iconAlarmLargeLine;
       case 'iconalarmlike':
-        return CustomIcons.icon_alarm_like;
+        return CustomIcons.iconAlarmLike;
       case 'iconalarmnotice':
-        return CustomIcons.icon_alarm_notice;
+        return CustomIcons.iconAlarmNotice;
       case 'iconalarmquestion':
-        return CustomIcons.icon_alarm_question;
+        return CustomIcons.iconAlarmQuestion;
       case 'iconalarmselected':
-        return CustomIcons.icon_alarm_selected;
+        return CustomIcons.iconAlarmSelected;
       case 'iconalarmwon':
-        return CustomIcons.icon_alarm_won;
+        return CustomIcons.iconAlarmWon;
       case 'iconanalyticslargeline':
-        return CustomIcons.icon_analytics_large_line;
+        return CustomIcons.iconAnalyticsLargeLine;
       case 'iconanalyticsmediumline':
-        return CustomIcons.icon_analytics_medium_line;
+        return CustomIcons.iconAnalyticsMediumLine;
       case 'iconanalyticsxlargeline':
-        return CustomIcons.icon_analytics_xlarge_line;
+        return CustomIcons.iconAnalyticsXlargeLine;
       case 'iconanswer2xlargeline':
-        return CustomIcons.icon_answer_2xlarge_line;
+        return CustomIcons.iconAnswer_2xlargeLine;
       case 'iconanswerlargeline':
-        return CustomIcons.icon_answer_large_line;
+        return CustomIcons.iconAnswerLargeLine;
       case 'iconanswerxlargeline':
-        return CustomIcons.icon_answer_xlarge_line;
-      case 'iconarrowlargeline':
-        return CustomIcons.icon_arrow_large_line;
-      case 'iconarrowmediumline':
-        return CustomIcons.icon_arrow_medium_line;
-      case 'iconarrowsmallline':
-        return CustomIcons.icon_arrow_small_line;
-      case 'iconarrowxlargeline':
-        return CustomIcons.icon_arrow_xlarge_line;
-      case 'iconarrowroundmediumline':
-        return CustomIcons.icon_arrowround_medium_line;
+        return CustomIcons.iconAnswerXlargeLine;
+      case 'iconArrowlargeline':
+        return CustomIcons.iconArrowLargeLine;
+      case 'iconArrowmediumline':
+        return CustomIcons.iconArrowMediumLine;
+      case 'iconArrowsmallline':
+        return CustomIcons.iconArrowSmallLine;
+      case 'iconArrowxlargeline':
+        return CustomIcons.iconArrowXlargeLine;
+      case 'iconArrowRoundmediumline':
+        return CustomIcons.iconArrowRoundMediumLine;
       case 'iconbackwardlargeline':
-        return CustomIcons.icon_backward_large_line;
+        return CustomIcons.iconBackwardLargeLine;
       case 'iconblockmediumline':
-        return CustomIcons.icon_block_medium_line;
+        return CustomIcons.iconBlockMediumLine;
       case 'iconboard2xlargeline':
-        return CustomIcons.icon_board_2xlarge_line;
-      case 'iconbookmarklargefill':
-        return CustomIcons.icon_bookmark_large_fill;
-      case 'iconbookmarklargeline':
-        return CustomIcons.icon_bookmark_large_line;
-      case 'iconbookmarkmediumfill':
-        return CustomIcons.icon_bookmark_medium_fill;
-      case 'iconbookmarkmediumline':
-        return CustomIcons.icon_bookmark_medium_line;
-      case 'iconbookmarkxlargefill':
-        return CustomIcons.icon_bookmark_xlarge_fill;
-      case 'iconbookmarkxlargeline':
-        return CustomIcons.icon_bookmark_xlarge_line;
+        return CustomIcons.iconBoard_2xlargeLine;
+      case 'iconbookMarklargefill':
+        return CustomIcons.iconBookMarkLargeFill;
+      case 'iconbookMarklargeline':
+        return CustomIcons.iconBookMarkLargeLine;
+      case 'iconbookMarkmediumfill':
+        return CustomIcons.iconBookmarkMediumFill;
+      case 'iconbookMarkmediumline':
+        return CustomIcons.iconBookmarkMediumLine;
+      case 'iconbookMarkxlargefill':
+        return CustomIcons.iconBookMarkXlargeFill;
+      case 'iconbookMarkxlargeline':
+        return CustomIcons.iconBookMarkXlargeLine;
       case 'iconbrowsemediumfill':
-        return CustomIcons.icon_browse_medium_fill;
+        return CustomIcons.iconBrowseMediumFill;
       case 'iconbrowsemediumline':
-        return CustomIcons.icon_browse_medium_line;
+        return CustomIcons.iconBrowseMediumLine;
       case 'iconchangejob2xlargeline':
-        return CustomIcons.icon_changejob_2xlarge_line;
+        return CustomIcons.iconChangeJob_2xlargeLine;
       case 'iconchecklargeline':
-        return CustomIcons.icon_check_large_line;
+        return CustomIcons.iconCheckLargeLine;
       case 'iconcheckmediumline':
-        return CustomIcons.icon_check_medium_line;
+        return CustomIcons.iconCheckMediumLine;
       case 'iconchecksmallline':
-        return CustomIcons.icon_check_small_line;
-      case 'iconcheckround2xlargefill':
-        return CustomIcons.icon_checkround_2xlarge_fill;
-      case 'iconcheckround2xlargeline':
-        return CustomIcons.icon_checkround_2xlarge_line;
-      case 'iconcheckroundlargefill':
-        return CustomIcons.icon_checkround_large_fill;
-      case 'iconcheckroundlargeline':
-        return CustomIcons.icon_checkround_large_line;
-      case 'iconcheckroundmediumfill':
-        return CustomIcons.icon_checkround_medium_fill;
-      case 'iconcheckroundmediumline':
-        return CustomIcons.icon_checkround_medium_line;
-      case 'iconcheckroundsmallfill':
-        return CustomIcons.icon_checkround_small_fill;
-      case 'iconcheckroundsmallline':
-        return CustomIcons.icon_checkround_small_line;
-      case 'iconcheckroundxlargefill':
-        return CustomIcons.icon_checkround_xlarge_fill;
-      case 'iconcheckroundxlargeline':
-        return CustomIcons.icon_checkround_xlarge_line;
+        return CustomIcons.iconCheckSmallLine;
+      case 'iconcheckRound2xlargefill':
+        return CustomIcons.iconCheckRound_2xlargeFill;
+      case 'iconcheckRound2xlargeline':
+        return CustomIcons.iconCheckRound_2xlargeLine;
+      case 'iconcheckRoundlargefill':
+        return CustomIcons.iconCheckRoundLargeFill;
+      case 'iconcheckRoundlargeline':
+        return CustomIcons.iconCheckRoundLargeLine;
+      case 'iconcheckRoundmediumfill':
+        return CustomIcons.iconCheckRoundMediumFill;
+      case 'iconcheckRoundmediumline':
+        return CustomIcons.iconCheckRoundMediumLine;
+      case 'iconcheckRoundsmallfill':
+        return CustomIcons.iconCheckRoundSmallFill;
+      case 'iconcheckRoundsmallline':
+        return CustomIcons.iconCheckRoundSmallLine;
+      case 'iconcheckRoundxlargefill':
+        return CustomIcons.iconCheckRoundXlargeFill;
+      case 'iconcheckRoundxlargeline':
+        return CustomIcons.iconCheckRoundXlargeLine;
       case 'iconclockmediumfill':
-        return CustomIcons.icon_clock_medium_fill;
+        return CustomIcons.iconClockMediumFill;
       case 'iconclockmediumline':
-        return CustomIcons.icon_clock_medium_line;
+        return CustomIcons.iconClockMediumLine;
       case 'iconcloselargeline':
-        return CustomIcons.icon_close_large_line;
+        return CustomIcons.iconCloseLargeLine;
       case 'iconclosemediumline':
-        return CustomIcons.icon_close_medium_line;
+        return CustomIcons.iconCloseMediumLine;
       case 'iconclosesmallline':
-        return CustomIcons.icon_close_small_line;
+        return CustomIcons.iconCloseSmallLine;
       case 'iconclosexlargeline':
-        return CustomIcons.icon_close_xlarge_line;
-      case 'iconcloseroundmediumfill':
-        return CustomIcons.icon_closeround_medium_fill;
-      case 'iconcloseroundmediumline':
-        return CustomIcons.icon_closeround_medium_line;
+        return CustomIcons.iconCloseXlargeLine;
+      case 'iconcloseRoundmediumfill':
+        return CustomIcons.iconCloseRoundMediumFill;
+      case 'iconcloseRoundmediumline':
+        return CustomIcons.iconCloseRoundMediumLine;
       case 'iconcollege2xlargeline':
-        return CustomIcons.icon_college_2xlarge_line;
+        return CustomIcons.iconCollege_2xlargeLine;
       case 'iconcommentmediumline':
-        return CustomIcons.icon_comment_medium_line;
+        return CustomIcons.iconCommentMediumLine;
       case 'iconcouponlargeline':
-        return CustomIcons.icon_coupon_large_line;
+        return CustomIcons.iconCouponLargeLine;
       case 'iconcouponmediumline':
-        return CustomIcons.icon_coupon_medium_line;
+        return CustomIcons.iconCouponMediumLine;
       case 'icondiscountmediumline':
-        return CustomIcons.icon_discount_medium_line;
+        return CustomIcons.iconDiscountMediumLine;
       case 'icondownloadlargeline':
-        return CustomIcons.icon_download_large_line;
+        return CustomIcons.iconDownloadLargeLine;
       case 'icondownloadmediumline':
-        return CustomIcons.icon_download_medium_line;
+        return CustomIcons.iconDownloadMediumLine;
       case 'icondownloadxlargeline':
-        return CustomIcons.icon_download_xlarge_line;
+        return CustomIcons.iconDownloadXlargeLine;
       case 'iconedulargefill':
-        return CustomIcons.icon_edu_large_fill;
+        return CustomIcons.iconEduLargeFill;
       case 'iconedulargeline':
-        return CustomIcons.icon_edu_large_line;
+        return CustomIcons.iconEduLargeLine;
       case 'iconessaylargeline':
-        return CustomIcons.icon_essay_large_line;
+        return CustomIcons.iconEssayLargeLine;
       case 'iconessaymediumline':
-        return CustomIcons.icon_essay_medium_line;
+        return CustomIcons.iconEssayMediumLine;
       case 'iconessayxlargeline':
-        return CustomIcons.icon_essay_xlarge_line;
+        return CustomIcons.iconEssayXlargeLine;
       case 'iconexclamationlargefill':
-        return CustomIcons.icon_exclamation_large_fill;
+        return CustomIcons.iconExclamationLargeFill;
       case 'iconexclamationlargeline':
-        return CustomIcons.icon_exclamation_large_line;
+        return CustomIcons.iconExclamationLargeLine;
       case 'iconexclamationmediumfill':
-        return CustomIcons.icon_exclamation_medium_fill;
+        return CustomIcons.iconExclamationMediumFill;
       case 'iconexclamationmediumline':
-        return CustomIcons.icon_exclamation_medium_line;
+        return CustomIcons.iconExclamationMediumLine;
       case 'iconexclamationsmallfill':
-        return CustomIcons.icon_exclamation_small_fill;
+        return CustomIcons.iconExclamationSmallFill;
       case 'iconexclamationsmallline':
-        return CustomIcons.icon_exclamation_small_line;
+        return CustomIcons.iconExclamationSmallLine;
       case 'iconexportmediumline':
-        return CustomIcons.icon_export_medium_line;
+        return CustomIcons.iconExportMediumLine;
       case 'iconfilemediumline':
-        return CustomIcons.icon_file_medium_line;
+        return CustomIcons.iconFileMediumLine;
       case 'iconfilesmallline':
-        return CustomIcons.icon_file_small_line;
+        return CustomIcons.iconFileSmallLine;
       case 'iconfilterlargeline':
-        return CustomIcons.icon_filter_large_line;
+        return CustomIcons.iconFilterLargeLine;
       case 'iconfiltermediumline':
-        return CustomIcons.icon_filter_medium_line;
+        return CustomIcons.iconFilterMediumLine;
       case 'iconhamburgerlargeline':
-        return CustomIcons.icon_hamburger_large_line;
+        return CustomIcons.iconHamburgerLargeLine;
       case 'iconimportlargeline':
-        return CustomIcons.icon_import_large_line;
+        return CustomIcons.iconImportLargeLine;
       case 'iconimportmediumline':
-        return CustomIcons.icon_import_medium_line;
+        return CustomIcons.iconImportMediumLine;
       case 'iconinformationlargefill':
-        return CustomIcons.icon_information_large_fill;
+        return CustomIcons.iconInformationLargeFill;
       case 'iconinformationlargeline':
-        return CustomIcons.icon_information_large_line;
+        return CustomIcons.iconInformationLargeLine;
       case 'iconinformationsmallfill':
-        return CustomIcons.icon_information_small_fill;
+        return CustomIcons.iconInformationSmallFill;
       case 'iconinformationsmallline':
-        return CustomIcons.icon_information_small_line;
+        return CustomIcons.iconInformationSmallLine;
       case 'iconinterviewlargeline':
-        return CustomIcons.icon_interview_large_line;
+        return CustomIcons.iconInterviewLargeLine;
       case 'iconinterviewmediumline':
-        return CustomIcons.icon_interview_medium_line;
+        return CustomIcons.iconInterviewMediumLine;
       case 'iconjob2xlargeline':
-        return CustomIcons.icon_job_2xlarge_line;
+        return CustomIcons.iconJob_2xlargeLine;
       case 'iconlikemediumfill':
-        return CustomIcons.icon_like_medium_fill;
+        return CustomIcons.iconLikeMediumFill;
       case 'iconlikemediumline':
-        return CustomIcons.icon_like_medium_line;
+        return CustomIcons.iconLikeMediumLine;
       case 'iconlikesmallfill':
-        return CustomIcons.icon_like_small_fill;
+        return CustomIcons.iconLikeSmallFill;
       case 'iconlikesmallline':
-        return CustomIcons.icon_like_small_line;
+        return CustomIcons.iconLikeSmallLine;
       case 'iconlinklargeline':
-        return CustomIcons.icon_link_large_line;
+        return CustomIcons.iconLinkLargeLine;
       case 'iconlinkmediumline':
-        return CustomIcons.icon_link_medium_line;
+        return CustomIcons.iconLinkMediumLine;
       case 'iconlinksmallline':
-        return CustomIcons.icon_link_small_line;
+        return CustomIcons.iconLinkSmallLine;
       case 'iconlocationmediumfill':
-        return CustomIcons.icon_location_medium_fill;
+        return CustomIcons.iconLocationMediumFill;
       case 'iconlocationmediumline':
-        return CustomIcons.icon_location_medium_line;
+        return CustomIcons.iconLocationMediumLine;
       case 'iconlocklargefill':
-        return CustomIcons.icon_lock_large_fill;
+        return CustomIcons.iconLockLargeFill;
       case 'iconlocklargeline':
-        return CustomIcons.icon_lock_large_line;
+        return CustomIcons.iconLockLargeLine;
       case 'iconlockmediumfill':
-        return CustomIcons.icon_lock_medium_fill;
+        return CustomIcons.iconLockMediumFill;
       case 'iconlockmediumline':
-        return CustomIcons.icon_lock_medium_line;
+        return CustomIcons.iconLockMediumLine;
       case 'iconmegaphonelargeline':
-        return CustomIcons.icon_megaphone_large_line;
+        return CustomIcons.iconMegaphoneLargeLine;
       case 'iconmegaphonemediumline':
-        return CustomIcons.icon_megaphone_medium_line;
+        return CustomIcons.iconMegaphoneMediumLine;
       case 'iconmegaphonesmallline':
-        return CustomIcons.icon_megaphone_small_line;
+        return CustomIcons.iconMegaphoneSmallLine;
       case 'iconmentoringlargefill':
-        return CustomIcons.icon_mentoring_large_fill;
+        return CustomIcons.iconMentoringLargeFill;
       case 'iconmentoringlargeline':
-        return CustomIcons.icon_mentoring_large_line;
+        return CustomIcons.iconMentoringLargeLine;
       case 'iconminusmediumline':
-        return CustomIcons.icon_minus_medium_line;
+        return CustomIcons.iconMinusMediumLine;
       case 'iconphoto2xlargeline':
-        return CustomIcons.icon_photo_2xlarge_line;
+        return CustomIcons.iconPhoto_2xlargeLine;
       case 'iconphotolargeline':
-        return CustomIcons.icon_photo_large_line;
+        return CustomIcons.iconPhotoLargeLine;
       case 'iconphotoxlargeline':
-        return CustomIcons.icon_photo_xlarge_line;
+        return CustomIcons.iconPhotoXlargeLine;
       case 'iconplus2xlargeline':
-        return CustomIcons.icon_plus_2xlarge_line;
+        return CustomIcons.iconPlus_2xlargeLine;
       case 'iconpluslargeline':
-        return CustomIcons.icon_plus_large_line;
+        return CustomIcons.iconPlusLargeLine;
       case 'iconplusmediumline':
-        return CustomIcons.icon_plus_medium_line;
+        return CustomIcons.iconPlusMediumLine;
       case 'iconplussmallline':
-        return CustomIcons.icon_plus_small_line;
-      case 'iconplusroundlargeline':
-        return CustomIcons.icon_plusround_large_line;
-      case 'iconplusroundmediumline':
-        return CustomIcons.icon_plusround_medium_line;
+        return CustomIcons.iconPlusSmallLine;
+      case 'iconplusRoundlargeline':
+        return CustomIcons.iconPlusRoundLargeLine;
+      case 'iconplusRoundmediumline':
+        return CustomIcons.iconPlusRoundMediumLine;
       case 'iconpricemediumline':
-        return CustomIcons.icon_price_medium_line;
+        return CustomIcons.iconPriceMediumLine;
       case 'iconprofile2xlargefill':
-        return CustomIcons.icon_profile_2xlarge_fill;
+        return CustomIcons.iconProfile_2xlargeFill;
       case 'iconprofilelargefill':
-        return CustomIcons.icon_profile_large_fill;
+        return CustomIcons.iconProfileLargeFill;
       case 'iconprofilelargeline':
-        return CustomIcons.icon_profile_large_line;
+        return CustomIcons.iconProfileLargeLine;
       case 'iconprofilesmallfill':
-        return CustomIcons.icon_profile_small_fill;
+        return CustomIcons.iconProfileSmallFill;
       case 'iconprofilesmallline':
-        return CustomIcons.icon_profile_small_line;
+        return CustomIcons.iconProfileSmallLine;
       case 'iconprofilexlargefill':
-        return CustomIcons.icon_profile_xlarge_fill;
+        return CustomIcons.iconProfileXlargeFill;
       case 'iconprofilexlargeline':
-        return CustomIcons.icon_profile_xlarge_line;
+        return CustomIcons.iconProfileXlargeLine;
       case 'iconptlargefill':
-        return CustomIcons.icon_pt_large_fill;
+        return CustomIcons.iconPtLargeFill;
       case 'iconptlargeline':
-        return CustomIcons.icon_pt_large_line;
+        return CustomIcons.iconPtLargeLine;
       case 'iconquestionlargeline':
-        return CustomIcons.icon_question_large_line;
+        return CustomIcons.iconQuestionLargeLine;
       case 'iconquestionmediumline':
-        return CustomIcons.icon_question_medium_line;
-      case 'iconquestionmarklargefill':
-        return CustomIcons.icon_questionmark_large_fill;
-      case 'iconquestionmarklargeline':
-        return CustomIcons.icon_questionmark_large_line;
-      case 'iconquestionmarkmediumfill':
-        return CustomIcons.icon_questionmark_medium_fill;
-      case 'iconquestionmarkmediumline':
-        return CustomIcons.icon_questionmark_medium_line;
-      case 'iconquestionmarksmallfill':
-        return CustomIcons.icon_questionmark_small_fill;
-      case 'iconquestionmarksmallline':
-        return CustomIcons.icon_questionmark_small_line;
+        return CustomIcons.iconQuestionMediumLine;
+      case 'iconquestionMarklargefill':
+        return CustomIcons.iconQuestionMarkLargeFill;
+      case 'iconquestionMarklargeline':
+        return CustomIcons.iconQuestionMarkLargeLine;
+      case 'iconquestionMarkmediumfill':
+        return CustomIcons.iconQuestionMarkMediumFill;
+      case 'iconquestionMarkmediumline':
+        return CustomIcons.iconQuestionMarkMediumLine;
+      case 'iconquestionMarksmallfill':
+        return CustomIcons.iconQuestionMarkSmallFill;
+      case 'iconquestionMarksmallline':
+        return CustomIcons.iconQuestionMarkSmallLine;
       case 'iconreplylargeline':
-        return CustomIcons.icon_reply_large_line;
+        return CustomIcons.iconReplyLargeLine;
       case 'iconresumelargeline':
-        return CustomIcons.icon_resume_large_line;
+        return CustomIcons.iconResumeLargeLine;
       case 'iconresumemediumline':
-        return CustomIcons.icon_resume_medium_line;
+        return CustomIcons.iconResumeMediumLine;
       case 'iconrevertmediumline':
-        return CustomIcons.icon_revert_medium_line;
+        return CustomIcons.iconRevertMediumLine;
       case 'iconsearchlargeline':
-        return CustomIcons.icon_search_large_line;
+        return CustomIcons.iconSearchLargeLine;
       case 'iconsearchsmallline':
-        return CustomIcons.icon_search_small_line;
+        return CustomIcons.iconSearchSmallLine;
       case 'iconsecuritylargefill':
-        return CustomIcons.icon_security_large_fill;
+        return CustomIcons.iconSecurityLargeFill;
       case 'iconsecuritylargeline':
-        return CustomIcons.icon_security_large_line;
+        return CustomIcons.iconSecurityLargeLine;
       case 'iconsendlargefill':
-        return CustomIcons.icon_send_large_fill;
+        return CustomIcons.iconSendLargeFill;
       case 'iconsettinglargeline':
-        return CustomIcons.icon_setting_large_line;
+        return CustomIcons.iconSettingLargeLine;
       case 'iconsettingsmallfill':
-        return CustomIcons.icon_setting_small_fill;
+        return CustomIcons.iconSettingSmallFill;
       case 'iconsirenmediumline':
-        return CustomIcons.icon_siren_medium_line;
+        return CustomIcons.iconSirenMediumLine;
       case 'iconstarlargefill':
-        return CustomIcons.icon_star_large_fill;
+        return CustomIcons.iconStarLargeFill;
       case 'iconstarlargeline':
-        return CustomIcons.icon_star_large_line;
+        return CustomIcons.iconStarLargeLine;
       case 'iconstarmediumfill':
-        return CustomIcons.icon_star_medium_fill;
+        return CustomIcons.iconStarMediumFill;
       case 'iconstarmediumline':
-        return CustomIcons.icon_star_medium_line;
+        return CustomIcons.iconStarMediumLine;
       case 'iconstarsmallfill':
-        return CustomIcons.icon_star_small_fill;
+        return CustomIcons.iconStarSmallFill;
       case 'iconstarsmallline':
-        return CustomIcons.icon_star_small_line;
+        return CustomIcons.iconStarSmallLine;
       case 'iconstarxlargefill':
-        return CustomIcons.icon_star_xlarge_fill;
+        return CustomIcons.iconStarXlargeFill;
       case 'iconstarxlargeline':
-        return CustomIcons.icon_star_xlarge_line;
-      case 'iconstarroundlargefill':
-        return CustomIcons.icon_starround_large_fill;
+        return CustomIcons.iconStarXlargeLine;
+      case 'iconstarRoundlargefill':
+        return CustomIcons.iconStarRoundLargeFill;
       case 'iconsupervisor2xlargeline':
-        return CustomIcons.icon_supervisor_2xlarge_line;
+        return CustomIcons.iconSupervisor_2xlargeLine;
       case 'iconsupport2xlargeline':
-        return CustomIcons.icon_support_2xlarge_line;
+        return CustomIcons.iconSupport_2xlargeLine;
       case 'iconsupportmediumline':
-        return CustomIcons.icon_support_medium_line;
+        return CustomIcons.iconSupportMediumLine;
       case 'iconsupportxlargeline':
-        return CustomIcons.icon_support_xlarge_line;
-      case 'icontextarrowlargeline':
-        return CustomIcons.icon_textarrow_large_line;
-      case 'icontextarrowmediumline':
-        return CustomIcons.icon_textarrow_medium_line;
-      case 'icontextarrowsmallline':
-        return CustomIcons.icon_textarrow_small_line;
-      case 'icontextarrowxlargeline':
-        return CustomIcons.icon_textarrow_xlarge_line;
+        return CustomIcons.iconSupportXlargeLine;
+      case 'icontextArrowlargeline':
+        return CustomIcons.iconTextArrowLargeLine;
+      case 'icontextArrowmediumline':
+        return CustomIcons.iconTextArrowMediumLine;
+      case 'icontextArrowsmallline':
+        return CustomIcons.iconTextArrowSmallLine;
+      case 'icontextArrowxlargeline':
+        return CustomIcons.iconTextArrowXlargeLine;
       case 'iconthreedotlargefill':
-        return CustomIcons.icon_threedot_large_fill;
+        return CustomIcons.iconThreeDotLargeFill;
       case 'iconthreedotmediumfill':
-        return CustomIcons.icon_threedot_medium_fill;
+        return CustomIcons.iconThreeDotMediumFill;
       case 'iconthreedotsmallfill':
-        return CustomIcons.icon_threedot_small_fill;
+        return CustomIcons.iconThreeDotSmallFill;
       case 'icontrashlargeline':
-        return CustomIcons.icon_trash_large_line;
+        return CustomIcons.iconTrashLargeLine;
       case 'icontrashmediumline':
-        return CustomIcons.icon_trash_medium_line;
+        return CustomIcons.iconTrashMediumLine;
       case 'iconunblockmediumline':
-        return CustomIcons.icon_unblock_medium_line;
+        return CustomIcons.iconUnblockMediumLine;
       case 'iconvideolargefill':
-        return CustomIcons.icon_video_large_fill;
+        return CustomIcons.iconVideoLargeFill;
       case 'iconvideolargeline':
-        return CustomIcons.icon_video_large_line;
+        return CustomIcons.iconVideoLargeLine;
       case 'iconvideomediumfill':
-        return CustomIcons.icon_video_medium_fill;
+        return CustomIcons.iconVideoMediumFill;
       case 'iconvideomediumline':
-        return CustomIcons.icon_video_medium_line;
+        return CustomIcons.iconVideoMediumLine;
       case 'iconvodlargeline':
-        return CustomIcons.icon_vod_large_line;
+        return CustomIcons.iconVodLargeLine;
       case 'iconvodmediumline':
-        return CustomIcons.icon_vod_medium_line;
+        return CustomIcons.iconVodMediumLine;
       case 'iconvodxlargeline':
-        return CustomIcons.icon_vod_xlarge_line;
+        return CustomIcons.iconVodXlargeLine;
       case 'iconvodproductlargeline':
-        return CustomIcons.icon_vodproduct_large_line;
+        return CustomIcons.iconVodproductLargeLine;
       case 'iconwriting2xlargeline':
-        return CustomIcons.icon_writing_2xlarge_line;
+        return CustomIcons.iconWriting_2xlargeLine;
       case 'iconwritinglargeline':
-        return CustomIcons.icon_writing_large_line;
+        return CustomIcons.iconWritingLargeLine;
       case 'iconwritingmediumline':
-        return CustomIcons.icon_writing_medium_line;
+        return CustomIcons.iconWritingMediumLine;
       case 'iconwritingsmallline':
-        return CustomIcons.icon_writing_small_line;
+        return CustomIcons.iconWritingSmallLine;
       case 'iconclasslargeline':
-        return CustomIcons.icon_class_large_line;
+        return CustomIcons.iconClassLargeLine;
       case 'iconbusinesscaselargeline':
-        return CustomIcons.icon_businesscase_large_line;
+        return CustomIcons.iconBusinessCaseLargeLine;
       case 'iconfeedlargeline':
-        return CustomIcons.icon_feed_large_line;
+        return CustomIcons.iconFeedLargeLine;
       default:
         return Icons.error;
     }

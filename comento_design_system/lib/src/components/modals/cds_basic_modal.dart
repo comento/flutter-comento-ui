@@ -104,7 +104,7 @@ class CdsBasicModal extends StatelessWidget {
           }
         },
         child: Icon(
-          CustomIcons.icon_close_xlarge_line,
+          CustomIcons.iconCloseXlargeLine,
           size: 28,
           color: CdsColors.grey400,
         ),

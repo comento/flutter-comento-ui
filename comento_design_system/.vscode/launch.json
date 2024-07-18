@@ -1,0 +1,12 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Generate Icons",
+            "type": "node-terminal",
+            "request": "launch",
+            "command": "npm install -g svg-to-ttf-flutter-icons && svg-to-ttf-flutter-icons generate --input=./assets/icons/svg --ttf=./assets/fonts/CustomIcons.ttf --dart=./lib/src/components/icons/custom_icons.dart && python ./tools/modify_icons.py",
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}

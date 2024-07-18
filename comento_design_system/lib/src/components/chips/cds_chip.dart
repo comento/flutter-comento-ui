@@ -51,7 +51,7 @@ class CdsChip extends StatelessWidget {
         GestureDetector(
           onTap: onClose,
           child: Icon(
-            CustomIcons.icon_close_small_line,
+            CustomIcons.iconCloseSmallLine,
             size: _buildIconSize(),
             color: textColor?.withOpacity(0.8),
           ),

@@ -163,7 +163,7 @@ class _CdsSearchTextFieldState extends State<CdsSearchTextField> {
       child: GestureDetector(
         onTap: () => _onSearch(_controller.value.text),
         child: Icon(
-          CustomIcons.icon_search_large_line,
+          CustomIcons.iconSearchLargeLine,
           color: CdsColors.grey500,
           size: widget.iconSize,
         ),
@@ -179,7 +179,7 @@ class _CdsSearchTextFieldState extends State<CdsSearchTextField> {
         return widget.onChanged!(value);
       },
       child: Icon(
-        CustomIcons.icon_closeround_medium_fill,
+        CustomIcons.iconCloseRoundMediumFill,
         color: CdsColors.grey400,
         size: 16,
       ),
