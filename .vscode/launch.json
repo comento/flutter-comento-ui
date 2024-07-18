@@ -1,0 +1,14 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Generate Icons",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile",
+            "toolArgs": [
+                "svg_to_font generate  --input=./comento_design_system/assets/icons/svg --font-output=./comento_design_system/assets/fonts --class-output=./comento_design_system/lib/src/components/icons",
+            ],
+        },
+    ]
+}
