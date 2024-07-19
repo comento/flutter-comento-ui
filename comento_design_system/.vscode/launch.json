@@ -5,7 +5,7 @@
             "name": "Generate Icons",
             "type": "node-terminal",
             "request": "launch",
-            "command": "dart ./tools/path_to_your_dart_file.dart && dart ./tools/generate_icons_helper.dart && svg_to_font generate --input=./assets/icons/svg --font-output=./assets/fonts --class-output=./lib/src/components/icons --name CustomIcons && dart ./tools/add_font_package.dart",
+            "command": "dart ./tools/generate_icons_helper.dart && flutter pub global activate icon_generator && icon_generator --from=./assets/icons/svg --class-name=CustomIcons --out-font=./assets/fonts/CustomIcons.ttf --out-flutter=./lib/src/components/icons/custom_icons.dart --package=comento_design_system --naming-strategy=camel --normalize",
             "cwd": "${workspaceFolder}"
         },
     ]
