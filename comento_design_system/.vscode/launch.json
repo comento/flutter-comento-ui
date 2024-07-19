@@ -5,8 +5,8 @@
             "name": "Generate Icons",
             "type": "node-terminal",
             "request": "launch",
-            "command": "npm install -g svg-to-ttf-flutter-icons && svg-to-ttf-flutter-icons generate --input=./assets/icons/svg --ttf=./assets/fonts/CustomIcons.ttf --dart=./lib/src/components/icons/custom_icons.dart && python ./tools/modify_icons.py",
+            "command": "dart ./tools/path_to_your_dart_file.dart && dart ./tools/generate_icons_helper.dart && svg_to_font generate --input=./assets/icons/svg --font-output=./assets/fonts --class-output=./lib/src/components/icons --name CustomIcons && dart ./tools/add_font_package.dart",
             "cwd": "${workspaceFolder}"
-        }
+        },
     ]
 }

@@ -35,6 +35,6 @@ flutter:
           weight: 600
     - family: CustomIcons
       fonts:
-        - asset: assets/fonts/CustomIcons.ttf
+        - asset: assets/fonts/custom_icons.ttf
 exclude:
     - assets/icons/svg/
