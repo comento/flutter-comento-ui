@@ -98,7 +98,7 @@ class CdsOutlinedButton extends StatelessWidget {
       child: printChild,
       style: OutlinedButton.styleFrom(
         textStyle: CdsTextStyles.button.merge(
-          TextStyle(fontSize: 14),
+          TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
         ),
         padding: EdgeInsets.symmetric(horizontal: 12),
         minimumSize: const Size(60, 36),
@@ -141,7 +141,7 @@ class CdsOutlinedButton extends StatelessWidget {
       child: printChild,
       style: OutlinedButton.styleFrom(
         textStyle: CdsTextStyles.button.merge(
-          TextStyle(fontSize: 14),
+          TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
         ),
         padding: EdgeInsets.symmetric(horizontal: 12),
         minimumSize: const Size(double.infinity, 36),
@@ -184,7 +184,7 @@ class CdsOutlinedButton extends StatelessWidget {
       child: printChild,
       style: OutlinedButton.styleFrom(
         textStyle: CdsTextStyles.button.merge(
-          TextStyle(fontSize: 16),
+          TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
         ),
         padding: EdgeInsets.symmetric(horizontal: 14),
         minimumSize: const Size(76, 48),
@@ -227,7 +227,7 @@ class CdsOutlinedButton extends StatelessWidget {
       child: printChild,
       style: OutlinedButton.styleFrom(
         textStyle: CdsTextStyles.button.merge(
-          TextStyle(fontSize: 16),
+          TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
         ),
         padding: EdgeInsets.symmetric(horizontal: 14),
         minimumSize: const Size(double.infinity, 48),
