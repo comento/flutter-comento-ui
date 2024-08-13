@@ -26,6 +26,8 @@ class CdsOutlinedButton extends StatelessWidget {
     required String text,
     Widget? leading,
     Widget? trailing,
+    double? leadingMargin,
+    double? trailingMargin,
     bool isEnabled = true,
     bool isLoading = false,
   }) {
@@ -34,6 +36,8 @@ class CdsOutlinedButton extends StatelessWidget {
       loadingIndicator: CdsCircularProgressIndicator.small(color: color),
       leading: leading,
       trailing: trailing,
+      leadingMargin: leadingMargin,
+      trailingMargin: trailingMargin,
       text: text,
     );
     return CdsOutlinedButton._(
@@ -68,6 +72,8 @@ class CdsOutlinedButton extends StatelessWidget {
     required String text,
     Widget? leading,
     Widget? trailing,
+    double? leadingMargin,
+    double? trailingMargin,
     bool isEnabled = true,
     bool isLoading = false,
   }) {
@@ -76,6 +82,8 @@ class CdsOutlinedButton extends StatelessWidget {
       loadingIndicator: CdsCircularProgressIndicator.small(color: color),
       leading: leading,
       trailing: trailing,
+      leadingMargin: leadingMargin,
+      trailingMargin: trailingMargin,
       text: text,
     );
     return CdsOutlinedButton._(
@@ -107,6 +115,8 @@ class CdsOutlinedButton extends StatelessWidget {
     required String text,
     Widget? leading,
     Widget? trailing,
+    double? leadingMargin,
+    double? trailingMargin,
     bool isEnabled = true,
     bool isLoading = false,
   }) {
@@ -115,6 +125,8 @@ class CdsOutlinedButton extends StatelessWidget {
       loadingIndicator: CdsCircularProgressIndicator.small(color: color),
       leading: leading,
       trailing: trailing,
+      leadingMargin: leadingMargin,
+      trailingMargin: trailingMargin,
       text: text,
     );
     return CdsOutlinedButton._(
@@ -146,6 +158,8 @@ class CdsOutlinedButton extends StatelessWidget {
     required String text,
     Widget? leading,
     Widget? trailing,
+    double? leadingMargin,
+    double? trailingMargin,
     bool isEnabled = true,
     bool isLoading = false,
   }) {
@@ -154,6 +168,8 @@ class CdsOutlinedButton extends StatelessWidget {
       loadingIndicator: CdsCircularProgressIndicator.medium(color: color),
       leading: leading,
       trailing: trailing,
+      leadingMargin: leadingMargin,
+      trailingMargin: trailingMargin,
       text: text,
     );
     return CdsOutlinedButton._(
@@ -185,6 +201,8 @@ class CdsOutlinedButton extends StatelessWidget {
     required String text,
     Widget? leading,
     Widget? trailing,
+    double? leadingMargin,
+    double? trailingMargin,
     bool isEnabled = true,
     bool isLoading = false,
   }) {
@@ -193,6 +211,8 @@ class CdsOutlinedButton extends StatelessWidget {
       loadingIndicator: CdsCircularProgressIndicator.medium(color: color),
       leading: leading,
       trailing: trailing,
+      leadingMargin: leadingMargin,
+      trailingMargin: trailingMargin,
       text: text,
     );
     return CdsOutlinedButton._(
@@ -220,6 +240,8 @@ class CdsOutlinedButton extends StatelessWidget {
     required Widget loadingIndicator,
     Widget? leading,
     Widget? trailing,
+    double? leadingMargin,
+    double? trailingMargin,
     required String text,
   }) {
     Widget printChild = isLoading
@@ -228,9 +250,15 @@ class CdsOutlinedButton extends StatelessWidget {
             ? Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  if (leading != null) leading,
+                  if (leading != null) ...[
+                    leading,
+                    SizedBox(width: leadingMargin),
+                  ],
                   Text(text),
-                  if (trailing != null) trailing,
+                  if (trailing != null) ...[
+                    SizedBox(width: trailingMargin),
+                    trailing,
+                  ],
                 ],
               )
             : Text(text);
