@@ -24,17 +24,17 @@ class CdsOutlinedButton extends StatelessWidget {
     Clip clipBehavior = Clip.none,
     CdsComponentColor color = CdsComponentColor.blue,
     required String text,
-    Widget? icon,
-    double? iconMargin,
+    Widget? leading,
+    Widget? trailing,
     bool isEnabled = true,
     bool isLoading = false,
   }) {
     Widget printChild = _buildChild(
       isLoading: isLoading,
       loadingIndicator: CdsCircularProgressIndicator.small(color: color),
-      icon: icon,
+      leading: leading,
+      trailing: trailing,
       text: text,
-      iconMargin: iconMargin,
     );
     return CdsOutlinedButton._(
       key: key,
@@ -66,17 +66,17 @@ class CdsOutlinedButton extends StatelessWidget {
     Clip clipBehavior = Clip.none,
     CdsComponentColor color = CdsComponentColor.blue,
     required String text,
-    Widget? icon,
-    double? iconMargin,
+    Widget? leading,
+    Widget? trailing,
     bool isEnabled = true,
     bool isLoading = false,
   }) {
     Widget printChild = _buildChild(
       isLoading: isLoading,
       loadingIndicator: CdsCircularProgressIndicator.small(color: color),
-      icon: icon,
+      leading: leading,
+      trailing: trailing,
       text: text,
-      iconMargin: iconMargin,
     );
     return CdsOutlinedButton._(
       key: key,
@@ -105,17 +105,17 @@ class CdsOutlinedButton extends StatelessWidget {
     Clip clipBehavior = Clip.none,
     CdsComponentColor color = CdsComponentColor.blue,
     required String text,
-    Widget? icon,
-    double? iconMargin,
+    Widget? leading,
+    Widget? trailing,
     bool isEnabled = true,
     bool isLoading = false,
   }) {
     Widget printChild = _buildChild(
       isLoading: isLoading,
       loadingIndicator: CdsCircularProgressIndicator.small(color: color),
-      icon: icon,
+      leading: leading,
+      trailing: trailing,
       text: text,
-      iconMargin: iconMargin,
     );
     return CdsOutlinedButton._(
       key: key,
@@ -144,17 +144,17 @@ class CdsOutlinedButton extends StatelessWidget {
     Clip clipBehavior = Clip.none,
     CdsComponentColor color = CdsComponentColor.blue,
     required String text,
-    Widget? icon,
-    double? iconMargin,
+    Widget? leading,
+    Widget? trailing,
     bool isEnabled = true,
     bool isLoading = false,
   }) {
     Widget printChild = _buildChild(
       isLoading: isLoading,
       loadingIndicator: CdsCircularProgressIndicator.medium(color: color),
-      icon: icon,
+      leading: leading,
+      trailing: trailing,
       text: text,
-      iconMargin: iconMargin,
     );
     return CdsOutlinedButton._(
       key: key,
@@ -183,17 +183,17 @@ class CdsOutlinedButton extends StatelessWidget {
     Clip clipBehavior = Clip.none,
     CdsComponentColor color = CdsComponentColor.blue,
     required String text,
-    Widget? icon,
-    double? iconMargin,
+    Widget? leading,
+    Widget? trailing,
     bool isEnabled = true,
     bool isLoading = false,
   }) {
     Widget printChild = _buildChild(
       isLoading: isLoading,
       loadingIndicator: CdsCircularProgressIndicator.medium(color: color),
-      icon: icon,
+      leading: leading,
+      trailing: trailing,
       text: text,
-      iconMargin: iconMargin,
     );
     return CdsOutlinedButton._(
       key: key,
@@ -215,64 +215,22 @@ class CdsOutlinedButton extends StatelessWidget {
     );
   }
 
-  factory CdsOutlinedButton.backIconFull({
-    Key? key,
-    required VoidCallback? onPressed,
-    VoidCallback? onLongPress,
-    Clip clipBehavior = Clip.none,
-    CdsComponentColor color = CdsComponentColor.blue,
-    required String text,
-    required Widget icon,
-    double? iconMargin,
-    bool isEnabled = true,
-    bool isLoading = false,
-  }) {
-    return CdsOutlinedButton._(
-      key: key,
-      onPressed: isEnabled
-          ? isLoading
-              ? () {}
-              : onPressed
-          : null,
-      onLongPress: onLongPress,
-      clipBehavior: clipBehavior,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Expanded(
-            child: Text(
-              text,
-            ),
-          ),
-          icon,
-        ],
-      ),
-      style: OutlinedButton.styleFrom(
-        textStyle: CdsTextStyles.button.merge(
-          TextStyle(fontSize: 16, overflow: TextOverflow.ellipsis),
-        ),
-        padding: EdgeInsets.symmetric(horizontal: 14),
-        minimumSize: const Size(double.infinity, 48),
-      ).merge(_getButtonStyle(color)),
-    );
-  }
-
   static Widget _buildChild({
     required bool isLoading,
     required Widget loadingIndicator,
-    Widget? icon,
+    Widget? leading,
+    Widget? trailing,
     required String text,
-    double? iconMargin,
   }) {
     Widget printChild = isLoading
         ? loadingIndicator
-        : icon != null
+        : leading != null || trailing != null
             ? Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  icon,
-                  SizedBox(width: iconMargin),
+                  if (leading != null) leading,
                   Text(text),
+                  if (trailing != null) trailing,
                 ],
               )
             : Text(text);
@@ -306,100 +264,100 @@ class CdsOutlinedButton extends StatelessWidget {
   static ButtonStyle _getGreenButtonStyle() {
     return ButtonStyle(
       tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-      foregroundColor: MaterialStateProperty.resolveWith((states) {
-        if (states.contains(MaterialState.disabled)) return CdsColors.green100;
+      foregroundColor: WidgetStateProperty.resolveWith((states) {
+        if (states.contains(WidgetState.disabled)) return CdsColors.green100;
         return CdsColors.green600;
       }),
-      side: MaterialStateProperty.resolveWith((states) {
-        if (states.contains(MaterialState.disabled))
+      side: WidgetStateProperty.resolveWith((states) {
+        if (states.contains(WidgetState.disabled))
           return BorderSide(color: CdsColors.green100);
         return BorderSide(color: CdsColors.green600);
       }),
-      overlayColor: MaterialStateProperty.resolveWith((states) {
+      overlayColor: WidgetStateProperty.resolveWith((states) {
         return CdsColors.green100;
       }),
-      shape: MaterialStateProperty.all(
+      shape: WidgetStateProperty.all(
         RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(CdsUI.buttonRadius),
         ),
       ),
-      backgroundColor: MaterialStateProperty.all(CdsColors.white),
-      elevation: MaterialStateProperty.all(0),
+      backgroundColor: WidgetStateProperty.all(CdsColors.white),
+      elevation: WidgetStateProperty.all(0),
     );
   }
 
   static ButtonStyle _getGreyButtonStyle() {
     return ButtonStyle(
       tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-      foregroundColor: MaterialStateProperty.resolveWith((states) {
-        if (states.contains(MaterialState.disabled)) return CdsColors.grey100;
+      foregroundColor: WidgetStateProperty.resolveWith((states) {
+        if (states.contains(WidgetState.disabled)) return CdsColors.grey100;
         return CdsColors.grey600;
       }),
-      side: MaterialStateProperty.resolveWith((states) {
-        if (states.contains(MaterialState.disabled))
+      side: WidgetStateProperty.resolveWith((states) {
+        if (states.contains(WidgetState.disabled))
           return BorderSide(color: CdsColors.grey100);
         return BorderSide(color: CdsColors.grey400);
       }),
-      overlayColor: MaterialStateProperty.resolveWith((states) {
+      overlayColor: WidgetStateProperty.resolveWith((states) {
         return CdsColors.grey100;
       }),
-      shape: MaterialStateProperty.all(
+      shape: WidgetStateProperty.all(
         RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(CdsUI.buttonRadius),
         ),
       ),
-      backgroundColor: MaterialStateProperty.all(CdsColors.white),
-      elevation: MaterialStateProperty.all(0),
+      backgroundColor: WidgetStateProperty.all(CdsColors.white),
+      elevation: WidgetStateProperty.all(0),
     );
   }
 
   static ButtonStyle _getBlueButtonStyle() {
     return ButtonStyle(
       tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-      foregroundColor: MaterialStateProperty.resolveWith((states) {
-        if (states.contains(MaterialState.disabled)) return CdsColors.blue100;
+      foregroundColor: WidgetStateProperty.resolveWith((states) {
+        if (states.contains(WidgetState.disabled)) return CdsColors.blue100;
         return CdsColors.blue600;
       }),
-      side: MaterialStateProperty.resolveWith((states) {
-        if (states.contains(MaterialState.disabled))
+      side: WidgetStateProperty.resolveWith((states) {
+        if (states.contains(WidgetState.disabled))
           return BorderSide(color: CdsColors.blue100);
         return BorderSide(color: CdsColors.blue600);
       }),
-      overlayColor: MaterialStateProperty.resolveWith((states) {
+      overlayColor: WidgetStateProperty.resolveWith((states) {
         return CdsColors.blue000;
       }),
-      shape: MaterialStateProperty.all(
+      shape: WidgetStateProperty.all(
         RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(CdsUI.buttonRadius),
         ),
       ),
-      backgroundColor: MaterialStateProperty.all(CdsColors.white),
-      elevation: MaterialStateProperty.all(0),
+      backgroundColor: WidgetStateProperty.all(CdsColors.white),
+      elevation: WidgetStateProperty.all(0),
     );
   }
 
   static ButtonStyle _getRedButtonStyle() {
     return ButtonStyle(
       tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-      foregroundColor: MaterialStateProperty.resolveWith((states) {
-        if (states.contains(MaterialState.disabled)) return CdsColors.red100;
+      foregroundColor: WidgetStateProperty.resolveWith((states) {
+        if (states.contains(WidgetState.disabled)) return CdsColors.red100;
         return CdsColors.red600;
       }),
-      side: MaterialStateProperty.resolveWith((states) {
-        if (states.contains(MaterialState.disabled))
+      side: WidgetStateProperty.resolveWith((states) {
+        if (states.contains(WidgetState.disabled))
           return BorderSide(color: CdsColors.red100);
         return BorderSide(color: CdsColors.red600);
       }),
-      overlayColor: MaterialStateProperty.resolveWith((states) {
+      overlayColor: WidgetStateProperty.resolveWith((states) {
         return CdsColors.red000;
       }),
-      shape: MaterialStateProperty.all(
+      shape: WidgetStateProperty.all(
         RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(CdsUI.buttonRadius),
         ),
       ),
-      backgroundColor: MaterialStateProperty.all(CdsColors.white),
-      elevation: MaterialStateProperty.all(0),
+      backgroundColor: WidgetStateProperty.all(CdsColors.white),
+      elevation: WidgetStateProperty.all(0),
     );
   }
 }
