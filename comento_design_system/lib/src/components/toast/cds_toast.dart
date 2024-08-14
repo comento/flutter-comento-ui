@@ -26,7 +26,10 @@ class CdsToast {
     Duration? duration = const Duration(milliseconds: 3000),
     Color? backgroundColor,
     Color? color,
+    Color? iconColor,
     void Function()? onDismiss,
+    TextStyle? textStyle,
+    double? gap,
   }) {
     showToastWidget(
       _buildContent(
@@ -36,6 +39,9 @@ class CdsToast {
         suffix: suffix,
         backgroundColor: backgroundColor,
         color: color,
+        iconColor: iconColor,
+        textStyle: textStyle,
+        gap: gap,
       ),
       context: context,
       position: _position(position),
@@ -112,6 +118,9 @@ class CdsToast {
     CdsToastType? type,
     Color? backgroundColor,
     Color? color,
+    Color? iconColor,
+    TextStyle? textStyle,
+    double? gap,
   }) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: CdsUI.widthPadding),
@@ -137,12 +146,12 @@ class CdsToast {
           children: [
             if (prefixIcon != null)
               Container(
-                margin: EdgeInsets.only(right: 4.0),
+                margin: EdgeInsets.only(right: gap ?? 4.0),
                 width: 24.0,
                 height: 24.0,
                 child: Icon(
                   prefixIcon,
-                  color: _color(color),
+                  color: iconColor ?? _color(color),
                 ),
               ),
             Flexible(
@@ -151,15 +160,16 @@ class CdsToast {
                   message,
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
-                  style: CdsTextStyles.bodyText2.copyWith(
-                    color: _color(color),
-                  ),
+                  style: textStyle ??
+                      CdsTextStyles.bodyText2.copyWith(
+                        color: _color(color),
+                      ),
                 ),
               ),
             ),
             if (suffix != null) ...[
               SizedBox(
-                width: 4,
+                width: gap ?? 4.0,
               ),
               suffix,
             ],
