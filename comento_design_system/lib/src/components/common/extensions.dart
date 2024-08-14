@@ -1,3 +1,3 @@
 extension IsKoreanChar on String {
-  bool get isOnlyKoreanChars => RegExp(r'[가-힣]').hasMatch(this);
+  bool get isKoreanChars => RegExp(r'[가-힣]').hasMatch(this);
 }

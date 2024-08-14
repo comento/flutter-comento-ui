@@ -52,7 +52,7 @@ class CdsInformativeChip extends StatelessWidget {
                 color: color.contentsColor,
                 fontSize: size.fontSize,
                 fontWeight: size.fontWeigt,
-                height: text.isOnlyKoreanChars ? size.textHeight : 1,
+                height: text.isKoreanChars ? size.textHeight : 1,
               ),
             ),
             if (onCloseTap != null) ...[

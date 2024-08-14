@@ -52,7 +52,7 @@ class CdsNewClickableChip extends StatelessWidget {
                 color: color.contentsColor,
                 fontSize: size.fontSize,
                 fontWeight: size.fontWeigt,
-                height: text.isOnlyKoreanChars ? size.textHeight : 1,
+                height: text.isKoreanChars ? size.textHeight : 1,
               ),
             ),
             if (rightIcon != null) ...[
