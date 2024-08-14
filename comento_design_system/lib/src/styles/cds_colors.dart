@@ -44,18 +44,21 @@ class CdsColors {
   static const Color green600 = const Color(0xFF04CD66);
   static const Color green400 = const Color(0xFF54DD97);
   static const Color green100 = const Color(0xFFCDF5E0);
+  static const Color green050 = const Color(0xFFE5FAEF);
   static const Color green000 = const Color(0xFFF5FDF9);
 
   static const Color red800 = const Color(0xFF971818);
   static const Color red600 = const Color(0xFFE92525);
   static const Color red400 = const Color(0xFFF06B6B);
   static const Color red100 = const Color(0xFFFBD3D3);
+  static const Color red050 = const Color(0xFFFDE8E8);
   static const Color red000 = const Color(0xFFFEF6F6);
 
   static const Color orange800 = const Color(0xFFCF5310);
   static const Color orange600 = const Color(0xFFEE7E41);
   static const Color orange400 = const Color(0xFFF3A77E);
   static const Color orange100 = const Color(0xFFFCE5D9);
+  static const Color orange050 = const Color(0xFFFDF2EB);
   static const Color orange000 = const Color(0xFFFEFAF7);
 
   static const Color yellow600 = const Color(0xFFFFD700);
@@ -69,6 +72,7 @@ class CdsColors {
   static const Color blue300 = const Color(0xFF90BBEF);
   static const Color blue200 = const Color(0xFFB2D0F4);
   static const Color blue100 = const Color(0xFFD4E5F9);
+  static const Color blue050 = const Color(0xFFE9F2FC);
   static const Color blue000 = const Color(0xFFF7FAFE);
 
   static const Color transparent = const Color(0x00000000);
