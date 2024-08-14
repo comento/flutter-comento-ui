@@ -4,6 +4,8 @@
 export 'components/animated_icons/animated_icons.dart';
 export 'components/app_bars/cds_app_bar.dart';
 export 'components/app_bars/cds_sub_app_bar.dart';
+export 'components/app_chips/cds_informative_chip.dart';
+export 'components/app_chips/cds_new_clickable_chip.dart';
 // avatars
 export 'components/avatars/cds_avatar.dart';
 // badges

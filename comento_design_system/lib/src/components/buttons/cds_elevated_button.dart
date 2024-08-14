@@ -164,6 +164,7 @@ class CdsElevatedButton extends StatelessWidget {
     bool isEnabled = true,
     bool isLoading = false,
     bool isToggled = false,
+    FontWeight? fontWeight,
   }) =>
       CdsElevatedButton._(
         key: key,
@@ -180,7 +181,7 @@ class CdsElevatedButton extends StatelessWidget {
             : Text(text),
         style: ElevatedButton.styleFrom(
           textStyle: CdsTextStyles.button.merge(
-            TextStyle(fontSize: 16),
+            TextStyle(fontSize: 16, fontWeight: fontWeight),
           ),
           padding: EdgeInsets.symmetric(horizontal: 18),
           minimumSize: const Size(double.infinity, 48),
