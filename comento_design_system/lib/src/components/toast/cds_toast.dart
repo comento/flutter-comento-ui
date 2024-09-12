@@ -126,8 +126,8 @@ class CdsToast {
       padding: const EdgeInsets.symmetric(horizontal: CdsUI.widthPadding),
       child: Container(
         padding: const EdgeInsets.symmetric(
-          horizontal: 16,
-          vertical: 14,
+          horizontal: 20,
+          vertical: 17.5,
         ),
         decoration: BoxDecoration(
           color: _backgroundColor(type, backgroundColor),
@@ -142,29 +142,35 @@ class CdsToast {
         ),
         child: Row(
           mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            if (prefixIcon != null)
-              Container(
-                margin: EdgeInsets.only(right: gap ?? 4.0),
-                width: 24.0,
-                height: 24.0,
-                child: Icon(
-                  prefixIcon,
-                  color: iconColor ?? _color(color),
-                ),
-              ),
-            Flexible(
-              child: Container(
-                child: Text(
-                  message,
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                  style: textStyle ??
-                      CdsTextStyles.bodyText2.copyWith(
-                        color: _color(color),
+            Expanded(
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  if (prefixIcon != null)
+                    Container(
+                      margin: EdgeInsets.only(right: gap ?? 4.0),
+                      width: 24.0,
+                      height: 24.0,
+                      child: Icon(
+                        prefixIcon,
+                        color: iconColor ?? _color(color),
                       ),
-                ),
+                    ),
+                  Expanded(
+                    child: Text(
+                      message,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                      style: textStyle ??
+                          CdsTextStyles.bodyText2.copyWith(
+                            color: _color(color),
+                          ),
+                    ),
+                  ),
+                ],
               ),
             ),
             if (suffix != null) ...[
