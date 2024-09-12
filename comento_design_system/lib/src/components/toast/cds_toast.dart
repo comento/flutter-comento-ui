@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:comento_design_system/comento_design_system.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_styled_toast/flutter_styled_toast.dart';
@@ -124,62 +126,68 @@ class CdsToast {
   }) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: CdsUI.widthPadding),
-      child: Container(
-        padding: const EdgeInsets.symmetric(
-          horizontal: 20,
-          vertical: 17.5,
-        ),
-        decoration: BoxDecoration(
-          color: _backgroundColor(type, backgroundColor),
-          borderRadius: BorderRadius.circular(8.0),
-          boxShadow: [
-            BoxShadow(
-              color: CdsColors.black.withOpacity(0.06),
-              blurRadius: 7.0,
-              offset: Offset(0, 3),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(8.0),
+        child: BackdropFilter(
+          filter: ImageFilter.blur(sigmaX: 15.0, sigmaY: 15.0),
+          child: Container(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 20,
+              vertical: 17.5,
             ),
-          ],
-        ),
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Expanded(
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  if (prefixIcon != null)
-                    Container(
-                      margin: EdgeInsets.only(right: gap ?? 4.0),
-                      width: 24.0,
-                      height: 24.0,
-                      child: Icon(
-                        prefixIcon,
-                        color: iconColor ?? _color(color),
-                      ),
-                    ),
-                  Expanded(
-                    child: Text(
-                      message,
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
-                      style: textStyle ??
-                          CdsTextStyles.bodyText2.copyWith(
-                            color: _color(color),
+            decoration: BoxDecoration(
+              color: _backgroundColor(type, backgroundColor),
+              borderRadius: BorderRadius.circular(8.0),
+              boxShadow: [
+                BoxShadow(
+                  color: CdsColors.black.withOpacity(0.06),
+                  blurRadius: 7.0,
+                  offset: Offset(0, 3),
+                ),
+              ],
+            ),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Expanded(
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      if (prefixIcon != null)
+                        Container(
+                          margin: EdgeInsets.only(right: gap ?? 4.0),
+                          width: 24.0,
+                          height: 24.0,
+                          child: Icon(
+                            prefixIcon,
+                            color: iconColor ?? _color(color),
                           ),
-                    ),
+                        ),
+                      Expanded(
+                        child: Text(
+                          message,
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
+                          style: textStyle ??
+                              CdsTextStyles.bodyText2.copyWith(
+                                color: _color(color),
+                              ),
+                        ),
+                      ),
+                    ],
                   ),
+                ),
+                if (suffix != null) ...[
+                  SizedBox(
+                    width: gap ?? 4.0,
+                  ),
+                  suffix,
                 ],
-              ),
+              ],
             ),
-            if (suffix != null) ...[
-              SizedBox(
-                width: gap ?? 4.0,
-              ),
-              suffix,
-            ],
-          ],
+          ),
         ),
       ),
     );
