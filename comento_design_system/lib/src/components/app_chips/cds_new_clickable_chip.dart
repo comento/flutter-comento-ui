@@ -51,7 +51,7 @@ class CdsNewClickableChip extends StatelessWidget {
                 color: color.contentsColor,
                 fontSize: size.fontSize,
                 fontWeight: size.fontWeigt,
-                height: 1.2,
+                height: 1,
               ),
             ),
             if (rightIcon != null) ...[
