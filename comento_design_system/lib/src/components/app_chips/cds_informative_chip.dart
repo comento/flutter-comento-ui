@@ -1,5 +1,4 @@
 import 'package:comento_design_system/comento_design_system.dart';
-import 'package:comento_design_system/src/components/common/extensions.dart';
 import 'package:flutter/material.dart';
 
 /// close icon이 존재하는 경우 [onCloseTap] 함수를 넣어주면 됩니다.
@@ -52,7 +51,7 @@ class CdsInformativeChip extends StatelessWidget {
                 color: color.contentsColor,
                 fontSize: size.fontSize,
                 fontWeight: size.fontWeigt,
-                height: text.isKoreanChars ? size.textHeight : 1,
+                height: 1.2,
               ),
             ),
             if (onCloseTap != null) ...[
