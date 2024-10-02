@@ -1,5 +1,4 @@
 import 'package:comento_design_system/comento_design_system.dart';
-import 'package:comento_design_system/src/components/common/extensions.dart';
 import 'package:flutter/material.dart';
 
 class CdsNewClickableChip extends StatelessWidget {
@@ -52,7 +51,7 @@ class CdsNewClickableChip extends StatelessWidget {
                 color: color.contentsColor,
                 fontSize: size.fontSize,
                 fontWeight: size.fontWeigt,
-                height: text.isKoreanChars ? size.textHeight : 1,
+                height: 1.2,
               ),
             ),
             if (rightIcon != null) ...[
